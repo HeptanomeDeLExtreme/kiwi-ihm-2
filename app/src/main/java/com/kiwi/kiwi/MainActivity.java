@@ -1,18 +1,25 @@
+/**
+ * Activité principale de l'application, composée de deux fragments
+ *
+ * @author Ealhad
+ */
+
 package com.kiwi.kiwi;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-
-import com.kiwi.kiwi.model.Resto;
-import com.kiwi.kiwi.model.RestoAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +27,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ListView mListView;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +47,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        mListView = (ListView) findViewById(R.id.listView);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
 
-        List<Resto> restos = genererRestos();
-
-        RestoAdapter adapter = new RestoAdapter(MainActivity.this, restos);
-        mListView.setAdapter(adapter);
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -58,19 +66,14 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -78,14 +81,18 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Gère les clics sur le menu
+     *
+     * @param item l'élément de menu sélectionné
+     * @return true
+     */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_liste) {
-            // Handle the camera action
         } else if (id == R.id.nav_amis) {
 
         } else if (id == R.id.nav_profil) {
@@ -99,12 +106,47 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private List<Resto> genererRestos() {
-        List<Resto> restos = new ArrayList<>();
-        restos.add(new Resto("", "C 'n P", true));
-        restos.add(new Resto("", "Snoop", true));
-        restos.add(new Resto("", "RU", true));
-        restos.add(new Resto("", "Chez Cédric", false));
-        return restos;
+    /**
+     * Crée les deux fragments de l'activité
+     *
+     * @param viewPager cf. http://developer.android.com/reference/android/support/v4/view/ViewPager.html
+     */
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new ListFragment(), "Liste");
+        adapter.addFragment(new MapFragment(), "Carte");
+        viewPager.setAdapter(adapter);
+    }
+
+    /**
+     * Gère les fragments
+     */
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager) {
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
     }
 }
