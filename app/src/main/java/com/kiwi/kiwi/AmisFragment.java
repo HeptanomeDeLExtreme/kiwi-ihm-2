@@ -1,8 +1,5 @@
-/**
- * Fragment contenant la localisation des restaurants
- * Intégration Google Maps
- */
 package com.kiwi.kiwi;
+
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,19 +7,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MapFragment extends Fragment {
+
+/**
+ * Affichage de la liste des amis
+ */
+public class AmisFragment extends Fragment {
 
     //TODO tout
 
-    public MapFragment() {
+    public AmisFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false);
+        View view = inflater.inflate(R.layout.fragment_amis, container, false);
+
+        return view;
     }
 
 }
