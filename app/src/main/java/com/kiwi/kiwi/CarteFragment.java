@@ -10,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MapFragment extends Fragment {
+public class CarteFragment extends Fragment {
 
     //TODO tout
 
-    public MapFragment() {
+    public static final String tag = "carte_frag";
+
+    public CarteFragment() {
         // Required empty public constructor
     }
 

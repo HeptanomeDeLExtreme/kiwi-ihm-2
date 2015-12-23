@@ -19,6 +19,7 @@ import java.util.List;
  */
 public class MainFragment extends Fragment {
 
+    public static final String tag = "main_frag";
 
     public MainFragment() {
         // Required empty public constructor
@@ -35,25 +36,22 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
+        ListFragment liste = (ListFragment) getChildFragmentManager().findFragmentByTag(ListFragment.tag);
+        CarteFragment carte = (CarteFragment) getChildFragmentManager().findFragmentByTag(CarteFragment.tag);
+
+        if (liste == null) liste = new ListFragment();
+        if (carte == null) carte = new CarteFragment();
+
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-        setupViewPager(viewPager);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
+        adapter.addFragment(liste, "Liste");
+        adapter.addFragment(carte, "Carte");
+        viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
 
         return view;
-    }
-
-    /**
-     * Crée les deux onglets du fragment
-     *
-     * @param viewPager cf. http://developer.android.com/reference/android/support/v4/view/ViewPager.html
-     */
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
-        adapter.addFragment(new ListFragment(), "Liste");
-        adapter.addFragment(new MapFragment(), "Carte");
-        viewPager.setAdapter(adapter);
     }
 
     /**

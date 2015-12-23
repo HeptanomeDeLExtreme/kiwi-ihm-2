@@ -20,6 +20,8 @@ import java.util.List;
 
 public class ListFragment extends Fragment {
 
+    public static final String tag = "liste_frag";
+
     public ListFragment() {
         // Required empty public constructor
     }

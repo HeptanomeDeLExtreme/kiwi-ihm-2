@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private FragmentManager mFragmentManager;
+    private MainFragment mainFragment;
+    private AmisFragment amisFragment;
+    private ProfilFragment profilFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +44,10 @@ public class MainActivity extends AppCompatActivity
 
         mFragmentManager = getSupportFragmentManager();
 
+        mainFragment = new MainFragment();
+
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        transaction.replace(R.id.container_view, new MainFragment());
+        transaction.replace(R.id.container_view, mainFragment);
         transaction.commit();
     }
 
@@ -87,11 +92,14 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
 
         if (id == R.id.nav_liste) {
-            transaction.replace(R.id.container_view, new MainFragment());
+            if (mainFragment == null) mainFragment = new MainFragment();
+            transaction.replace(R.id.container_view, mainFragment);
         } else if (id == R.id.nav_amis) {
-            transaction.replace(R.id.container_view, new AmisFragment());
+            if (amisFragment == null) amisFragment = new AmisFragment();
+            transaction.replace(R.id.container_view, amisFragment);
         } else if (id == R.id.nav_profil) {
-
+            if (profilFragment == null) profilFragment = new ProfilFragment();
+            transaction.replace(R.id.container_view, profilFragment);
         } else if (id == R.id.nav_compte) {
 
         }
