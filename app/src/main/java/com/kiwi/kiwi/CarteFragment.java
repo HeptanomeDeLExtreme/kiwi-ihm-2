@@ -10,7 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class CarteFragment extends Fragment {
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+
+public class CarteFragment extends Fragment implements OnMapReadyCallback {
 
     //TODO tout
 
@@ -21,10 +25,19 @@ public class CarteFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_carte, container, false);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.carte);
+        mapFragment.getMapAsync(this);
+        //Voir un bout de doc ici : https://developers.google.com/maps/documentation/android-api/map#configure_initial_state
+
+        return view;
     }
 
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+    }
 }

@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity
             if (profilFragment == null) profilFragment = new ProfilFragment();
             transaction.replace(R.id.container_view, profilFragment);
         } else if (id == R.id.nav_compte) {
-
+            //TODO
         }
 
         transaction.commit();
