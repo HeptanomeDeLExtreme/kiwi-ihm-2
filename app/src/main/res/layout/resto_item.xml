@@ -11,7 +11,7 @@
         android:layout_height="50dp" />
 
     <TextView
-        android:id="@+id/nom"
+        android:id="@+id/labelNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/photo"
@@ -24,8 +24,8 @@
         android:id="@+id/ouvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/nom"
-        android:layout_below="@+id/nom"
+        android:layout_alignLeft="@+id/labelNom"
+        android:layout_below="@+id/labelNom"
         tools:text="Truc ?" />
 
 </RelativeLayout>

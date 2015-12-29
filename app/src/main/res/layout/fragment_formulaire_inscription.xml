@@ -1,0 +1,149 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kiwi.kiwi.FormulaireInscriptionFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#589c51"
+        android:id="@+id/background">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|top">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/defautLabelNomFamille"
+                android:id="@+id/labelNom"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="@string/defautEditNomFamille"
+                android:ems="10"
+                android:id="@+id/editNom"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_marginRight="0dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/defautLabelPrenom"
+                android:id="@+id/labelPrenom"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="@string/defautEditPrenom"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:layout_row="1"
+                android:layout_column="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/defautLabelPseudo"
+                android:id="@+id/labelPseudo"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editPseudo"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:text="@string/defautEditPseudo"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/defautLabelMail"
+                android:id="@+id/labelMail"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/editMail"
+                android:layout_row="3"
+                android:layout_column="1"
+                android:text="@string/defautEditMail" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/defautLabelMdp"
+                android:id="@+id/labelMdp"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/editMdp"
+                android:layout_row="4"
+                android:layout_column="1" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/defautLabelConfMdp"
+                android:id="@+id/labelConfMdp"
+                android:layout_row="5"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp" />
+
+            <EditText
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/editConfMdp"
+                android:layout_row="5"
+                android:layout_column="1" />
+
+        </GridLayout>
+    </FrameLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK !"
+        android:id="@+id/boutonOK"
+        android:layout_gravity="right|bottom" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retour"
+        android:id="@+id/boutonRetour"
+        android:layout_gravity="left|bottom" />
+</FrameLayout>

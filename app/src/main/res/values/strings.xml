@@ -11,4 +11,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Formulaire d'inscription -->
+    <string name="defautEditNomFamille">Entrez votre nom de famille...</string>
+    <string name="defautLabelNomFamille">Nom</string>
+    <string name="defautEditPrenom">Entrez votre prénom...</string>
+    <string name="defautLabelPrenom">Prénom</string>
+    <string name="defautEditPseudo">Entrez votre pseudo...</string>
+    <string name="defautLabelPseudo">Pseudo</string>
+    <string name="defautEditMail">Entrez votre mail...</string>
+    <string name="defautLabelMail">Mail</string>
+    <string name="defautLabelMdp">Mot de passe</string>
+    <string name="defautLabelConfMdp">Confirmation du mot de passe</string>
 </resources>

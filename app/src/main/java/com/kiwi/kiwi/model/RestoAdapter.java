@@ -28,7 +28,7 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
         RestoViewHolder viewHolder = (RestoViewHolder) convertView.getTag();
         if (viewHolder == null) {
             viewHolder = new RestoViewHolder();
-            viewHolder.nom = (TextView) convertView.findViewById(R.id.nom);
+            viewHolder.nom = (TextView) convertView.findViewById(R.id.labelNom);
             viewHolder.ouvert = (TextView) convertView.findViewById(R.id.ouvert);
             viewHolder.photo = (ImageView) convertView.findViewById(R.id.photo);
             convertView.setTag(viewHolder);
