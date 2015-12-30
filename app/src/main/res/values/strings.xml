@@ -23,4 +23,8 @@
     <string name="defautLabelMail">Mail</string>
     <string name="defautLabelMdp">Mot de passe</string>
     <string name="defautLabelConfMdp">Confirmation du mot de passe</string>
+    <string name="editPseudoAmi">PseudoAmi</string>
+    <string name="LabelMangeA">mange à :</string>
+    <string name="editNomResto">nomResto</string>
+    <string name="labelMin">min</string>
 </resources>

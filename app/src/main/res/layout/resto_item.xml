@@ -11,7 +11,7 @@
         android:layout_height="50dp" />
 
     <TextView
-        android:id="@+id/labelNom"
+        android:id="@+id/ouvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/photo"
@@ -21,11 +21,11 @@
         tools:text="Restaurant" />
 
     <TextView
-        android:id="@+id/ouvert"
+        android:id="@+id/labelNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/labelNom"
-        android:layout_below="@+id/labelNom"
+        android:layout_alignLeft="@+id/ouvert"
+        android:layout_below="@+id/ouvert"
         tools:text="Truc ?" />
 
 </RelativeLayout>

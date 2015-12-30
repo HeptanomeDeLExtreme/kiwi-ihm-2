@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/photoAmi"
+        android:layout_width="50dp"
+        android:layout_height="60dp" />
+
+    <ImageView
+        android:id="@+id/couverts"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:src="@drawable/couverts"
+        android:layout_alignBottom="@+id/editNbAttenteManger"
+        android:layout_toStartOf="@+id/editNbAttenteManger" />
+
+    <ImageView
+        android:id="@+id/hommeMarchant"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:src="@drawable/hommemarchant"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/couverts" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/LabelMangeA"
+        android:id="@+id/labelMangeA"
+        android:layout_alignBottom="@+id/photoAmi"
+        android:layout_toEndOf="@+id/photoAmi"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/labelMin"
+        android:id="@+id/labelMin"
+        android:layout_marginEnd="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="..."
+        android:id="@+id/editNbMarche"
+        android:layout_marginEnd="10dp"
+        android:layout_alignBaseline="@+id/labelMin"
+        android:layout_alignBottom="@+id/labelMin"
+        android:layout_toStartOf="@+id/labelMin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="..."
+        android:id="@+id/editNbAttenteManger"
+        android:layout_alignStart="@+id/editNbMarche"
+        android:layout_alignBaseline="@+id/labelMangeA"
+        android:layout_alignBottom="@+id/labelMangeA" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/editPseudoAmi"
+        android:id="@+id/labelPseudo"
+        android:layout_alignBottom="@+id/editNbMarche"
+        android:layout_alignStart="@+id/labelMangeA" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/editNomResto"
+        android:id="@+id/editNomResto"
+        android:layout_alignTop="@+id/labelMangeA"
+        android:layout_toEndOf="@+id/labelPseudo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/labelMin"
+        android:id="@+id/labelMin2"
+        android:layout_alignBottom="@+id/editNbAttenteManger"
+        android:layout_toEndOf="@+id/editNbMarche" />
+
+</RelativeLayout>
