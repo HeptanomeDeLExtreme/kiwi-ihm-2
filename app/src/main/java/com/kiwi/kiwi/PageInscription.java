@@ -25,5 +25,13 @@ public class PageInscription extends AppCompatActivity {
 
     public void boutonSeConnecterListener(View view) {
         Log.i("debug", "Appui sur boutonSeConnecter");
+        Intent menuIntent = new Intent(this, PageConnexion.class);
+        startActivity(menuIntent);
+    }
+
+    public void lienAccederSansCompteListener(View view) {
+        Log.i("debug", "Appui sur le lien AccederSansCompte");
+        Intent menuIntent = new Intent(this, ListFragment.class);
+        startActivity(menuIntent);
     }
 }

@@ -32,5 +32,6 @@
     <string name="boutonRetour">Retour</string>
     <string name="boutonOk">OK !</string>
     <string name="stringNull" />
+    <string name="title_activity_page_connexion">PageConnexion</string>
 
 </resources>
