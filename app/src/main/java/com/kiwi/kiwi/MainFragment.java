@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Vue principale contenant la liste des restaurants et la carte
  */
 public class MainFragment extends Fragment {
 
@@ -38,14 +38,17 @@ public class MainFragment extends Fragment {
 
         ListFragment liste = (ListFragment) getChildFragmentManager().findFragmentByTag(ListFragment.tag);
         CarteFragment carte = (CarteFragment) getChildFragmentManager().findFragmentByTag(CarteFragment.tag);
+        TriFragment tri = (TriFragment) getChildFragmentManager().findFragmentByTag(TriFragment.tag);
 
         if (liste == null) liste = new ListFragment();
         if (carte == null) carte = new CarteFragment();
+        if (tri == null) tri = new TriFragment();
 
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(liste, "Liste");
         adapter.addFragment(carte, "Carte");
+        adapter.addFragment(tri, "Tri");
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
