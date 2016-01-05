@@ -12,4 +12,25 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
+    <string name="stringCreerCompte">Créer un Compte</string>
+    <string name="stringSeConnecter">Se Connecter</string>
+    <string name="stringAccederSansCompte">Accéder Sans Compte</string>
+    <string name="title_activity_page_inscription">PageInscription</string>
+    <string name="title_activity_formulaire_inscription">FormulaireInscription</string>
+
+    <!-- Formulaire Inscription -->
+    <string name="labelNom">Nom :</string>
+    <string name="defaultNom">Entrez votre nom de famille...</string>
+    <string name="labelPrenom">Prénom :</string>
+    <string name="defaultPrenom">Entrez votre prénom...</string>
+    <string name="labelPseudo">Pseudo :</string>
+    <string name="defaultPseudo">Entrez votre pseudo KIWI...</string>
+    <string name="labelMail">Mail:</string>
+    <string name="defaultMail">exemple@entrezVotreMail.fr</string>
+    <string name="mdp">Mot de passe :</string>
+    <string name="confMdp">Confirmation du mot de passe :</string>
+    <string name="boutonRetour">Retour</string>
+    <string name="boutonOk">OK !</string>
+    <string name="stringNull" />
+
 </resources>
