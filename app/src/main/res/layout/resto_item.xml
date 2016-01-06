@@ -28,4 +28,12 @@
         android:layout_below="@+id/nom"
         tools:text="Truc ?" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="€ € € €"
+        android:id="@+id/prixResto"
+        android:layout_alignBottom="@+id/photo"
+        android:layout_alignStart="@+id/ouvert" />
+
 </RelativeLayout>
