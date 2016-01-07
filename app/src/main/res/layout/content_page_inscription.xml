@@ -49,7 +49,7 @@
         android:id="@+id/boutonAccederSansCompte"
         android:layout_marginTop="40dp"
         style="?android:attr/borderlessButtonStyle"
-        android:onClick="lienAccederSansCompteListener"
+        android:onClick="boutonAccederSansCompteListener"
         android:layout_below="@+id/boutonSeConnecter"
         android:layout_centerHorizontal="true" />
 

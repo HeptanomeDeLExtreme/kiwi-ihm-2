@@ -36,9 +36,9 @@ public class PageInscription extends AppCompatActivity {
     }
 
     // TODO : Peut-être que ce n'est plus ListFragment qu'il faut appeler.
-    public void lienAccederSansCompteListener(View view) {
+    public void boutonAccederSansCompteListener(View view) {
         Log.i("debug", "Appui sur le lien AccederSansCompte");
-        Intent menuIntent = new Intent(this, ListFragment.class);
+        Intent menuIntent = new Intent(this, MainActivity.class);
         startActivity(menuIntent);
     }
 }
