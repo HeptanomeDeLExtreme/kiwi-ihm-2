@@ -1,5 +1,6 @@
 package com.kiwi.kiwi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,17 +18,11 @@ public class FormulaireInscription extends AppCompatActivity {
         setContentView(R.layout.activity_formulaire_inscription);
     }
 
-    /* Listener */
-
-    // EditText
-    public void editTextNomListener(View view) {
-        EditText editTextNom = (EditText) findViewById(R.id.idTextNom);
-        editTextNom.setText("");
-    }
-
     // Boutons
     public void boutonRetourListener(View view) {
         Log.i("debug", "Appui sur le bouton Retour !");
+        Intent menuIntent = new Intent(this, PageInscription.class);
+        startActivity(menuIntent);
     }
 
     public void boutonOkListener(View view) {

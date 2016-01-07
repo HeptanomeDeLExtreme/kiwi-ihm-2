@@ -1,6 +1,7 @@
 package com.kiwi.kiwi;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 public class PageInscription extends AppCompatActivity {
 
@@ -15,6 +17,10 @@ public class PageInscription extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_inscription);
+
+        // Underline "Accéder sans compte" button
+        Button specialButton = (Button) findViewById(R.id.boutonAccederSansCompte);
+        specialButton.setPaintFlags(specialButton.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
     }
 
     public void boutonCreerCompteListener(View view) {
@@ -29,6 +35,7 @@ public class PageInscription extends AppCompatActivity {
         startActivity(menuIntent);
     }
 
+    // TODO : Peut-être que ce n'est plus ListFragment qu'il faut appeler.
     public void lienAccederSansCompteListener(View view) {
         Log.i("debug", "Appui sur le lien AccederSansCompte");
         Intent menuIntent = new Intent(this, ListFragment.class);
