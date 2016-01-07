@@ -6,7 +6,6 @@
 
 package com.kiwi.kiwi;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -24,19 +23,20 @@ import android.widget.Toast;
 import com.kiwi.kiwi.model.Avis;
 import com.kiwi.kiwi.model.Categorie;
 import com.kiwi.kiwi.model.Resto;
+import com.kiwi.kiwi.model.Ami;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.google.android.gms.maps.model.LatLng;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static List<Resto> listeRestos;
+    public static List<Ami> listeAmis;
     private FragmentManager mFragmentManager;
     private MainFragment mainFragment;
-    private AmisFragment amisFragment;
+    private AmiFragment amiFragment;
     private ProfilFragment profilFragment;
 
     @Override
@@ -60,20 +60,39 @@ public class MainActivity extends AppCompatActivity
         mainFragment = new MainFragment();
 
         listeRestos = genererRestos();
+        listeAmis = genererAmis();
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         transaction.replace(R.id.container_view, mainFragment);
         transaction.commit();
     }
 
+    private List<Ami> genererAmis() {
+        List<Ami> list = new ArrayList<Ami>();
+        list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg"));
+        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg"));
+        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg"));
+        return list;
+    }
+
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-        }
+        }*/
+
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+
+        if (mainFragment == null) mainFragment = new MainFragment();
+        transaction.replace(R.id.container_view, mainFragment);
+
+        transaction.commit();
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 
     /**
@@ -93,8 +112,8 @@ public class MainActivity extends AppCompatActivity
             if (mainFragment == null) mainFragment = new MainFragment();
             transaction.replace(R.id.container_view, mainFragment);
         } else if (id == R.id.nav_amis) {
-            if (amisFragment == null) amisFragment = new AmisFragment();
-            transaction.replace(R.id.container_view, amisFragment);
+            if (amiFragment == null) amiFragment = new AmiFragment();
+            transaction.replace(R.id.container_view, amiFragment);
         } else if (id == R.id.nav_profil) {
             if (profilFragment == null) profilFragment = new ProfilFragment();
             transaction.replace(R.id.container_view, profilFragment);
@@ -173,7 +192,6 @@ public class MainActivity extends AppCompatActivity
                 Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
                 45.781206, 4.873504, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
 
-
         return restos;
     }
 
@@ -183,7 +201,4 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(getApplicationContext(), "Restaurant !", Toast.LENGTH_SHORT).show();
     }
 
-    public static Context getApplicationContent(){
-        return getApplicationContent();
-    }
 }
