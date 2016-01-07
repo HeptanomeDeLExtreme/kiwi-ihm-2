@@ -6,4 +6,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Boutons -->
+    <dimen name="buttonHeight">50dp</dimen>
+    <dimen name="buttonWidth">500dp</dimen>
 </resources>
