@@ -35,6 +35,8 @@ public class PageConnexion extends AppCompatActivity {
         Log.i("debug", "Le mot de passe entré par l'utilisateur est : " + mdpEntre.getText() + " !");
         if( (PSEUDO.equals(pseudoEntre.getText().toString())) && (MDP.equals(mdpEntre.getText().toString())) ) {
             Log.i("debug", "Identifiants et mot de passe corrects !");
+            Intent menuIntent = new Intent(this, MainActivity.class);
+            startActivity(menuIntent);
             
         } else {
             Log.i("debug", "Identifiants et mot de passe incorrects !");

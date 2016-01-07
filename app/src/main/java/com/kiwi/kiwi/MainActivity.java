@@ -6,6 +6,7 @@
 
 package com.kiwi.kiwi;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -15,7 +16,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.kiwi.kiwi.model.Avis;
 import com.kiwi.kiwi.model.Categorie;
@@ -119,7 +123,67 @@ public class MainActivity extends AppCompatActivity
                 Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
                 45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
 
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                    "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                    Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                    45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                    "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                    Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                    45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                45.781206, 4.873504, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                45.781206, 4.873504, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+
 
         return restos;
+    }
+
+
+    public void goToResto(View v){
+        Log.i("Debug", "go to resto");
+        Toast.makeText(getApplicationContext(), "Restaurant !", Toast.LENGTH_SHORT).show();
+    }
+
+    public static Context getApplicationContent(){
+        return getApplicationContent();
     }
 }
