@@ -15,7 +15,6 @@ import android.widget.ListView;
 import com.kiwi.kiwi.model.Resto;
 import com.kiwi.kiwi.model.RestoAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListFragment extends Fragment {
@@ -37,7 +36,7 @@ public class ListFragment extends Fragment {
 
         ListView mListView = (ListView) view.findViewById(R.id.listView);
 
-        List<Resto> restos = genererRestos();
+        List<Resto> restos = MainActivity.listeRestos;
 
         RestoAdapter adapter = new RestoAdapter(getContext(), restos);
         mListView.setAdapter(adapter);
@@ -50,13 +49,5 @@ public class ListFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
 
-    private List<Resto> genererRestos() {
-        List<Resto> restos = new ArrayList<>();
-        restos.add(new Resto("", "C 'n P", true));
-        restos.add(new Resto("", "Snoop", true));
-        restos.add(new Resto("", "RU", true));
-        restos.add(new Resto("", "Chez Cédric", false));
-        return restos;
-    }
 
 }

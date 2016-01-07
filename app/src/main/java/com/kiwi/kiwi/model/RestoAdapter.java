@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.kiwi.kiwi.R;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class RestoAdapter extends ArrayAdapter<Resto> {
@@ -31,6 +33,7 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
             viewHolder.nom = (TextView) convertView.findViewById(R.id.nom);
             viewHolder.ouvert = (TextView) convertView.findViewById(R.id.ouvert);
             viewHolder.photo = (ImageView) convertView.findViewById(R.id.photo);
+            viewHolder.prixResto = (TextView) convertView.findViewById(R.id.prixResto);
             convertView.setTag(viewHolder);
         }
 
@@ -47,12 +50,15 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
 
         //viewHolder.photo.setImageDrawable(new ColorDrawable(resto.getPhoto()));
 
+        viewHolder.prixResto.setText(resto.getNiveauTarif());
+
         return convertView;
     }
 
     private class RestoViewHolder {
         public TextView nom;
         public TextView ouvert;
+        public TextView prixResto;
         public ImageView photo;
     }
 }
