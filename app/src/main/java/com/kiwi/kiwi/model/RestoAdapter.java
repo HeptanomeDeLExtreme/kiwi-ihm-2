@@ -1,6 +1,7 @@
 package com.kiwi.kiwi.model;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,9 +32,11 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
         if (viewHolder == null) {
             viewHolder = new RestoViewHolder();
             viewHolder.nom = (TextView) convertView.findViewById(R.id.nom);
-            viewHolder.ouvert = (TextView) convertView.findViewById(R.id.ouvert);
+            //viewHolder.ouvert = (TextView) convertView.findViewById(R.id.ouvert);
             viewHolder.photo = (ImageView) convertView.findViewById(R.id.photo);
             viewHolder.prixResto = (TextView) convertView.findViewById(R.id.prixResto);
+            viewHolder.tempsChemin = (TextView) convertView.findViewById(R.id.textTempsChemin);
+            viewHolder.tempsRepas = (TextView) convertView.findViewById(R.id.textTempsRepas);
             convertView.setTag(viewHolder);
         }
 
@@ -43,22 +46,27 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
         //il ne reste plus qu'à remplir notre vue
         viewHolder.nom.setText(resto.getNom());
 
-        if (resto.getOuvert())
+/*        if (resto.getOuvert())
             viewHolder.ouvert.setText(R.string.resto_ouvert);
         else
-            viewHolder.ouvert.setText(R.string.resto_ferme);
+            viewHolder.ouvert.setText(R.string.resto_ferme);*/
 
         //viewHolder.photo.setImageDrawable(new ColorDrawable(resto.getPhoto()));
 
         viewHolder.prixResto.setText(resto.getNiveauTarif());
+
+        viewHolder.tempsChemin.setText("1O"+" "+"min");
+        viewHolder.tempsRepas.setText(resto.getTempsAttente()+" min");
 
         return convertView;
     }
 
     private class RestoViewHolder {
         public TextView nom;
-        public TextView ouvert;
+        //public TextView ouvert;
         public TextView prixResto;
         public ImageView photo;
+        public TextView tempsChemin;
+        public TextView tempsRepas;
     }
 }

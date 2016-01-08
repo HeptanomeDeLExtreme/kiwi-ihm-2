@@ -28,4 +28,11 @@ public class Categorie {
         return universitaire;
     }
 
+    public static Categorie getItalien(){
+        if(universitaire == null){
+            universitaire = new Categorie("italien.jpg","Italien");
+        }
+        return universitaire;
+    }
+
 }
