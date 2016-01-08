@@ -32,6 +32,10 @@ public class AmiAdapter extends ArrayAdapter<Ami> {
         if (viewHolder == null) {
             viewHolder = new AmiViewHolder();
             viewHolder.nomPrenom = (TextView) convertView.findViewById(R.id.nomPrenom);
+            viewHolder.mangeA = (TextView) convertView.findViewById(R.id.mangeA);
+            viewHolder.tempsChemin = (TextView) convertView.findViewById(R.id.tempsChemiAmi);
+            viewHolder.tempsAttente = (TextView) convertView.findViewById(R.id.tempsAttenteAmi);
+            viewHolder.photo = (ImageView) convertView.findViewById(R.id.photoAmi);
             convertView.setTag(viewHolder);
         }
 
@@ -39,12 +43,20 @@ public class AmiAdapter extends ArrayAdapter<Ami> {
         Ami ami = getItem(position);
 
         //il ne reste plus qu'à remplir notre vue
-        viewHolder.nomPrenom.setText(ami.getNom());
+        viewHolder.nomPrenom.setText(ami.getNom()+ " " + ami.getPrenom());
+        viewHolder.mangeA.setText("Mange à "+ami.getRestaurantActuel().getNom());
+        viewHolder.tempsChemin.setText(ami.getTempsChemin()+" min");
+        viewHolder.tempsAttente.setText(ami.getTempsAttente()+" min");
+
         return convertView;
     }
 
     private class AmiViewHolder {
         public TextView nomPrenom;
+        public TextView mangeA;
+        public TextView tempsChemin;
+        public TextView tempsAttente;
+        public ImageView photo;
     }
 
 }

@@ -68,10 +68,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     private List<Ami> genererAmis() {
+        List<Resto> restos = MainActivity.listeRestos;
         List<Ami> list = new ArrayList<Ami>();
-        list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg"));
-        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg"));
-        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg"));
+        list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg",1,1,restos.get(0)));
+        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg",3,1,restos.get(1)));
+        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg",5,4,restos.get(2)));
         return list;
     }
 

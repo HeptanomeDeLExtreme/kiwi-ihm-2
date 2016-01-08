@@ -77,7 +77,7 @@ public class ListFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        Log.i("DEBUG",view+"trui");
         ListView mListView = (ListView) view.findViewById(R.id.listView);
 
         List<Resto> restos = MainActivity.listeRestos;
