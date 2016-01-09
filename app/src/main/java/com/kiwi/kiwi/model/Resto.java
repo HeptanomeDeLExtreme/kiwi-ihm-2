@@ -12,7 +12,7 @@ public class Resto {
     String adresse;
     Paiement moyenPaiement;
     String telephone;
-    String niveauTarif; //Entre 1 et 3
+    double niveauTarif; //Entre 1 et 3
     String tempsAttente;
     String horaires;
     Categorie categorie; // Resto U, Resto INSA, ...
@@ -27,7 +27,7 @@ public class Resto {
 
 
     public Resto(String nom, String photo, Boolean ouvert, String adresse, Paiement moyenPaiement,
-                 String telephone, String niveauTarif, String tempsAttente, String horaires,
+                 String telephone, double niveauTarif, String tempsAttente, String horaires,
                  Categorie categorie, String typeRestaurant, String menuDuJour, List<Avis> avis,
                  double lat, double lon, Double distanceUtilisateurRestaurant,
                  Integer tempsUtilisateurRestaurant, String description) {
@@ -79,7 +79,7 @@ public class Resto {
         return moyenPaiement;
     }
 
-    public String getNiveauTarif() {
+    public double getNiveauTarif() {
         return niveauTarif;
     }
 

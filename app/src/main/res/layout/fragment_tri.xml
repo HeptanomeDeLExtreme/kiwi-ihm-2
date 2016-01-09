@@ -71,6 +71,27 @@
 
             <View style="@style/Divider" />
 
+            <com.appyvet.rangebar.RangeBar xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rangebar"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                custom:connectingLineColor="@android:color/holo_green_dark"
+                custom:pinColor="@android:color/holo_green_dark"
+                custom:pinMaxFont="25dp"
+                custom:pinRadius="20dp"
+                custom:rangeBarColor="@android:color/holo_green_dark"
+                custom:rangeBarPaddingBottom="15dp"
+                custom:selectorColor="#000000"
+                custom:temporaryPins="false"
+                custom:tickColor="@android:color/transparent"
+                custom:tickEnd="10"
+                custom:tickInterval="0.1"
+                custom:tickStart="2" />
+
+            <View style="@style/Divider" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

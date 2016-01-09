@@ -26,8 +26,8 @@ import java.util.List;
 public class CarteFragment extends Fragment implements OnMapReadyCallback{
 
 
-    private static final LatLng INSA = new LatLng(45.781206, 4.873504);
     public static final String tag = "carte_frag";
+    private static final LatLng INSA = new LatLng(45.781206, 4.873504);
     List<Resto> ListeRestos = MainActivity.listeRestos;
     private Marker SelectedMarker;
 
@@ -69,7 +69,7 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback{
                     .position(resto.getPositionGPS())
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
                     .title(resto.getNom())
-                    .snippet(resto.getNiveauTarif())
+                    .snippet(Double.toString(resto.getNiveauTarif()))
                     .visible(true));
         }
 

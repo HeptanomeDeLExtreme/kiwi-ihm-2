@@ -24,6 +24,9 @@ public class Filtre {
 
     private Boolean ouvert;
 
+    private double prixMin;
+    private double prixMax;
+
     public Filtre() {
         cb = true;
         INSA = true;
@@ -38,6 +41,9 @@ public class Filtre {
         sandwich = true;
 
         ouvert = false;
+
+        prixMin = 2;
+        prixMax = 10;
     }
 
     public void majRestos() {
@@ -54,7 +60,9 @@ public class Filtre {
                     (!pizzeria && resto.getCategorie() == Categorie.PIZZERIA) ||
                     (!oriental && resto.getCategorie() == Categorie.ORIENTAL) ||
                     (!indien && resto.getCategorie() == Categorie.INDIEN) ||
-                    (!sandwich && resto.getCategorie() == Categorie.SANDWICH))
+                    (!sandwich && resto.getCategorie() == Categorie.SANDWICH) ||
+                    (resto.getNiveauTarif() > prixMax) ||
+                    (resto.getNiveauTarif() < prixMin))
                 itr.remove();
         }
     }
@@ -155,6 +163,24 @@ public class Filtre {
 
     public void setOuvert(Boolean ouvert) {
         this.ouvert = ouvert;
+        majRestos();
+    }
+
+    public double getPrixMin() {
+        return prixMin;
+    }
+
+    public void setPrixMin(double prixMin) {
+        this.prixMin = prixMin;
+        majRestos();
+    }
+
+    public double getPrixMax() {
+        return prixMax;
+    }
+
+    public void setPrixMax(double prixMax) {
+        this.prixMax = prixMax;
         majRestos();
     }
 }

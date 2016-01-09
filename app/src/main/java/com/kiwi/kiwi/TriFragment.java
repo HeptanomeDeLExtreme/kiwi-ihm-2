@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 
+import com.appyvet.rangebar.IRangeBarFormatter;
+import com.appyvet.rangebar.RangeBar;
+
 
 /**
  * Menu de tri des restaurants
@@ -28,6 +31,8 @@ public class TriFragment extends Fragment {
     private CheckBox checkSandwich;
 
     private CheckBox checkOuvert;
+
+    private RangeBar rangeBar;
 
     public TriFragment() {
         // Required empty public constructor
@@ -141,6 +146,23 @@ public class TriFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.filtre.setOuvert(((CheckBox) v).isChecked());
+            }
+        });
+
+        rangeBar = (RangeBar) view.findViewById(R.id.rangebar);
+        rangeBar.setFormatter(new IRangeBarFormatter() {
+            @Override
+            public String format(String s) {
+                return s + " €";
+            }
+        });
+        rangeBar.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
+            @Override
+            public void onRangeChangeListener(RangeBar rangeBar, int leftPinIndex,
+                                              int rightPinIndex,
+                                              String leftPinValue, String rightPinValue) {
+                MainActivity.filtre.setPrixMin(Double.parseDouble(leftPinValue));
+                MainActivity.filtre.setPrixMax(Double.parseDouble(rightPinValue));
             }
         });
 

@@ -54,7 +54,7 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
 
         viewHolder.photo.setImageDrawable(new ColorDrawable());
 
-        viewHolder.prixResto.setText(resto.getNiveauTarif());
+        viewHolder.prixResto.setText(String.format("%.2f", resto.getNiveauTarif()) + " €");
 
         viewHolder.tempsChemin.setText("1O" + " " + "min");
         viewHolder.tempsRepas.setText(resto.getTempsAttente() + " min");
