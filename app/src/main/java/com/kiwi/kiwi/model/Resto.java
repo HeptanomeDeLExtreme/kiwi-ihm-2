@@ -15,8 +15,6 @@ public class Resto {
     String menuDuJour;
     List<Avis> avis;
 
-    Boolean visible;
-
 
     public Resto(String nom, String photo, Boolean ouvert, String adresse, String moyenPaiement,
                  Integer niveauTarif, String tempsAttente, String horaires, Categorie categorie,
@@ -82,17 +80,5 @@ public class Resto {
 
     public List<Avis> getAvis() {
         return avis;
-    }
-
-    public Boolean getVisible() {
-        return visible;
-    }
-
-    public void cacher() {
-        visible = false;
-    }
-
-    public void montrer() {
-        visible = true;
     }
 }

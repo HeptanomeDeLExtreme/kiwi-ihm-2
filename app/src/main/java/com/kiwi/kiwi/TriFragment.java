@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 
-import com.kiwi.kiwi.model.Resto;
-
 
 /**
  * Menu de tri des restaurants
@@ -32,16 +30,15 @@ public class TriFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_tri, container, false);
 
         checkOuvert = (CheckBox) view.findViewById(R.id.check_ouvert);
+        checkOuvert.setChecked(MainActivity.filtre.getOuvert());
         checkOuvert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (Resto resto : MainActivity.listeRestos) {
-                    if (resto.getOuvert()) resto.montrer();
-                    else resto.cacher();
-                }
+                MainActivity.filtre.setOuvert(((CheckBox) v).isChecked());
             }
         });
 

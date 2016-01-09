@@ -17,15 +17,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.kiwi.kiwi.model.Filtre;
 import com.kiwi.kiwi.model.Resto;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static List<Resto> listeRestos;
+    public static ArrayList<Resto> listeRestos;
+    public static ArrayList<Resto> listeRestosVisibles;
+    public static Filtre filtre;
+
     private FragmentManager mFragmentManager;
     private MainFragment mainFragment;
     private AmisFragment amisFragment;
@@ -52,6 +55,8 @@ public class MainActivity extends AppCompatActivity
         mainFragment = new MainFragment();
 
         listeRestos = genererRestos();
+        listeRestosVisibles = listeRestos;
+        filtre = new Filtre();
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         transaction.replace(R.id.container_view, mainFragment);
@@ -101,10 +106,10 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private List<Resto> genererRestos() {
-        List<Resto> restos = new ArrayList<>();
+    private ArrayList<Resto> genererRestos() {
+        ArrayList<Resto> restos = new ArrayList<>();
         restos.add(new Resto("", "C 'n P", true));
-        restos.add(new Resto("", "Snoop", true));
+        restos.add(new Resto("", "Snoop", false));
         restos.add(new Resto("", "RU", true));
         restos.add(new Resto("", "Chez Cédric", false));
         return restos;

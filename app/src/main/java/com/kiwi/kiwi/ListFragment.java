@@ -36,7 +36,7 @@ public class ListFragment extends Fragment {
 
         ListView mListView = (ListView) view.findViewById(R.id.listView);
 
-        List<Resto> restos = MainActivity.listeRestos;
+        List<Resto> restos = MainActivity.listeRestosVisibles;
 
         RestoAdapter adapter = new RestoAdapter(getContext(), restos);
         mListView.setAdapter(adapter);
@@ -48,6 +48,5 @@ public class ListFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
-
 
 }

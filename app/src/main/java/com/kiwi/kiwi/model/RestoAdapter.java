@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.kiwi.kiwi.MainActivity;
 import com.kiwi.kiwi.R;
 
 import java.util.List;
@@ -36,6 +37,8 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
 
         //getItem(position) va récupérer l'item [position] de la List
         Resto resto = getItem(position);
+        System.out.println(resto.getNom());
+        Filtre filtre = MainActivity.filtre;
 
         //il ne reste plus qu'à remplir notre vue
         viewHolder.nom.setText(resto.getNom());
