@@ -116,6 +116,10 @@ public class Resto {
         return visible;
     }
 
+    public LatLng getPositionGPS() {
+        return positionGPS;
+    }
+
     public void cacher() {
         visible = false;
     }
