@@ -25,7 +25,6 @@ public class Resto {
     String description;
     List<Ami> mesAmisQuiSontDansCeResto;
 
-    Boolean visible;
 
 
     public Resto(String nom, String photo, Boolean ouvert, String adresse, String moyenPaiement,

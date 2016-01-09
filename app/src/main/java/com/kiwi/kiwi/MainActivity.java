@@ -15,24 +15,33 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
+import com.kiwi.kiwi.model.Filtre;
 import com.kiwi.kiwi.model.Avis;
 import com.kiwi.kiwi.model.Categorie;
 import com.kiwi.kiwi.model.Resto;
+import com.kiwi.kiwi.model.Ami;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.google.android.gms.maps.model.LatLng;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static List<Resto> listeRestos;
+    public static ArrayList<Resto> listeRestos;
+    public static ArrayList<Resto> listeRestosVisibles;
+    public static Filtre filtre;
+
+    public static List<Ami> listeAmis;
+
     private FragmentManager mFragmentManager;
     private MainFragment mainFragment;
-    private AmisFragment amisFragment;
+    private AmiFragment amiFragment;
     private ProfilFragment profilFragment;
 
     @Override
@@ -56,20 +65,42 @@ public class MainActivity extends AppCompatActivity
         mainFragment = new MainFragment();
 
         listeRestos = genererRestos();
+        listeRestosVisibles = (ArrayList) listeRestos.clone();
+        filtre = new Filtre();
+        listeAmis = genererAmis();
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         transaction.replace(R.id.container_view, mainFragment);
         transaction.commit();
     }
 
+    private List<Ami> genererAmis() {
+        List<Resto> restos = MainActivity.listeRestos;
+        List<Ami> list = new ArrayList<Ami>();
+        list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg",1,1,restos.get(0)));
+        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg",3,1,restos.get(1)));
+        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg",5,4,restos.get(2)));
+        return list;
+    }
+
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-        }
+        }*/
+
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+
+        if (mainFragment == null) mainFragment = new MainFragment();
+        transaction.replace(R.id.container_view, mainFragment);
+
+        transaction.commit();
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 
     /**
@@ -89,8 +120,8 @@ public class MainActivity extends AppCompatActivity
             if (mainFragment == null) mainFragment = new MainFragment();
             transaction.replace(R.id.container_view, mainFragment);
         } else if (id == R.id.nav_amis) {
-            if (amisFragment == null) amisFragment = new AmisFragment();
-            transaction.replace(R.id.container_view, amisFragment);
+            if (amiFragment == null) amiFragment = new AmiFragment();
+            transaction.replace(R.id.container_view, amiFragment);
         } else if (id == R.id.nav_profil) {
             if (profilFragment == null) profilFragment = new ProfilFragment();
             transaction.replace(R.id.container_view, profilFragment);
@@ -105,21 +136,79 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private List<Resto> genererRestos() {
-        List<Resto> restos = new ArrayList<>();
-/*        restos.add(new Resto("", "C 'n P", true));
+    private ArrayList<Resto> genererRestos() {
+        ArrayList<Resto> restos = new ArrayList<>();
+/*      restos.add(new Resto("", "C 'n P", true));
         restos.add(new Resto("", "Snoop", true));
         restos.add(new Resto("", "RU", true));
         restos.add(new Resto("", "Chez Cédric", false));*/
 
         List<Avis> avisResto1 = new ArrayList<Avis>();
         avisResto1.add(new Avis(0,"C'est vraiment de la pisse ...","Secret Mathieu"));
+
         restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
                 "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
                 Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
-                45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+                45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
 
+        restos.add(new Resto("Snoop Dog", "CastorEtPollux.jpg", false, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+
+        restos.add(new Resto("Restau U", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                    "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                    Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                    45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                    "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                    Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                    45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                        Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                        45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                45.781206, 4.873504, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
+
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
+                45.781206, 4.873504, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
 
         return restos;
     }
+
+
+    public void goToResto(View v){
+        Log.i("Debug", "go to resto");
+        Toast.makeText(getApplicationContext(), "Restaurant !", Toast.LENGTH_SHORT).show();
+    }
+
 }
