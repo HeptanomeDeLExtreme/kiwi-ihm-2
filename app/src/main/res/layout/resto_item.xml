@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="85dp"
     android:padding="10dp">
 
     <ImageView
@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/photo"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/photo"
+        android:layout_toEndOf="@+id/photo"
+        android:textSize="20dp"
         android:textStyle="bold"
         tools:text="Restaurant" />
 
@@ -24,46 +25,53 @@
         android:id="@+id/prixResto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/nom"
-        android:layout_below="@+id/photo"
         android:text="€ € € €"
         android:textSize="25dp" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="90dp"
-        android:layout_toEndOf="@+id/nom"
-        android:background="@drawable/hommemarchant" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_alignTop="@+id/prixResto"
-        android:background="@drawable/couverts" />
-
-    <TextView
-        android:id="@+id/textTempsChemin"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:text="tempsChemin" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textTempsRepas"
+        <TextView
+            android:id="@+id/textTempsChemin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="temps marche" />
+
+        <ImageView
+            android:id="@+id/imgMarche"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/hommemarchant" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textTempsChemin"
-        android:layout_alignTop="@+id/imageView3"
-        android:text="tempsRepas" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <View
-        style="@style/Divider"
-        android:layout_alignParentBottom="true" />
+        <TextView
+            android:id="@+id/textTempsRepas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="temps repas" />
+
+        <ImageView
+            android:id="@+id/imgCouverts"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/couverts" />
+
+    </LinearLayout>
 
 </RelativeLayout>
