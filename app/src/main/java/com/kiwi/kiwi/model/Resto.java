@@ -24,6 +24,7 @@ public class Resto {
     Integer tempsUtilisateurRestaurant;
     String description;
     List<Ami> mesAmisQuiSontDansCeResto;
+    Boolean visible;
 
 
 
