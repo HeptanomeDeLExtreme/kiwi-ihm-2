@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:padding="10dp"
+    >
 
     <ImageView
         android:id="@+id/photo"
@@ -21,11 +22,45 @@
         tools:text="Restaurant" />
 
     <TextView
-        android:id="@+id/ouvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/nom"
-        android:layout_below="@+id/nom"
-        tools:text="Truc ?" />
+        android:text="€ € € €"
+        android:id="@+id/prixResto"
+        android:textSize="25dp"
+        android:layout_below="@+id/photo"
+        android:layout_alignStart="@+id/nom" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView2"
+        android:background="@drawable/hommemarchant"
+        android:layout_marginStart="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/nom" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView3"
+        android:background="@drawable/couverts"
+        android:layout_alignTop="@+id/prixResto"
+        android:layout_alignStart="@+id/imageView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tempsChemin"
+        android:id="@+id/textTempsChemin"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tempsRepas"
+        android:id="@+id/textTempsRepas"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_alignStart="@+id/textTempsChemin" />
 
 </RelativeLayout>

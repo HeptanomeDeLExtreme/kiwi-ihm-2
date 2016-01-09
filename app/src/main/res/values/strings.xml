@@ -9,7 +9,35 @@
 
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Titre des activités -->
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_page_inscription">PageInscription</string>
+    <string name="title_activity_formulaire_inscription">FormulaireInscription</string>
+    <string name="title_activity_page_connexion">PageConnexion</string>
+
+    <!-- Boutons -->
+    <string name="boutonCreerCompte">Créer un Compte</string>
+    <string name="boutonSeConnecter">Se Connecter</string>
+    <string name="boutonAccederSansCompte">Accéder Sans Compte</string>
+    <string name="boutonRetour">Retour</string>
+    <string name="boutonOk">OK !</string>
+
+    <!-- Labels -->
+    <string name="labelNom">Nom :</string>
+    <string name="labelPrenom">Prénom :</string>
+    <string name="labelPseudo">Pseudo :</string>
+    <string name="labelMail">Mail:</string>
+    <string name="mdp">Mot de passe :</string>
+    <string name="confMdp">Confirmation du mot de passe :</string>
+
+    <!-- Textes par défaut -->
+    <string name="defaultNom">Entrez votre nom de famille...</string>
+    <string name="defaultPrenom">Entrez votre prénom...</string>
+    <string name="defaultPseudo">Entrez votre pseudo KIWI...</string>
+    <string name="defaultMail">exemple@entrezVotreMail.fr</string>
+    <string name="defaultIDCorrects">Veuillez patienter...</string>
+    <string name="defaultIDIncorrects">Identifiants / Mot de passe incorrect(s)...</string>
+    <string name="defaultPhraseApp">Laissez la vie devenir votre KIWI !</string>
 </resources>

@@ -6,6 +6,7 @@ package com.kiwi.kiwi.model;
 public class Categorie {
     String nom;
     String icone; // TODO Voir comment fonctionne icone
+    static Categorie universitaire;
 
     public Categorie(String icone, String nom) {
         this.icone = icone;
@@ -20,5 +21,18 @@ public class Categorie {
         return icone;
     }
 
+    public static Categorie getUniversitaire(){
+        if(universitaire == null){
+            universitaire = new Categorie("universitaire.jpg","Universitaire");
+        }
+        return universitaire;
+    }
+
+    public static Categorie getItalien(){
+        if(universitaire == null){
+            universitaire = new Categorie("italien.jpg","Italien");
+        }
+        return universitaire;
+    }
 
 }
