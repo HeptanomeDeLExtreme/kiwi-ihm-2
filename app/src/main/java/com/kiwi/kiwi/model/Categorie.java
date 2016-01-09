@@ -35,4 +35,38 @@ public class Categorie {
         return universitaire;
     }
 
+    public static Categorie getTacos() {
+        if(universitaire == null){
+            universitaire = new Categorie("tacos.jpg","Tacos");
+        }
+        return universitaire;
+    }
+
+    public static Categorie getPizzeria() {
+        if(universitaire == null){
+            universitaire = new Categorie("pizzeria.jpg","Pizzeria");
+        }
+        return universitaire;
+    }
+
+    public static Categorie getOriental() {
+        if(universitaire == null){
+            universitaire = new Categorie("oriental.jpg","Cuisine Orientale");
+        }
+        return universitaire;
+    }
+
+    public static Categorie getIndien() {
+        if(universitaire == null){
+            universitaire = new Categorie("indien.jpg","Cuisine Indienne");
+        }
+        return universitaire;
+    }
+
+    public static Categorie getSandwich() {
+        if(universitaire == null){
+            universitaire = new Categorie("sandwich.jpg","Sandwich");
+        }
+        return universitaire;
+    }
 }
