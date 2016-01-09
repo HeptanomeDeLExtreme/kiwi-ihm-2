@@ -20,11 +20,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.kiwi.kiwi.model.Filtre;
+import com.kiwi.kiwi.model.Ami;
 import com.kiwi.kiwi.model.Avis;
 import com.kiwi.kiwi.model.Categorie;
+import com.kiwi.kiwi.model.Filtre;
 import com.kiwi.kiwi.model.Resto;
-import com.kiwi.kiwi.model.Ami;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,10 +76,10 @@ public class MainActivity extends AppCompatActivity
 
     private List<Ami> genererAmis() {
         List<Resto> restos = MainActivity.listeRestos;
-        List<Ami> list = new ArrayList<Ami>();
-        list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg",1,1,restos.get(0)));
-        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg",3,1,restos.get(1)));
-        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg",5,4,restos.get(2)));
+        List<Ami> list = new ArrayList<>();
+        list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg", 1, 1, restos.get(0)));
+        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg", 3, 1, restos.get(1)));
+        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg", 5, 4, restos.get(2)));
         return list;
     }
 
@@ -138,74 +138,74 @@ public class MainActivity extends AppCompatActivity
 
     private ArrayList<Resto> genererRestos() {
         ArrayList<Resto> restos = new ArrayList<>();
-/*      restos.add(new Resto("", "C 'n P", true));
-        restos.add(new Resto("", "Snoop", true));
-        restos.add(new Resto("", "RU", true));
-        restos.add(new Resto("", "Chez Cédric", false));*/
 
-        List<Avis> avisResto1 = new ArrayList<Avis>();
+        List<Avis> avisResto1 = new ArrayList<>();
         avisResto1.add(new Avis(0,"Ce n'est pas terrible...","Secret Mathieu"));
 
-        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
                 "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
-                45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.",true));
+                Categorie.UNIVERSITAIRE, "Universitaire", "Soupe de quinoa", avisResto1,
+                45.781206, 4.873504, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk."));
 
-        restos.add(new Resto("Prévert", "Prevert.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+        restos.add(new Resto("Prévert", "Prevert.jpg", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
                         "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                        Categorie.getUniversitaire(), "Universitaire", "Nouilles", avisResto1,
-                        45.781109, 4.873279, 3.5, 7, "Restaurant universaire bon marché. \n", true));
-        restos.add(new Resto("Grillon", "Grillon.jpg", true, "Avenue des Arts", "Carte Etudiant",
+                Categorie.UNIVERSITAIRE, "Universitaire", "Nouilles", avisResto1,
+                45.781109, 4.873279, 3.5, 7, "Restaurant universaire bon marché. \n"));
+
+        restos.add(new Resto("Grillon", "Grillon.jpg", true, "Avenue des Arts", Resto.Paiement.INSA,
                     "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                    Categorie.getUniversitaire(), "Universitaire", "Poisson pânée", avisResto1,
-                    45.783876, 4.875049, 3.5,7, "Restaurant universaire bon marché. \n", true));
+                Categorie.UNIVERSITAIRE, "Universitaire", "Poisson pânée", avisResto1,
+                45.783876, 4.875049, 3.5, 7, "Restaurant universaire bon marché. \n"));
 
-        restos.add(new Resto("Olivier", "Olivier.jpg", true, "Avenue des Arts", "Carte Etudiant",
+        restos.add(new Resto("Olivier", "Olivier.jpg", true, "Avenue des Arts", Resto.Paiement.INSA,
                         "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                        Categorie.getUniversitaire(), "Universitaire", "Millefeuille", avisResto1,
-                        45.784249, 4.874854 , 3.5,7, "Restaurant universaire bon marché. \n", true));
-        restos.add(new Resto("Jussieu", "Jussieu.jpg", true, "Avenue Albert Einstein", "Carte Etudiant",
+                Categorie.UNIVERSITAIRE, "Universitaire", "Millefeuille", avisResto1,
+                45.784249, 4.874854, 3.5, 7, "Restaurant universaire bon marché. \n"));
+        restos.add(new Resto("Jussieu", "Jussieu.jpg", false, "Avenue Albert Einstein", Resto.Paiement.IZLY,
                         "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                        Categorie.getUniversitaire(), "Universitaire", "Glace à la fraise et au chocolat", avisResto1,
-                        45.780981, 4.876224, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le RU.", true));
+                Categorie.UNIVERSITAIRE, "Universitaire", "Glace à la fraise et au chocolat", avisResto1,
+                45.780981, 4.876224, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le RU."));
 
-        restos.add(new Resto("Snack du Campus", "Tacos.jpg", true, "Rue de la Doua", "Carte Etudiant",
+        restos.add(new Resto("Snack du Campus", "Tacos.jpg", true, "Rue de la Doua", Resto.Paiement.CB,
                         "06 25 17 86 71", "10,20€", "4", "11h00 - 14h, 18h00 - 23h00",
-                        Categorie.getTacos(), "Universitaire", "Tacos", avisResto1,
-                        45.777149, 4.874541, 3.5,7, "Restaurant de tacos très bon !", true));
-        restos.add(new Resto("Pizzeria Pinocchio", "PizzeriaPinocchio.jpg", true, "Boulevard du 11 Novembre 1918", "Carte Etudiant",
+                Categorie.TACOS, "Universitaire", "Tacos", avisResto1,
+                45.777149, 4.874541, 3.5, 7, "Restaurant de tacos très bon !"));
+
+        restos.add(new Resto("Pizzeria Pinocchio", "PizzeriaPinocchio.jpg", true, "Boulevard du 11 Novembre 1918", Resto.Paiement.CB,
                     "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                    Categorie.getPizzeria(), "Universitaire", "Pizza au poulpe", avisResto1,
-                    45.779272, 4.874409, 3.5,7, "Bonnes pizzas.", true));
+                Categorie.PIZZERIA, "Universitaire", "Pizza au poulpe", avisResto1,
+                45.779272, 4.874409, 3.5, 7, "Bonnes pizzas."));
 
-        restos.add(new Resto("NoGlu", "NoGlu.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+        restos.add(new Resto("NoGlu", "NoGlu.jpg", false, "Avenue Jean Capelle", Resto.Paiement.CB,
                         "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                        Categorie.getUniversitaire(), "Universitaire", "Soupe de vermicelle", avisResto1,
-                        45.778888, 4.874545, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le noeud.", true));
-        restos.add(new Resto("Restaurant U", "RestaurantU.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
-                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                        Categorie.getUniversitaire(), "Universitaire", "Sandwich", avisResto1,
-                        45.781110, 4.873504, 3.5,7, "Restaurant universitaire très très bon marché", true));
+                Categorie.UNIVERSITAIRE, "Universitaire", "Soupe de vermicelle", avisResto1,
+                45.778888, 4.874545, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le noeud."));
 
-        restos.add(new Resto("Les milles et une nuits", "MilleEtUneNuits.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+        restos.add(new Resto("Restaurant U", "RestaurantU.jpg", true, "Avenue Jean Capelle", Resto.Paiement.IZLY,
                         "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                        Categorie.getOriental(), "Oriental", "Miel et chèvre", avisResto1,
-                        45.781206, 4.873508, 3.5,7, "C'est un restaurant oriental.", true));
-        restos.add(new Resto("Indiana", "Indiana.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+                Categorie.UNIVERSITAIRE, "Universitaire", "Sandwich", avisResto1,
+                45.781110, 4.873504, 3.5, 7, "Restaurant universitaire très très bon marché"));
+
+        restos.add(new Resto("Les milles et une nuits", "MilleEtUneNuits.jpg", false, "Avenue Jean Capelle", Resto.Paiement.CB,
+                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                Categorie.ORIENTAL, "Oriental", "Miel et chèvre", avisResto1,
+                45.781206, 4.873508, 3.5, 7, "C'est un restaurant oriental."));
+
+        restos.add(new Resto("Indiana", "Indiana.jpg", true, "Avenue Jean Capelle", Resto.Paiement.CB,
                 "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                Categorie.getIndien(), "Indien", "Spécial", avisResto1,
-                45.781220, 4.873504, 3.5, 7, "Bonne cuisine indienne.", true));
+                Categorie.INDIEN, "Indien", "Spécial", avisResto1,
+                45.781220, 4.873504, 3.5, 7, "Bonne cuisine indienne."));
 
-        restos.add(new Resto("Sandwich'In", "SandwichIn.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+        restos.add(new Resto("Sandwich'In", "SandwichIn.jpg", true, "Avenue Jean Capelle", Resto.Paiement.CB,
                 "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                Categorie.getSandwich(), "Sandwicherie", "Sandwich au poulet", avisResto1,
-                45.781250, 4.873504, 3.5, 7, "Sandwicherie !", true));
+                Categorie.SANDWICH, "Sandwicherie", "Sandwich au poulet", avisResto1,
+                45.781250, 4.873504, 3.5, 7, "Sandwicherie !"));
 
         return restos;
     }
 
 
-    public void goToResto(View v){
+    public void goToResto(View v) {
         Log.i("Debug", "go to resto");
         Toast.makeText(getApplicationContext(), "Restaurant !", Toast.LENGTH_SHORT).show();
     }

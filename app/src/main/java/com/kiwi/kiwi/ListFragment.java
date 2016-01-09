@@ -8,18 +8,13 @@ package com.kiwi.kiwi;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kiwi.kiwi.model.Resto;
 import com.kiwi.kiwi.model.RestoAdapter;
@@ -77,7 +72,7 @@ public class ListFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.i("DEBUG",view+"trui");
+        Log.i("DEBUG", view + "trui");
         ListView mListView = (ListView) view.findViewById(R.id.listView);
 
         List<Resto> restos = MainActivity.listeRestosVisibles;
@@ -90,9 +85,9 @@ public class ListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                List<Resto> restos = MainActivity.listeRestos;
+                List<Resto> restos = MainActivity.listeRestosVisibles;
                 Resto restoChoisi = restos.get(position);
-                Log.i("DEBUG", "Appui sur le "+position+"ème item : " + restoChoisi.getNom());
+                Log.i("DEBUG", "Appui sur le " + position + "ème item : " + restoChoisi.getNom());
             }
         });
 

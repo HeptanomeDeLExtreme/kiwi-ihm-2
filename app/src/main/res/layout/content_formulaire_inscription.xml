@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -11,140 +10,140 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/labelNom"
         android:id="@+id/idLabelNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/idTextNom"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/idTextNom" />
+        android:text="@string/labelNom" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
         android:id="@+id/idTextNom"
-        android:layout_below="@+id/idLabelNom"
-        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:hint="@string/defaultNom"/>
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/idLabelNom"
+        android:ems="10"
+        android:hint="@string/defaultNom"
+        android:inputType="textPersonName" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/labelPrenom"
         android:id="@+id/idLabelPrenom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/idTextNom"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/idTextNom"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/idTextNom" />
+        android:text="@string/labelPrenom" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
         android:id="@+id/idTextPrenom"
-        android:layout_below="@+id/idLabelPrenom"
-        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/idLabelPrenom"
-        android:hint="@string/defaultPrenom" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/idLabelPrenom"
+        android:ems="10"
+        android:hint="@string/defaultPrenom"
+        android:inputType="textPersonName" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/labelPseudo"
         android:id="@+id/idLabelPseudo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/idTextPrenom"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/idTextPrenom"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/idTextPrenom" />
+        android:text="@string/labelPseudo" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
         android:id="@+id/idTextPseudo"
-        android:layout_below="@+id/idLabelPseudo"
-        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/idLabelPseudo"
-        android:hint="@string/defaultPseudo"/>
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/idLabelPseudo"
+        android:ems="10"
+        android:hint="@string/defaultPseudo"
+        android:inputType="textPersonName" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/labelMail"
         android:id="@+id/idLabelMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/idTextPseudo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:text="@string/labelMail" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
         android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/idLabelMail"
-        android:layout_alignParentStart="true"
+        android:ems="10"
         android:hint="@string/defaultMail"
-        android:layout_alignParentEnd="true" />
+        android:inputType="textEmailAddress" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mdp"
         android:id="@+id/idLabelMdp"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/editText" />
-
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/idTextMdp"
-        android:layout_below="@+id/idLabelMdp"
+        android:layout_alignEnd="@+id/editText"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/editText"
+        android:text="@string/mdp" />
+
+    <EditText
+        android:id="@+id/idTextMdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/idLabelMdp"
+        android:ems="10"
+        android:inputType="textPassword" />
 
     <TextView
+        android:id="@+id/idLabelConfMdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/confMdp"
-        android:id="@+id/idLabelConfMdp"
-        android:layout_below="@+id/idTextMdp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/idTextMdp"
+        android:text="@string/confMdp" />
 
     <EditText
+        android:id="@+id/idTextConfMdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/idTextConfMdp"
-        android:layout_below="@+id/idLabelConfMdp"
+        android:layout_alignEnd="@+id/idLabelConfMdp"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/idLabelConfMdp" />
+        android:layout_below="@+id/idLabelConfMdp"
+        android:ems="10"
+        android:inputType="textPassword" />
 
     <Button
+        android:id="@+id/boutonRetour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/boutonRetour"
-        android:id="@+id/boutonRetour"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:width="100dp"
-        android:onClick="boutonRetourListener"/>
+        android:onClick="boutonRetourListener"
+        android:text="@string/boutonRetour" />
 
     <Button
+        android:id="@+id/boutonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/boutonOk"
-        android:id="@+id/boutonOk"
         android:layout_alignBottom="@+id/boutonRetour"
         android:layout_alignParentEnd="true"
         android:width="100dp"
-        android:onClick="boutonOkListener"/>
+        android:onClick="boutonOkListener"
+        android:text="@string/boutonOk" />
 </RelativeLayout>

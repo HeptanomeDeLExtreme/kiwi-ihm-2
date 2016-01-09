@@ -10,7 +10,7 @@ public class Resto {
     String photo; // Chemin vers l'image, en res ou en url
     Boolean ouvert; // Ouvert ou Fermé, juste pour toString
     String adresse;
-    String moyenPaiement;
+    Paiement moyenPaiement;
     String telephone;
     String niveauTarif; //Entre 1 et 3
     String tempsAttente;
@@ -24,15 +24,13 @@ public class Resto {
     Integer tempsUtilisateurRestaurant;
     String description;
     List<Ami> mesAmisQuiSontDansCeResto;
-    Boolean visible;
 
 
-
-    public Resto(String nom, String photo, Boolean ouvert, String adresse, String moyenPaiement,
+    public Resto(String nom, String photo, Boolean ouvert, String adresse, Paiement moyenPaiement,
                  String telephone, String niveauTarif, String tempsAttente, String horaires,
                  Categorie categorie, String typeRestaurant, String menuDuJour, List<Avis> avis,
                  double lat, double lon, Double distanceUtilisateurRestaurant,
-                 Integer tempsUtilisateurRestaurant, String description, Boolean visible) {
+                 Integer tempsUtilisateurRestaurant, String description) {
         this.nom = nom;
         this.photo = photo;
         this.ouvert = ouvert;
@@ -46,25 +44,18 @@ public class Resto {
         this.typeRestaurant = typeRestaurant;
         this.menuDuJour = menuDuJour;
         this.avis = avis;
-        this.positionGPS = new LatLng(lat,lon);
+        this.positionGPS = new LatLng(lat, lon);
         this.distanceUtilisateurRestaurant = distanceUtilisateurRestaurant;
         this.tempsUtilisateurRestaurant = tempsUtilisateurRestaurant;
         this.description = description;
-        this.visible = visible;
-        mesAmisQuiSontDansCeResto = new ArrayList<Ami>();
+        mesAmisQuiSontDansCeResto = new ArrayList<>();
     }
 
-    public Resto(String photo, String nom, Boolean ouvert) {
-        this.ouvert = ouvert;
-        this.photo = photo;
-        this.nom = nom;
-    }
-
-    public void ajouteAmi(Ami monAmi){
+    public void ajouteAmi(Ami monAmi) {
         mesAmisQuiSontDansCeResto.add(monAmi);
     }
 
-    public List<Ami> getListeAmi(){
+    public List<Ami> getListeAmi() {
         return mesAmisQuiSontDansCeResto;
     }
 
@@ -84,7 +75,7 @@ public class Resto {
         return adresse;
     }
 
-    public String getMoyenPaiement() {
+    public Paiement getMoyenPaiement() {
         return moyenPaiement;
     }
 
@@ -112,19 +103,13 @@ public class Resto {
         return avis;
     }
 
-    public Boolean getVisible() {
-        return visible;
-    }
-
     public LatLng getPositionGPS() {
         return positionGPS;
     }
 
-    public void cacher() {
-        visible = false;
-    }
-
-    public void montrer() {
-        visible = true;
+    public enum Paiement {
+        CB,
+        INSA,
+        IZLY
     }
 }

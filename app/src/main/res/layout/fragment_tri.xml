@@ -1,19 +1,129 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.kiwi.kiwi.TriFragment">
 
-    <CheckBox
-        android:id="@+id/check_ouvert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ouvert maintenant" />
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="faut rajouter le reste" />
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moyen de paiement"
+                android:textColor="@color/colorStandardText"
+                android:textSize="@dimen/textSizeMenuHeader"
+                android:textStyle="bold" />
+
+            <View style="@style/Divider" />
+
+            <CheckBox
+                android:id="@+id/check_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carte Bleue et espèces" />
+
+            <CheckBox
+                android:id="@+id/check_insa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carte INSA" />
+
+            <CheckBox
+                android:id="@+id/check_izly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carte IZLY" />
+
+            <View style="@style/Divider" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type de restaurant"
+                android:textColor="@color/colorStandardText"
+                android:textSize="@dimen/textSizeMenuHeader"
+                android:textStyle="bold" />
+
+            <View style="@style/Divider" />
+
+            <CheckBox
+                android:id="@+id/check_universitaire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Universitaire" />
+
+            <CheckBox
+                android:id="@+id/check_italien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Italien" />
+
+            <CheckBox
+                android:id="@+id/check_tacos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tacos" />
+
+            <CheckBox
+                android:id="@+id/check_pizzeria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pizzeria" />
+
+            <CheckBox
+                android:id="@+id/check_oriental"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oriental" />
+
+            <CheckBox
+                android:id="@+id/check_indien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indien" />
+
+            <CheckBox
+                android:id="@+id/check_sandwich"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sandwich" />
+
+            <View style="@style/Divider" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statut"
+                android:textColor="@color/colorStandardText"
+                android:textSize="@dimen/textSizeMenuHeader"
+                android:textStyle="bold" />
+
+            <View style="@style/Divider" />
+
+            <CheckBox
+                android:id="@+id/check_ouvert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ouvert maintenant" />
+
+            <View style="@style/Divider" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fourchette de prix"
+                android:textColor="@color/colorStandardText"
+                android:textSize="@dimen/textSizeMenuHeader"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>
