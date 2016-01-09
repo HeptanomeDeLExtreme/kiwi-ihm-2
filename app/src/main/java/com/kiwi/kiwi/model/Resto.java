@@ -24,8 +24,8 @@ public class Resto {
     Integer tempsUtilisateurRestaurant;
     String description;
     List<Ami> mesAmisQuiSontDansCeResto;
-
     Boolean visible;
+
 
 
     public Resto(String nom, String photo, Boolean ouvert, String adresse, String moyenPaiement,
@@ -114,6 +114,10 @@ public class Resto {
 
     public Boolean getVisible() {
         return visible;
+    }
+
+    public LatLng getPositionGPS() {
+        return positionGPS;
     }
 
     public void cacher() {

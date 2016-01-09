@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.kiwi.kiwi.model.Filtre;
 import com.kiwi.kiwi.model.Avis;
 import com.kiwi.kiwi.model.Categorie;
 import com.kiwi.kiwi.model.Resto;
@@ -32,8 +33,12 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static List<Resto> listeRestos;
+    public static ArrayList<Resto> listeRestos;
+    public static ArrayList<Resto> listeRestosVisibles;
+    public static Filtre filtre;
+
     public static List<Ami> listeAmis;
+
     private FragmentManager mFragmentManager;
     private MainFragment mainFragment;
     private AmiFragment amiFragment;
@@ -60,6 +65,8 @@ public class MainActivity extends AppCompatActivity
         mainFragment = new MainFragment();
 
         listeRestos = genererRestos();
+        listeRestosVisibles = (ArrayList) listeRestos.clone();
+        filtre = new Filtre();
         listeAmis = genererAmis();
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
@@ -129,19 +136,20 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private List<Resto> genererRestos() {
-        List<Resto> restos = new ArrayList<>();
-/*        restos.add(new Resto("", "C 'n P", true));
+    private ArrayList<Resto> genererRestos() {
+        ArrayList<Resto> restos = new ArrayList<>();
+/*      restos.add(new Resto("", "C 'n P", true));
         restos.add(new Resto("", "Snoop", true));
         restos.add(new Resto("", "RU", true));
         restos.add(new Resto("", "Chez Cédric", false));*/
 
         List<Avis> avisResto1 = new ArrayList<Avis>();
         avisResto1.add(new Avis(0,"Ce n'est pas terrible...","Secret Mathieu"));
+
         restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
                 "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
                 Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
-                45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+                45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.",true));
 
         restos.add(new Resto("Prévert", "Prevert.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
                         "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
