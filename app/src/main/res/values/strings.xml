@@ -47,4 +47,5 @@
     <string name="labelSansGluten">Sans Gluten</string>
     <string name="labelSansLactose">Sans Lactose</string>
     <string name="labelHallal">Halal</string>
+    <string name="userMailDefault">bruce.wayne@wayne-enterprise.com</string>
 </resources>

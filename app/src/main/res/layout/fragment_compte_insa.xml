@@ -21,7 +21,7 @@
         android:id="@+id/emailINSA"
         android:layout_below="@+id/buttonEdit"
         android:layout_centerHorizontal="true"
-        android:text="zob@insa-lyon.fr" />
+        android:text="@string/userMailDefault" />
 
     <TextView
         android:layout_width="wrap_content"

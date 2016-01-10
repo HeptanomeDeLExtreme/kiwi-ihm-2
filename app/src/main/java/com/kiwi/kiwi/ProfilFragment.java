@@ -19,10 +19,10 @@ import android.widget.ImageView;
  */
 public class ProfilFragment extends Fragment {
 
-    private static final String PRENOM = "Snoop";
-    private static final String NOM = "Dog";
-    private static final String PSEUDO = "DOGYDOG";
-    private static final String MAIL = "snoop.dog@hotmail.fr";
+    private static final String PRENOM = "Bruce";
+    private static final String NOM = "Wayne";
+    private static final String PSEUDO = "Batman";
+    private static final String MAIL = "bruce.wayne@wayne-enterprise.com";
 
     private boolean isVegetarien = false;
     private boolean isVegan = false;
