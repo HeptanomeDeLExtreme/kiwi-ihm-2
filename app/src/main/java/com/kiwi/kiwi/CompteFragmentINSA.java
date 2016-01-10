@@ -40,6 +40,17 @@ public class CompteFragmentINSA extends Fragment {
     public void onViewCreated(View view, final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+        EditText email = (EditText) getView().findViewById(R.id.emailINSA);
+        TextView montant = (TextView) getView().findViewById(R.id.montantINSA);
+        TextView date = (TextView) getView().findViewById(R.id.dateINSA);
+        Button con = (Button) getView().findViewById(R.id.connexionINSA);
+
+        email.setVisibility(View.INVISIBLE);
+        montant.setVisibility(View.INVISIBLE);
+        date.setVisibility(View.INVISIBLE);
+        con.setVisibility(View.INVISIBLE);
+
         ImageView b = (ImageView) view.findViewById(R.id.buttonEdit);
 
         b.setOnClickListener(new View.OnClickListener() {
@@ -48,19 +59,37 @@ public class CompteFragmentINSA extends Fragment {
                 EditText email = (EditText) getView().findViewById(R.id.emailINSA);
                 TextView montant = (TextView) getView().findViewById(R.id.montantINSA);
                 TextView date = (TextView) getView().findViewById(R.id.dateINSA);
+                Button con = (Button) getView().findViewById(R.id.connexionINSA);
 
                 if (isVisible) {
                     email.setVisibility(View.INVISIBLE);
                     montant.setVisibility(View.INVISIBLE);
                     date.setVisibility(View.INVISIBLE);
+                    con.setVisibility(View.INVISIBLE);
                 } else {
                     email.setVisibility(View.VISIBLE);
                     montant.setVisibility(View.VISIBLE);
                     date.setVisibility(View.VISIBLE);
+                    con.setVisibility(View.VISIBLE);
+                    email.setText("");
+                    montant.setText("");
+                    date.setText("");
                 }
                 isVisible = !isVisible;
             }
         });
+
+        con.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView montant = (TextView) getView().findViewById(R.id.montantINSA);
+                TextView date = (TextView) getView().findViewById(R.id.dateINSA);
+                montant.setText("Solde restant : 60€");
+                date.setText("Expiration : 23/10/2013");
+            }
+        });
+
+
     }
 
 

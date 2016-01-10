@@ -20,7 +20,7 @@
         android:id="@+id/emailINSA"
         android:layout_below="@+id/buttonEdit"
         android:layout_centerHorizontal="true"
-        android:text="@string/userMailDefault" />
+        android:text="grosdidier@insa-lyon.fr" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,5 +48,14 @@
         android:background="@drawable/logo_insa"
         android:layout_alignTop="@+id/buttonEdit"
         android:layout_toStartOf="@+id/emailINSA" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="connexion"
+        android:id="@+id/connexionINSA"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
