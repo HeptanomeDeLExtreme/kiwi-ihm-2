@@ -10,7 +10,7 @@ public class Resto {
     String photo; // Chemin vers l'image, en res ou en url
     Boolean ouvert; // Ouvert ou Fermé, juste pour toString
     String adresse;
-    String moyenPaiement;
+    Paiement moyenPaiement;
     String telephone;
     String niveauTarif; //Entre 1 et 3
     String tempsAttente;
@@ -87,7 +87,7 @@ public class Resto {
         return adresse;
     }
 
-    public String getMoyenPaiement() {
+    public Paiement getMoyenPaiement() {
         return moyenPaiement;
     }
 
@@ -117,10 +117,6 @@ public class Resto {
 
     public Boolean getVisible() {
         return visible;
-    }
-
-    public LatLng getPositionGPS() {
-        return positionGPS;
     }
 
     public void cacher() {
@@ -154,7 +150,7 @@ public class Resto {
         this.adresse = adresse;
     }
 
-    public void setMoyenPaiement(String moyenPaiement) {
+    public void setMoyenPaiement(Paiement moyenPaiement) {
         this.moyenPaiement = moyenPaiement;
     }
 
@@ -240,6 +236,8 @@ public class Resto {
 
     public void setVisible(Boolean visible) {
         this.visible = visible;
+    }
+
     public enum Paiement {
         CB,
         INSA,

@@ -69,7 +69,7 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback{
                     .position(resto.getPositionGPS())
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
                     .title(resto.getNom())
-                    .snippet(Double.toString(resto.getNiveauTarif()))
+                    .snippet(resto.getNiveauTarif())
                     .visible(true));
         }
 
