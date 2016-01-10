@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 
 /**
@@ -52,25 +51,21 @@ public class ProfilFragment extends Fragment {
     public void onViewCreated(View view, final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        /*TextView pseudo = (TextView) view.findViewById(R.id.pseudoUser);
-        pseudo.setText(PSEUDO);
-        pseudo.setEnabled(false);*/
         EditText pseudo = (EditText) view.findViewById(R.id.pseudoUser);
         pseudo.setText(PSEUDO);
         pseudo.setEnabled(false);
-        //makeEditableTextView(false, pseudo);
 
-        TextView nom = (TextView) view.findViewById(R.id.nomUser);
+        EditText nom = (EditText) view.findViewById(R.id.nomUser);
         nom.setText(NOM);
-        //makeEditableTextView(false, nom);
+        nom.setEnabled(false);
 
-        TextView prenom = (TextView) view.findViewById(R.id.prenomUser);
+        EditText prenom = (EditText) view.findViewById(R.id.prenomUser);
         prenom.setText(PRENOM);
-        //makeEditableTextView(false, prenom);
+        prenom.setEnabled(false);
 
-        TextView mail = (TextView) view.findViewById(R.id.mailUser);
+        EditText mail = (EditText) view.findViewById(R.id.mailUser);
         mail.setText(MAIL);
-        //makeEditableTextView(false, mail);
+        mail.setEnabled(false);
 
         /* Végétarien */
         CheckBox checkBoxVegetarien = (CheckBox) view.findViewById(R.id.checkBoxVegetarien);
@@ -80,7 +75,6 @@ public class ProfilFragment extends Fragment {
             checkBoxVegetarien.setChecked(false);
         }
         checkBoxVegetarien.setEnabled(false);
-        //makeEditableCheckBox(false, checkBoxVegetarien);
 
         /* Vegan */
         CheckBox checkBoxVegan = (CheckBox) view.findViewById(R.id.checkBoxVegan);
@@ -89,7 +83,7 @@ public class ProfilFragment extends Fragment {
         } else {
             checkBoxVegan.setChecked(false);
         }
-        //makeEditableCheckBox(false, checkBoxVegan);
+        checkBoxVegan.setEnabled(false);
 
         /* Gluten */
         CheckBox checkBoxGluten = (CheckBox) view.findViewById(R.id.checkBoxSansGluten);
@@ -98,7 +92,7 @@ public class ProfilFragment extends Fragment {
         } else {
             checkBoxGluten.setChecked(false);
         }
-        //makeEditableCheckBox(false, checkBoxGluten);
+        checkBoxGluten.setEnabled(false);
 
         /* Lactose */
         CheckBox checkBoxLactose = (CheckBox) view.findViewById(R.id.checkBoxSansLactose);
@@ -107,7 +101,7 @@ public class ProfilFragment extends Fragment {
         } else {
             checkBoxLactose.setChecked(false);
         }
-        //makeEditableCheckBox(false, checkBoxLactose);
+        checkBoxLactose.setEnabled(false);
 
         /* Hallal */
         CheckBox checkBoxHallal = (CheckBox) view.findViewById(R.id.checkBoxHallal);
@@ -116,7 +110,7 @@ public class ProfilFragment extends Fragment {
         } else {
             checkBoxHallal.setChecked(false);
         }
-        //makeEditableCheckBox(false, checkBoxHallal);
+        checkBoxHallal.setEnabled(false);
 
         /* Listener */
         checkBoxVegetarien.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +120,6 @@ public class ProfilFragment extends Fragment {
                     Log.i("debug", "Clic sur la checkbox végétarien !");
                     isVegetarien = !isVegetarien;
                     CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxVegetarien);
-                    //makeEditableCheckBox(isVegetarien, cb);
                     cb.setChecked(isVegetarien);
 
                 }
@@ -139,7 +132,6 @@ public class ProfilFragment extends Fragment {
                 Log.i("debug", "Clic sur la checkbox vegan !");
                 isVegan = !isVegan;
                 CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxVegan);
-                //makeEditableCheckBox(isVegan, cb);
                 cb.setChecked(isVegan);
             }
         });
@@ -150,7 +142,6 @@ public class ProfilFragment extends Fragment {
                 Log.i("debug", "Clic sur la checkbox gluten !");
                 isAllergicGluten = !isAllergicGluten;
                 CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxSansGluten);
-                //makeEditableCheckBox(isAllergicGluten, cb);
                 cb.setChecked(isAllergicGluten);
             }
         });
@@ -161,7 +152,6 @@ public class ProfilFragment extends Fragment {
                 Log.i("debug", "Clic sur la checkbox lactose !");
                 isAllergicLactose = !isAllergicLactose;
                 CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxSansLactose);
-                //makeEditableCheckBox(isAllergicLactose, cb);
                 cb.setChecked(isAllergicLactose);
             }
         });
@@ -172,7 +162,6 @@ public class ProfilFragment extends Fragment {
                 Log.i("debug", "Clic sur la checkbox gluten !");
                 isHallal = !isHallal;
                 CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxHallal);
-                //makeEditableCheckBox(isHallal, cb);
                 cb.setChecked(isHallal);
             }
         });
@@ -186,64 +175,35 @@ public class ProfilFragment extends Fragment {
                 Log.i("debug", "Etat de isEdition : " + isEdition);
 
                 EditText pseudo = (EditText) getView().findViewById(R.id.pseudoUser);
-                CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxVegetarien);
+                EditText nom = (EditText) getView().findViewById(R.id.nomUser);
+                EditText prenom = (EditText) getView().findViewById(R.id.prenomUser);
+                CheckBox cbVegetarien = (CheckBox) getView().findViewById(R.id.checkBoxVegetarien);
+                CheckBox cbVegan = (CheckBox) getView().findViewById(R.id.checkBoxVegan);
+                CheckBox cbGluten = (CheckBox) getView().findViewById(R.id.checkBoxSansGluten);
+                CheckBox cbLactose = (CheckBox) getView().findViewById(R.id.checkBoxSansLactose);
+                CheckBox cbHallal = (CheckBox) getView().findViewById(R.id.checkBoxHallal);
 
                 if(isEdition){
                     pseudo.setEnabled(true);
-                    cb.setEnabled(true);
+                    nom.setEnabled(true);
+                    prenom.setEnabled(true);
+                    cbVegetarien.setEnabled(true);
+                    cbVegan.setEnabled(true);
+                    cbGluten.setEnabled(true);
+                    cbLactose.setEnabled(true);
+                    cbHallal.setEnabled(true);
                 }
                 else{
                     pseudo.setEnabled(false);
-                    cb.setEnabled(false);
+                    nom.setEnabled(false);
+                    prenom.setEnabled(false);
+                    cbVegetarien.setEnabled(false);
+                    cbVegan.setEnabled(false);
+                    cbGluten.setEnabled(false);
+                    cbLactose.setEnabled(false);
+                    cbHallal.setEnabled(false);
                 }
-
-                // Does not work
-                /*TextView pseudo = (TextView) getView().findViewById(R.id.pseudoUser);
-                TextView nom = (TextView) getView().findViewById(R.id.nomUser);
-                TextView prenom = (TextView) getView().findViewById(R.id.prenomUser);
-
-                if(isEdition) {
-                    Log.i("debug", "isEdition true");
-                    makeEditableTextView(true, pseudo);
-                    makeEditableTextView(true, prenom);
-                    makeEditableTextView(true, nom);
-                } else {
-                    Log.i("debug", "isEdition false");
-                    makeEditableTextView(false, pseudo);
-                    makeEditableTextView(false, prenom);
-                    makeEditableTextView(false, nom);
-                } */
             }
         });
-    }
-
-    private void makeEditableTextView(boolean isEditable,TextView tv){
-        if(isEditable){
-            tv.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-            tv.setFocusable(true);
-            tv.setEnabled(true);
-            tv.setClickable(true);
-            tv.setFocusableInTouchMode(true);
-        } else {
-            tv.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            tv.setFocusable(false);
-            tv.setClickable(false);
-            tv.setFocusableInTouchMode(false);
-            tv.setEnabled(false);
-        }
-    }
-
-    private void makeEditableCheckBox(boolean isEditable, CheckBox cb) {
-        if(isEditable) {
-            cb.setFocusable(true);
-            cb.setClickable(true);
-            cb.setFocusableInTouchMode(true);
-            cb.setEnabled(true);
-        } else {
-            cb.setFocusable(false);
-            cb.setClickable(false);
-            cb.setFocusableInTouchMode(false);
-            cb.setEnabled(false);
-        }
     }
 }
