@@ -153,7 +153,7 @@ public class TriFragment extends Fragment {
         rangeBar.setFormatter(new IRangeBarFormatter() {
             @Override
             public String format(String s) {
-                return s + " €";
+                return s;
             }
         });
         rangeBar.setOnRangeBarChangeListener(new RangeBar.OnRangeBarChangeListener() {
@@ -161,8 +161,8 @@ public class TriFragment extends Fragment {
             public void onRangeChangeListener(RangeBar rangeBar, int leftPinIndex,
                                               int rightPinIndex,
                                               String leftPinValue, String rightPinValue) {
-                MainActivity.filtre.setPrixMin(Double.parseDouble(leftPinValue));
-                MainActivity.filtre.setPrixMax(Double.parseDouble(rightPinValue));
+                MainActivity.filtre.setPrixMin("€");
+                MainActivity.filtre.setPrixMax("€€€");
             }
         });
 

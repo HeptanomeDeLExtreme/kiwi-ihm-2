@@ -5,6 +5,7 @@
  */
 package com.kiwi.kiwi;
 
+import android.content.Intent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -59,6 +60,7 @@ public class ListFragment extends android.app.ListFragment {
 public class ListFragment extends Fragment {
 
     public static final String tag = "liste_frag";
+    final String EXTRA_RESTO = "resto";
 
     public ListFragment() {
         // Required empty public constructor
@@ -100,5 +102,6 @@ public class ListFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
+
 
 }
