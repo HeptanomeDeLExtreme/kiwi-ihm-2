@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,8 +52,12 @@ public class ProfilFragment extends Fragment {
     public void onViewCreated(View view, final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView pseudo = (TextView) view.findViewById(R.id.pseudoUser);
+        /*TextView pseudo = (TextView) view.findViewById(R.id.pseudoUser);
         pseudo.setText(PSEUDO);
+        pseudo.setEnabled(false);*/
+        EditText pseudo = (EditText) view.findViewById(R.id.pseudoUser);
+        pseudo.setText(PSEUDO);
+        pseudo.setEnabled(false);
         //makeEditableTextView(false, pseudo);
 
         TextView nom = (TextView) view.findViewById(R.id.nomUser);
@@ -74,6 +79,7 @@ public class ProfilFragment extends Fragment {
         } else {
             checkBoxVegetarien.setChecked(false);
         }
+        checkBoxVegetarien.setEnabled(false);
         //makeEditableCheckBox(false, checkBoxVegetarien);
 
         /* Vegan */
@@ -116,11 +122,14 @@ public class ProfilFragment extends Fragment {
         checkBoxVegetarien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("debug", "Clic sur la checkbox végétarien !");
-                isVegetarien = !isVegetarien;
-                CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxVegetarien);
-                //makeEditableCheckBox(isVegetarien, cb);
-                cb.setChecked(isVegetarien);
+                if(isEdition) {
+                    Log.i("debug", "Clic sur la checkbox végétarien !");
+                    isVegetarien = !isVegetarien;
+                    CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxVegetarien);
+                    //makeEditableCheckBox(isVegetarien, cb);
+                    cb.setChecked(isVegetarien);
+
+                }
             }
         });
 
@@ -175,6 +184,18 @@ public class ProfilFragment extends Fragment {
                 Log.i("debug", "Clic sur le bouton d'édition !");
                 isEdition = !isEdition;
                 Log.i("debug", "Etat de isEdition : " + isEdition);
+
+                EditText pseudo = (EditText) getView().findViewById(R.id.pseudoUser);
+                CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxVegetarien);
+
+                if(isEdition){
+                    pseudo.setEnabled(true);
+                    cb.setEnabled(true);
+                }
+                else{
+                    pseudo.setEnabled(false);
+                    cb.setEnabled(false);
+                }
 
                 // Does not work
                 /*TextView pseudo = (TextView) getView().findViewById(R.id.pseudoUser);

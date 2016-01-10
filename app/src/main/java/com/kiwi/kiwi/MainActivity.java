@@ -70,7 +70,9 @@ public class MainActivity extends AppCompatActivity
         listeAmis = genererAmis();
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        //profilFragment = new ProfilFragment();
         transaction.replace(R.id.container_view, mainFragment);
+        //transaction.replace(R.id.container_view, profilFragment);
         transaction.commit();
     }
 
@@ -101,6 +103,8 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
+
     }
 
     /**
@@ -165,9 +169,9 @@ public class MainActivity extends AppCompatActivity
                         Categorie.getUniversitaire(), "Universitaire", "Millefeuille", avisResto1,
                         45.784249, 4.874854 , 3.5,7, "Restaurant universaire bon marché. \n", true));
         restos.add(new Resto("Jussieu", "Jussieu.jpg", true, "Avenue Albert Einstein", "Carte Etudiant",
-                        "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
-                        Categorie.getUniversitaire(), "Universitaire", "Glace à la fraise et au chocolat", avisResto1,
-                        45.780981, 4.876224, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le RU.", true));
+                "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
+                Categorie.getUniversitaire(), "Universitaire", "Glace à la fraise et au chocolat", avisResto1,
+                45.780981, 4.876224, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le RU.", true));
 
         restos.add(new Resto("Snack du Campus", "Tacos.jpg", true, "Rue de la Doua", "Carte Etudiant",
                         "06 25 17 86 71", "10,20€", "4", "11h00 - 14h, 18h00 - 23h00",
