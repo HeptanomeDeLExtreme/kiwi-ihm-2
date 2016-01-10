@@ -85,11 +85,11 @@ public class ListFragment extends Fragment {
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long id) {
-                List<Resto> restos = MainActivity.listeRestosVisibles;
-                Resto restoChoisi = restos.get(position);
-                Log.i("DEBUG", "Appui sur le " + position + "ème item : " + restoChoisi.getNom());
+            public void onItemClick(AdapterView<?> adapter, View v, int position, long arg3) {
+                Intent intent = new Intent(getActivity(), PageResto.class);
+                Resto restoSelect = (Resto) (mListView.getItemAtPosition(position));
+                intent.putExtra(EXTRA_RESTO, restoSelect.getNom());
+                startActivity(intent);
             }
         });
 
