@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity
         restos.add(new Resto("", "Chez Cédric", false));*/
 
         List<Avis> avisResto1 = new ArrayList<Avis>();
-        avisResto1.add(new Avis(0,"C'est vraiment de la pisse ...", new Ami("Secret", "Mathieu", "photoprofil")));
+        avisResto1.add(new Avis(0,"C'est vraiment de la pisse ...", new Ami("Secret", "Mathieu", "photoutilisateur")));
         restos.add(new Resto("Castor et Pollux", "photoresto1", true, "Avenue Jean Capelle", "Carte Etudiant",
                 "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
                 Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,

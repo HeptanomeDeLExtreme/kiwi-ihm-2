@@ -230,6 +230,10 @@ public class Resto {
         return nbRepasRestants;
     }
 
+    public void addAvis (Avis avis){
+        this.avis.add(avis);
+    }
+
     public void setVisible(Boolean visible) {
         this.visible = visible;
     }
