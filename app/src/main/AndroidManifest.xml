@@ -48,6 +48,15 @@
             android:label="@string/title_activity_page_connexion"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PageAccueil" />
+        <activity
+            android:name=".PageResto"
+            android:label="@string/title_activity_page_resto"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kiwi.kiwi.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

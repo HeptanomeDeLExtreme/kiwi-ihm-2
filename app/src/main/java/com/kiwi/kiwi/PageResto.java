@@ -69,10 +69,11 @@ public class PageResto extends AppCompatActivity {
             TextView type = (TextView) findViewById(R.id.type);
             type.setText(resto.getTypeRestaurant());
             if(resto.getNbRepasRestants() != null){
-                TextView nbRepasRestants = new TextView(this);
+                TextView nbRepasRestants = new TextView(this, null, android.R.attr.textAppearanceMedium);
                 nbRepasRestants.setText("Nombre de repas restants : " + resto.getNbRepasRestants());
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                params.addRule(RelativeLayout.BELOW, R.id.tempsParcours);
+                params.addRule(RelativeLayout.BELOW, R.id.tempsAttente);
+                nbRepasRestants.setId(R.id.tempsParcours+6000);
                 nbRepasRestants.setLayoutParams(params);
                 RelativeLayout.LayoutParams params2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                 params2.addRule(RelativeLayout.BELOW, nbRepasRestants.getId());

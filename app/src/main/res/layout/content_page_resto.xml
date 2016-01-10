@@ -12,41 +12,41 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.kiwi.kiwi.PageResto">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:id="@+id/photo" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:id="@+id/photo" />
 
-        <TextView
-            android:layout_width="170dp"
-            android:layout_height="40dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/nom"
-            android:layout_below="@+id/photo"
-            android:layout_alignParentStart="true"
-            android:gravity="center_vertical"
-            android:textSize="20dp" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="Y Aller"
-            android:id="@+id/aller"
-            android:textSize="10dp"
-            android:layout_below="@+id/photo"
-            android:layout_alignEnd="@+id/photo" />
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/nom"
+        android:layout_below="@+id/photo"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:textSize="20dp" />
 
     <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="Y Aller et Partager"
-            android:id="@+id/allerPartager"
-            android:textSize="10dp"
-            android:layout_below="@+id/photo"
-            android:layout_toStartOf="@+id/aller" />
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Y Aller"
+        android:id="@+id/aller"
+        android:textSize="10dp"
+        android:layout_below="@+id/photo"
+        android:layout_alignEnd="@+id/photo" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Y Aller et Partager"
+        android:id="@+id/allerPartager"
+        android:textSize="10dp"
+        android:layout_below="@+id/photo"
+        android:layout_toStartOf="@+id/aller" />
 
     <View
         android:layout_width="match_parent"
@@ -69,31 +69,31 @@
             android:id="@+id/restoLayout">
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Tel : "
-                    android:id="@+id/telephone"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginTop="10dp" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Tel : "
+                android:id="@+id/telephone"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp" />
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Adresse : "
-                    android:id="@+id/adresse"
-                    android:layout_below="@+id/telephone"
-                    android:layout_alignParentStart="true" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Adresse : "
+                android:id="@+id/adresse"
+                android:layout_below="@+id/telephone"
+                android:layout_alignParentStart="true" />
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Paiment : "
-                    android:id="@+id/paiment"
-                    android:layout_below="@+id/adresse"
-                    android:layout_alignParentStart="true" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Paiment : "
+                android:id="@+id/paiment"
+                android:layout_below="@+id/adresse"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -105,22 +105,22 @@
                 android:layout_alignParentEnd="true" />
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Prix : "
-                    android:id="@+id/prix"
-                    android:layout_below="@+id/horaires"
-                    android:layout_alignParentStart="true" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Prix : "
+                android:id="@+id/prix"
+                android:layout_below="@+id/horaires"
+                android:layout_alignParentStart="true" />
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Temps de parcours : "
-                    android:id="@+id/tempsParcours"
-                    android:layout_below="@+id/prix"
-                    android:layout_alignParentStart="true" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Temps de parcours : "
+                android:id="@+id/tempsParcours"
+                android:layout_below="@+id/prix"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -133,13 +133,13 @@
                 android:singleLine="false" />
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Catégorie"
-                    android:id="@+id/categorie"
-                    android:layout_below="@+id/type"
-                    android:layout_alignParentStart="true" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Catégorie"
+                android:id="@+id/categorie"
+                android:layout_below="@+id/type"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -197,13 +197,13 @@
                 android:id="@+id/separateurAvis" />
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Temps d&apos;attente : "
-                    android:id="@+id/tempsAttente"
-                    android:layout_below="@+id/tempsParcours"
-                    android:layout_alignParentStart="true" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Temps d&apos;attente : "
+                android:id="@+id/tempsAttente"
+                android:layout_below="@+id/tempsParcours"
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -225,13 +225,13 @@
                 android:layout_alignParentStart="true" />
 
             <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/darker_gray"
-                    android:layout_below="@+id/categorie"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="15dp"
-                    android:id="@+id/separateurMenu" />
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_below="@+id/categorie"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:id="@+id/separateurMenu" />
 
             <TextView
                 android:layout_width="wrap_content"
