@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/buttonEdit"
+        android:background="@drawable/note48"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="89dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailINSA"
+        android:layout_below="@+id/buttonEdit"
+        android:layout_centerHorizontal="true"
+        android:text="zob@insa-lyon.fr" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Solde Restant : "
+        android:id="@+id/montantINSA"
+        android:layout_below="@+id/emailINSA"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Expiration"
+        android:id="@+id/dateINSA"
+        android:layout_below="@+id/montantINSA"
+        android:layout_alignStart="@+id/montantINSA"
+        android:layout_marginTop="87dp" />
+
+</RelativeLayout>
