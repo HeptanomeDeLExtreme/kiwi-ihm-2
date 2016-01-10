@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         compteFragmentINSA = new CompteFragmentINSA();
-        //transaction.replace(R.id.container_view, mainFragment);
-        transaction.replace(R.id.container_view, compteFragmentINSA);
+        transaction.replace(R.id.container_view, mainFragment);
+        //transaction.replace(R.id.container_view, compteFragmentINSA);
         transaction.commit();
 
     }
