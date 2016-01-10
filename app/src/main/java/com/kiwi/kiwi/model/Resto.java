@@ -28,12 +28,12 @@ public class Resto {
 
     Boolean visible;
 
-
-    public Resto(String nom, String photo, Boolean ouvert, String adresse, String moyenPaiement,
+    public Resto(String nom, String photo, Boolean ouvert, String adresse, Paiement moyenPaiement,
                  String telephone, String niveauTarif, String tempsAttente, String horaires,
                  Categorie categorie, String typeRestaurant, String menuDuJour, List<Avis> avis,
                  double lat, double lon, Double distanceUtilisateurRestaurant,
                  Integer tempsUtilisateurRestaurant, String description, Integer nbRepasRestants, Boolean visible) {
+        
         this.nom = nom;
         this.photo = photo;
         this.ouvert = ouvert;
@@ -47,7 +47,7 @@ public class Resto {
         this.typeRestaurant = typeRestaurant;
         this.menuDuJour = menuDuJour;
         this.avis = avis;
-        this.positionGPS = new LatLng(lat,lon);
+        this.positionGPS = new LatLng(lat, lon);
         this.distanceUtilisateurRestaurant = distanceUtilisateurRestaurant;
         this.tempsUtilisateurRestaurant = tempsUtilisateurRestaurant;
         this.description = description;
@@ -117,6 +117,10 @@ public class Resto {
 
     public Boolean getVisible() {
         return visible;
+    }
+
+    public LatLng getPositionGPS() {
+        return positionGPS;
     }
 
     public void cacher() {
@@ -236,5 +240,9 @@ public class Resto {
 
     public void setVisible(Boolean visible) {
         this.visible = visible;
+    public enum Paiement {
+        CB,
+        INSA,
+        IZLY
     }
 }

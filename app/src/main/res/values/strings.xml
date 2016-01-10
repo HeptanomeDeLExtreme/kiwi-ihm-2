@@ -25,12 +25,12 @@
     <string name="boutonOk">OK !</string>
 
     <!-- Labels -->
-    <string name="labelNom">Nom :</string>
-    <string name="labelPrenom">Prénom :</string>
-    <string name="labelPseudo">Pseudo :</string>
-    <string name="labelMail">Mail:</string>
-    <string name="mdp">Mot de passe :</string>
-    <string name="confMdp">Confirmation du mot de passe :</string>
+    <string name="labelNom">Nom</string>
+    <string name="labelPrenom">Prénom</string>
+    <string name="labelPseudo">Pseudo</string>
+    <string name="labelMail">Mail</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="confMdp">Confirmation du mot de passe</string>
 
     <!-- Textes par défaut -->
     <string name="defaultNom">Entrez votre nom de famille...</string>
@@ -41,4 +41,11 @@
     <string name="defaultIDIncorrects">Identifiants / Mot de passe incorrect(s)...</string>
     <string name="defaultPhraseApp">Laissez la vie devenir votre KIWI !</string>
     <string name="title_activity_page_resto">PageResto</string>
+    <string name="labelMonProfil">Mon Profil</string>
+    <string name="labelJeMange">Je mange...</string>
+    <string name="labelVegetarien">Végétarien</string>
+    <string name="labelVegan">Vegan</string>
+    <string name="labelSansGluten">Sans Gluten</string>
+    <string name="labelSansLactose">Sans Lactose</string>
+    <string name="labelHallal">Halal</string>
 </resources>
