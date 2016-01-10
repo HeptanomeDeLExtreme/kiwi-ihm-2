@@ -53,7 +53,7 @@ public class ProfilFragment extends Fragment {
 
         EditText pseudo = (EditText) view.findViewById(R.id.pseudoUser);
         pseudo.setText(PSEUDO);
-        pseudo.setEnabled(false);
+        //pseudo.setEnabled(false);
 
         EditText nom = (EditText) view.findViewById(R.id.nomUser);
         nom.setText(NOM);
