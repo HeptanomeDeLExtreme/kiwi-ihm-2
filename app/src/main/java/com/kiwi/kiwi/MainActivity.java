@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity
     private MainFragment mainFragment;
     private AmiFragment amiFragment;
     private ProfilFragment profilFragment;
+    private CompteFragmentINSA compteFragmentINSA;
+    private CompteFragmentIZLY compteFragmentIZLY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +72,9 @@ public class MainActivity extends AppCompatActivity
         listeAmis = genererAmis();
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        //profilFragment = new ProfilFragment();
-        transaction.replace(R.id.container_view, mainFragment);
-        //transaction.replace(R.id.container_view, profilFragment);
+        compteFragmentINSA = new CompteFragmentINSA();
+        //transaction.replace(R.id.container_view, mainFragment);
+        transaction.replace(R.id.container_view, compteFragmentINSA);
         transaction.commit();
     }
 
@@ -129,8 +131,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_profil) {
             if (profilFragment == null) profilFragment = new ProfilFragment();
             transaction.replace(R.id.container_view, profilFragment);
-        } else if (id == R.id.nav_compte) {
-            //TODO
+        } else if (id == R.id.nav_compteINSA) {
+            if (compteFragmentINSA == null) compteFragmentINSA = new CompteFragmentINSA();
+            transaction.replace(R.id.container_view, compteFragmentINSA);
+        }
+        else if (id == R.id.nav_compteIZLY) {
+            if (compteFragmentIZLY == null) compteFragmentIZLY = new CompteFragmentIZLY();
+            transaction.replace(R.id.container_view, compteFragmentIZLY);
         }
 
         transaction.commit();

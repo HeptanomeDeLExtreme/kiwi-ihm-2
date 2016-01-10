@@ -19,9 +19,13 @@
     <item android:title="Comptes">
         <menu>
             <item
-                android:id="@+id/nav_compte"
+                android:id="@+id/nav_compteINSA"
                 android:icon="@android:drawable/ic_menu_share"
                 android:title="INSA " />
+            <item
+                android:id="@+id/nav_compteIZLY"
+                android:icon="@android:drawable/ic_menu_share"
+                android:title="IZLY " />
         </menu>
     </item>
 
