@@ -33,16 +33,17 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_gravity="right"
         android:id="@+id/imageView2"
         android:background="@drawable/hommemarchant"
-        android:layout_marginStart="90dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/nom" />
+        android:layout_toStartOf="@+id/textTempsChemin" />
 
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:id="@+id/imageView3"
+        android:layout_gravity="right"
         android:background="@drawable/couverts"
         android:layout_alignTop="@+id/prixResto"
         android:layout_alignStart="@+id/imageView2" />

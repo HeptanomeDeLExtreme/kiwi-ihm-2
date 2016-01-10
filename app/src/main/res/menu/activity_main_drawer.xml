@@ -29,4 +29,19 @@
         </menu>
     </item>
 
+    <!-- <group android:id="@+id/notConnected">
+        <item
+            android:id="@+id/nav_connexion"
+            android:title="Connexion" />
+        <item
+            android:id="@+id/nav_creerCompte"
+            android:title="Créer un compte" />
+    </group> -->
+
+    <group android:id="@+id/connected">
+        <item
+            android:id="@+id/nav_deconnexion"
+            android:title="Déconnexion" />
+    </group>
+
 </menu>

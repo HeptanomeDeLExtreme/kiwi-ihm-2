@@ -6,6 +6,7 @@
 
 package com.kiwi.kiwi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -134,10 +135,18 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_compteINSA) {
             if (compteFragmentINSA == null) compteFragmentINSA = new CompteFragmentINSA();
             transaction.replace(R.id.container_view, compteFragmentINSA);
-        }
-        else if (id == R.id.nav_compteIZLY) {
+        } else if (id == R.id.nav_compteIZLY) {
             if (compteFragmentIZLY == null) compteFragmentIZLY = new CompteFragmentIZLY();
             transaction.replace(R.id.container_view, compteFragmentIZLY);
+        } /*else if (id == R.id.nav_connexion) {
+            Intent menuIntent = new Intent(this, PageConnexion.class);
+            startActivity(menuIntent);
+        } else if (id == R.id.nav_creerCompte) {
+            Intent menuIntent = new Intent(this, FormulaireInscription.class);
+            startActivity(menuIntent);
+        } */ else if (id == R.id.nav_deconnexion) {
+            Intent menuIntent = new Intent(this, PageInscription.class);
+            startActivity(menuIntent);
         }
 
         transaction.commit();
