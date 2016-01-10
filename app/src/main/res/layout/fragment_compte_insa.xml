@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <ImageView
         android:layout_width="60dp"
@@ -26,20 +27,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Solde Restant : "
+        android:text="Solde Restant : 50,40€"
         android:id="@+id/montantINSA"
-        android:layout_below="@+id/emailINSA"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp" />
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/emailINSA" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Expiration"
+        android:text="Expiration : 19/01/2016"
         android:id="@+id/dateINSA"
+        android:layout_marginTop="57dp"
         android:layout_below="@+id/montantINSA"
-        android:layout_alignStart="@+id/montantINSA"
-        android:layout_marginTop="87dp" />
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView6"
+        android:background="@drawable/logo_insa"
+        android:layout_alignTop="@+id/buttonEdit"
+        android:layout_toStartOf="@+id/emailINSA" />
 
 </RelativeLayout>
