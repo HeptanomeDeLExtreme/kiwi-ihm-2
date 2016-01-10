@@ -2,15 +2,15 @@ package com.kiwi.kiwi;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.Random;
 
 
 /**
@@ -40,6 +40,8 @@ public class CompteFragmentINSA extends Fragment {
     public void onViewCreated(View view, final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        TextView info = (TextView) getView().findViewById(R.id.infoINSA);
+        info.setText("Pas de compte INSA configuré !");
 
         EditText email = (EditText) getView().findViewById(R.id.emailINSA);
         TextView montant = (TextView) getView().findViewById(R.id.montantINSA);
@@ -50,8 +52,9 @@ public class CompteFragmentINSA extends Fragment {
         montant.setVisibility(View.INVISIBLE);
         date.setVisibility(View.INVISIBLE);
         con.setVisibility(View.INVISIBLE);
+        info.setVisibility(View.VISIBLE);
 
-        ImageView b = (ImageView) view.findViewById(R.id.buttonEdit);
+        ImageView b = (ImageView) view.findViewById(R.id.buttonEditIZLY);
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,16 +64,20 @@ public class CompteFragmentINSA extends Fragment {
                 TextView date = (TextView) getView().findViewById(R.id.dateINSA);
                 Button con = (Button) getView().findViewById(R.id.connexionINSA);
 
+                TextView info = (TextView) getView().findViewById(R.id.infoINSA);
+
                 if (isVisible) {
                     email.setVisibility(View.INVISIBLE);
                     montant.setVisibility(View.INVISIBLE);
                     date.setVisibility(View.INVISIBLE);
                     con.setVisibility(View.INVISIBLE);
+                    info.setVisibility(View.VISIBLE);
                 } else {
                     email.setVisibility(View.VISIBLE);
                     montant.setVisibility(View.VISIBLE);
                     date.setVisibility(View.VISIBLE);
                     con.setVisibility(View.VISIBLE);
+                    info.setVisibility(View.INVISIBLE);
                     email.setText("");
                     montant.setText("");
                     date.setText("");
@@ -84,8 +91,14 @@ public class CompteFragmentINSA extends Fragment {
             public void onClick(View v) {
                 TextView montant = (TextView) getView().findViewById(R.id.montantINSA);
                 TextView date = (TextView) getView().findViewById(R.id.dateINSA);
-                montant.setText("Solde restant : 60€");
-                date.setText("Expiration : 23/10/2013");
+
+                Random r = new Random();
+                int solde = r.nextInt(60 - 0 + 1) + 0;
+                int jour = r.nextInt(31 - 0 + 1) + 0;
+                int mois = r.nextInt(12 - 0 + 1) + 0;
+
+                montant.setText("Solde restant : "+solde+"€");
+                date.setText("Expiration : "+jour+"/"+mois+"/2013");
             }
         });
 
