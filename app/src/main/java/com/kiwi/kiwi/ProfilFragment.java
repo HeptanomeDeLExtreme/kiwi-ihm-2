@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -50,6 +51,9 @@ public class ProfilFragment extends Fragment {
     @Override
     public void onViewCreated(View view, final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Button buttonOK = (Button) getView().findViewById(R.id.buttonProfilOk);
+        buttonOK.setVisibility(View.INVISIBLE);
 
         EditText pseudo = (EditText) view.findViewById(R.id.pseudoUser);
         pseudo.setText(PSEUDO);
@@ -182,8 +186,12 @@ public class ProfilFragment extends Fragment {
                 CheckBox cbGluten = (CheckBox) getView().findViewById(R.id.checkBoxSansGluten);
                 CheckBox cbLactose = (CheckBox) getView().findViewById(R.id.checkBoxSansLactose);
                 CheckBox cbHallal = (CheckBox) getView().findViewById(R.id.checkBoxHallal);
+                ImageView edit = (ImageView) getView().findViewById(R.id.editButton);
+                Button buttonOK = (Button) getView().findViewById(R.id.buttonProfilOk);
 
                 if(isEdition){
+                    edit.setVisibility(View.INVISIBLE);
+                    buttonOK.setVisibility(View.VISIBLE);
                     pseudo.setEnabled(true);
                     nom.setEnabled(true);
                     prenom.setEnabled(true);
@@ -193,7 +201,31 @@ public class ProfilFragment extends Fragment {
                     cbLactose.setEnabled(true);
                     cbHallal.setEnabled(true);
                 }
-                else{
+            }
+        });
+
+        Button boutonOK = (Button) getView().findViewById(R.id.buttonProfilOk);
+        boutonOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("debug", "Clic sur le bouton d'édition !");
+                isEdition = !isEdition;
+                Log.i("debug", "Etat de isEdition : " + isEdition);
+
+                EditText pseudo = (EditText) getView().findViewById(R.id.pseudoUser);
+                EditText nom = (EditText) getView().findViewById(R.id.nomUser);
+                EditText prenom = (EditText) getView().findViewById(R.id.prenomUser);
+                CheckBox cbVegetarien = (CheckBox) getView().findViewById(R.id.checkBoxVegetarien);
+                CheckBox cbVegan = (CheckBox) getView().findViewById(R.id.checkBoxVegan);
+                CheckBox cbGluten = (CheckBox) getView().findViewById(R.id.checkBoxSansGluten);
+                CheckBox cbLactose = (CheckBox) getView().findViewById(R.id.checkBoxSansLactose);
+                CheckBox cbHallal = (CheckBox) getView().findViewById(R.id.checkBoxHallal);
+                ImageView edit = (ImageView) getView().findViewById(R.id.editButton);
+                Button buttonOK = (Button) getView().findViewById(R.id.buttonProfilOk);
+
+                if (!isEdition){
+                    edit.setVisibility(View.VISIBLE);
+                    buttonOK.setVisibility(View.INVISIBLE);
                     pseudo.setEnabled(false);
                     nom.setEnabled(false);
                     prenom.setEnabled(false);
