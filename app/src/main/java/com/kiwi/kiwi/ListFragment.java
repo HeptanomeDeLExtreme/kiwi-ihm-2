@@ -5,11 +5,13 @@
  */
 package com.kiwi.kiwi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.kiwi.kiwi.model.Resto;
@@ -20,6 +22,7 @@ import java.util.List;
 public class ListFragment extends Fragment {
 
     public static final String tag = "liste_frag";
+    final String EXTRA_RESTO = "resto";
 
     public ListFragment() {
         // Required empty public constructor
@@ -34,12 +37,22 @@ public class ListFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ListView mListView = (ListView) view.findViewById(R.id.listView);
+        final ListView mListView = (ListView) view.findViewById(R.id.listView);
 
         List<Resto> restos = MainActivity.listeRestos;
 
         RestoAdapter adapter = new RestoAdapter(getContext(), restos);
         mListView.setAdapter(adapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View v, int position, long arg3) {
+                Intent intent = new Intent(getActivity(), PageResto.class);
+                Resto restoSelect = (Resto) (mListView.getItemAtPosition(position));
+                intent.putExtra(EXTRA_RESTO, restoSelect.getNom());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

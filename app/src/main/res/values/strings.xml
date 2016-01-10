@@ -40,4 +40,5 @@
     <string name="defaultIDCorrects">Veuillez patienter...</string>
     <string name="defaultIDIncorrects">Identifiants / Mot de passe incorrect(s)...</string>
     <string name="defaultPhraseApp">Laissez la vie devenir votre KIWI !</string>
+    <string name="title_activity_page_resto">PageResto</string>
 </resources>

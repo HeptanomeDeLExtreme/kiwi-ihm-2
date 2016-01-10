@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.kiwi.kiwi.model.Ami;
 import com.kiwi.kiwi.model.Avis;
 import com.kiwi.kiwi.model.Categorie;
 import com.kiwi.kiwi.model.Resto;
@@ -113,11 +114,11 @@ public class MainActivity extends AppCompatActivity
         restos.add(new Resto("", "Chez Cédric", false));*/
 
         List<Avis> avisResto1 = new ArrayList<Avis>();
-        avisResto1.add(new Avis(0,"C'est vraiment de la pisse ...","Secret Mathieu"));
-        restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", "Carte Etudiant",
+        avisResto1.add(new Avis(0,"C'est vraiment de la pisse ...", new Ami("Secret", "Mathieu", "photoprofil")));
+        restos.add(new Resto("Castor et Pollux", "photoresto1", true, "Avenue Jean Capelle", "Carte Etudiant",
                 "06 69 69 69 69", "4,20€", "4", "11h30 -14h",
                 Categorie.getUniversitaire(), "Universitaire", "Soupe de quinoa", avisResto1,
-                45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.", true));
+                45.781206, 4.873504, 3.5,7, "Restaurant universaire bon marché. \n Appelé affectueusement le beurk.", null,  true));
 
 
         return restos;
