@@ -177,44 +177,44 @@ public class MainActivity extends AppCompatActivity
         List<Avis> avisResto3 = new ArrayList<>();
 
         restos.add(new Resto("Castor et Pollux", "resto1", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "1", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Soupe de quinoa", avisResto1,
-                45.781206, 4.873504, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueusement le beurk.",41,true));
+                45.781206, 4.873504, 3.5, 8, "Restaurant universaire bon marché. \n Appelé affectueusement le beurk.",41,true));
 
 
         restos.add(new Resto("Prévert", "resto2", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "2", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Nouilles", avisResto1,
                 45.781109, 4.873279, 3.5, 7, "Restaurant universaire bon marché. \n",41,true));
 
         restos.add(new Resto("Grillon", "resto3", true, "Avenue des Arts", Resto.Paiement.INSA,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "3", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Poisson pâné", avisResto1,
-                45.783876, 4.875049, 6.0, 7, "Restaurant universaire bon marché. \n",41,true));
+                45.783876, 4.875049, 6.0, 6, "Restaurant universaire bon marché. \n",41,true));
 
         restos.add(new Resto("Olivier", "resto5", true, "Avenue des Arts", Resto.Paiement.INSA,
                 "06 69 69 69 69", "€", "4", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Millefeuille", avisResto1,
-                45.784249, 4.874854, 5.0, 7, "Restaurant universaire bon marché. \n",41,true));
+                45.784249, 4.874854, 5.0, 5, "Restaurant universaire bon marché. \n",41,true));
         restos.add(new Resto("Jussieu", "resto6", false, "Avenue Albert Einstein", Resto.Paiement.IZLY,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "5", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Glace à la fraise et au chocolat", avisResto1,
-                45.780981, 4.876224, 4.0, 7, "Restaurant universaire bon marché. \n Appelé affectueusement le RU.",41,true));
+                45.780981, 4.876224, 4.0, 4, "Restaurant universaire bon marché. \n Appelé affectueusement le RU.",41,true));
 
         restos.add(new Resto("Snack du Campus", "resto4", true, "Rue de la Doua", Resto.Paiement.CB,
-                "06 25 17 86 71", "€€", "4", "11h00 - 14h, 18h00 - 23h00",
+                "06 25 17 86 71", "€€", "6", "11h00 - 14h, 18h00 - 23h00",
                 Categorie.TACOS, "Universitaire", "Tacos", avisResto2,
-                45.777149, 4.874541, 8.0, 7, "Restaurant de tacos de qualité ! Appelé affectueusement Chez Snoop",41,true));
+                45.777149, 4.874541, 8.0, 3, "Restaurant de tacos de qualité ! Appelé affectueusement Chez Snoop",41,true));
 
         restos.add(new Resto("Pizzeria Pinocchio", "resto9", true, "Boulevard du 11 Novembre 1918", Resto.Paiement.CB,
-                "06 69 69 69 69", "€€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€€", "7", "11h30 -14h",
                 Categorie.PIZZERIA, "Universitaire", "Pizza au poulpe", avisResto3,
-                45.779272, 4.874409, 10.0, 7, "Bonnes pizzas.",41,true));
+                45.779272, 4.874409, 10.0, 2, "Bonnes pizzas.",41,true));
 
         restos.add(new Resto("NoGlu", "resto7", false, "Avenue Jean Capelle", Resto.Paiement.CB,
-                "06 69 69 69 69", "€€€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€€€", "8", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Soupe de vermicelle", avisResto1,
-                45.778888, 4.874545, 11.0, 7, "Restaurant universaire bon marché. \n Appelé affectueusement le noeud.",41,true));
+                45.778888, 4.874545, 11.0, 1, "Restaurant universaire bon marché. \n Appelé affectueusement le noeud.",41,true));
 
         return restos;
     }
