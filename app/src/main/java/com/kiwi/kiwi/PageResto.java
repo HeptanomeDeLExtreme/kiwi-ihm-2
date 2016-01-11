@@ -17,6 +17,7 @@ import android.widget.ListAdapter;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kiwi.kiwi.model.Ami;
 import com.kiwi.kiwi.model.Avis;
