@@ -4,6 +4,7 @@
  */
 package com.kiwi.kiwi;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -82,6 +83,22 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
         Toast.makeText(this.getContext(), "Info window clicked",
                 Toast.LENGTH_SHORT).show();
 
+        Intent intent = new Intent(getActivity(), PageResto.class);
+        Resto restoSelect = trouverRestoParNom(marker.getTitle());
+        intent.putExtra("resto", restoSelect.getNom());
+        startActivity(intent);
+
+    }
+
+    // Méthode sale pour choper le resto depuis le marker
+    public Resto trouverRestoParNom(String nom){
+        Resto resto = new Resto();
+        for (Resto r : ListeRestos){
+            if(r.getNom().equals(nom)){
+                resto = r;
+            }
+        }
+        return resto;
     }
 
 

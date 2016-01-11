@@ -28,6 +28,8 @@ public class Resto {
 
     Boolean visible;
 
+    public Resto(){};
+
     public Resto(String nom, String photo, Boolean ouvert, String adresse, Paiement moyenPaiement,
                  String telephone, String niveauTarif, String tempsAttente, String horaires,
                  Categorie categorie, String typeRestaurant, String menuDuJour, List<Avis> avis,
