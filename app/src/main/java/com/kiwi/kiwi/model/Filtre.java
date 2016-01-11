@@ -24,8 +24,8 @@ public class Filtre {
 
     private Boolean ouvert;
 
-    private String prixMin;
-    private String prixMax;
+    private Double prixMin;
+    private Double prixMax;
 
     public Filtre() {
         cb = true;
@@ -42,8 +42,8 @@ public class Filtre {
 
         ouvert = false;
 
-        prixMin = "€";
-        prixMax = "€€€";
+        prixMin = 0.0;
+        prixMax = 15.0;
     }
 
     public void majRestos() {
@@ -61,8 +61,11 @@ public class Filtre {
                     (!oriental && resto.getCategorie() == Categorie.ORIENTAL) ||
                     (!indien && resto.getCategorie() == Categorie.INDIEN) ||
                     (!sandwich && resto.getCategorie() == Categorie.SANDWICH) ||
-                    (resto.getNiveauTarif().equals(prixMax)) ||
-                    (resto.getNiveauTarif().equals(prixMin)))
+                    //Méthode sale pour le filtre des prix , pour raisons historiques :
+                    // € signifie 5€, €€ = 10€, €€€ = 15€
+                    (resto.getNiveauTarifDouble() > prixMax) ||
+                    (resto.getNiveauTarifDouble() < prixMin)
+                )
                 itr.remove();
         }
     }
@@ -166,20 +169,20 @@ public class Filtre {
         majRestos();
     }
 
-    public String getPrixMin() {
+    public Double getPrixMin() {
         return prixMin;
     }
 
-    public void setPrixMin(String prixMin) {
+    public void setPrixMin(Double prixMin) {
         this.prixMin = prixMin;
         majRestos();
     }
 
-    public String getPrixMax() {
+    public Double getPrixMax() {
         return prixMax;
     }
 
-    public void setPrixMax(String prixMax) {
+    public void setPrixMax(Double prixMax) {
         this.prixMax = prixMax;
         majRestos();
     }

@@ -28,6 +28,8 @@ public class Resto {
 
     Boolean visible;
 
+    public Resto(){};
+
     public Resto(String nom, String photo, Boolean ouvert, String adresse, Paiement moyenPaiement,
                  String telephone, String niveauTarif, String tempsAttente, String horaires,
                  Categorie categorie, String typeRestaurant, String menuDuJour, List<Avis> avis,
@@ -236,6 +238,22 @@ public class Resto {
 
     public void setVisible(Boolean visible) {
         this.visible = visible;
+    }
+
+    public Double getNiveauTarifDouble() {
+        Double tarif = 0.0;
+        switch (this.niveauTarif){
+            case "€":
+                tarif = 4.0;
+                break;
+            case "€€":
+                tarif = 8.0;
+                break;
+            case "€€€":
+                tarif = 12.0;
+                break;
+        }
+        return tarif;
     }
 
     public enum Paiement {

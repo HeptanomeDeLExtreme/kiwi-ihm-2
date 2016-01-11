@@ -161,8 +161,8 @@ public class TriFragment extends Fragment {
             public void onRangeChangeListener(RangeBar rangeBar, int leftPinIndex,
                                               int rightPinIndex,
                                               String leftPinValue, String rightPinValue) {
-                MainActivity.filtre.setPrixMin("€");
-                MainActivity.filtre.setPrixMax("€€€");
+                MainActivity.filtre.setPrixMin(Double.parseDouble(leftPinValue));
+                MainActivity.filtre.setPrixMax(Double.parseDouble(rightPinValue));
             }
         });
 

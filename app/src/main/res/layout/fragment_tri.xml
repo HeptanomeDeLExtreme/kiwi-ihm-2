@@ -86,9 +86,9 @@
                 custom:selectorColor="#000000"
                 custom:temporaryPins="false"
                 custom:tickColor="@android:color/transparent"
-                custom:tickEnd="10"
+                custom:tickEnd="15"
                 custom:tickInterval="0.1"
-                custom:tickStart="2" />
+                custom:tickStart="0" />
 
             <View style="@style/Divider" />
 
