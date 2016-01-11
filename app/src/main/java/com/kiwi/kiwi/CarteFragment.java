@@ -80,15 +80,12 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Toast.makeText(this.getContext(), "Info window clicked",
-                Toast.LENGTH_SHORT).show();
-
         Intent intent = new Intent(getActivity(), PageResto.class);
         Resto restoSelect = trouverRestoParNom(marker.getTitle());
         intent.putExtra("resto", restoSelect.getNom());
         startActivity(intent);
-
     }
+
 
     // Méthode sale pour choper le resto depuis le marker
     public Resto trouverRestoParNom(String nom){

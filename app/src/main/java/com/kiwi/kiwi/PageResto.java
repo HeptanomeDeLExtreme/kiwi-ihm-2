@@ -2,6 +2,7 @@ package com.kiwi.kiwi;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
@@ -18,6 +19,8 @@ import android.widget.Toast;
 import com.kiwi.kiwi.model.Ami;
 import com.kiwi.kiwi.model.Avis;
 import com.kiwi.kiwi.model.Resto;
+
+import java.util.Locale;
 
 public class PageResto extends AppCompatActivity {
 
@@ -50,6 +53,37 @@ public class PageResto extends AppCompatActivity {
             photo.setImageResource(this.getResources().getIdentifier("drawable/" + resto.getPhoto(), null, this.getPackageName()));
             TextView nom = (TextView) findViewById(R.id.nom);
             nom.setText(resto.getNom());
+
+
+            Button boutonAller = (Button) findViewById(R.id.aller);
+            boutonAller.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    // saddr : coordonees du departement IF
+                    Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                            Uri.parse("http://maps.google.com/maps?saddr=45.781942, 4.872553&daddr="
+                                    +resto.getPositionGPS().latitude+","+resto.getPositionGPS().longitude));
+                    startActivity(intent);
+                    Toast.makeText(getApplicationContext(), "Allons y !", Toast.LENGTH_LONG).show();
+                }
+            });
+
+            Button boutonAllerPartager = (Button) findViewById(R.id.allerPartager);
+            boutonAllerPartager.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    // saddr : coordonees du departement IF
+                    Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                            Uri.parse("http://maps.google.com/maps?saddr=45.781942, 4.872553&daddr="
+                                    +resto.getPositionGPS().latitude+","+resto.getPositionGPS().longitude));
+                    startActivity(intent);
+
+                    Toast.makeText(getApplicationContext(), "Destination partagée !", Toast.LENGTH_LONG).show();
+                }
+            });
+
 
             //Partie des informations détaillées du restaurant
             TextView adresse = (TextView) findViewById(R.id.adresse);
