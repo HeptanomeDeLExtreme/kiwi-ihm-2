@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,7 +24,7 @@ import com.kiwi.kiwi.model.Resto;
 
 import java.util.List;
 
-public class CarteFragment extends Fragment implements OnMapReadyCallback{
+public class CarteFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener{
 
 
     public static final String tag = "carte_frag";
@@ -61,18 +62,27 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback{
         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
 
-        //TODO afficher tout ce qu'il faut
-
         // Affiche les marqueurs
         for (Resto resto : ListeRestos){
             map.addMarker(new MarkerOptions()
                     .position(resto.getPositionGPS())
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
                     .title(resto.getNom())
-                    .snippet(resto.getNiveauTarif())
+                    .snippet(resto.getNiveauTarif() + " - " + resto.getListeAmi().size() + " amis")
                     .visible(true));
         }
 
+        map.setOnInfoWindowClickListener(this);
+
+
     }
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        Toast.makeText(this.getContext(), "Info window clicked",
+                Toast.LENGTH_SHORT).show();
+
+    }
+
 
 }
