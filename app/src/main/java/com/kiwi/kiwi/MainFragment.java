@@ -49,7 +49,7 @@ public class MainFragment extends Fragment {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(liste, "Liste");
         adapter.addFragment(carte, "Carte");
-        adapter.addFragment(tri, "Tri");
+        adapter.addFragment(tri, "Filtre");
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
