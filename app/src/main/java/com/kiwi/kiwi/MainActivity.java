@@ -158,64 +158,64 @@ public class MainActivity extends AppCompatActivity
         avisResto1.add(new Avis(0,"Ce n'est pas terrible...",ami1));
 
         restos.add(new Resto("Castor et Pollux", "CastorEtPollux.jpg", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "12", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Soupe de quinoa", avisResto1,
-                45.781206, 4.873504, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.",41,true));
+                45.781206, 4.873504, 3.5, 1, "Restaurant universaire bon marché. \n Appelé affectueuse le beurk.",41,true));
 
 
         restos.add(new Resto("Prévert", "Prevert.jpg", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "11", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Nouilles", avisResto1,
-                45.781109, 4.873279, 3.5, 7, "Restaurant universaire bon marché. \n",41,true));
+                45.781109, 4.873279, 3.5, 2, "Restaurant universaire bon marché. \n",41,true));
 
         restos.add(new Resto("Grillon", "Grillon.jpg", true, "Avenue des Arts", Resto.Paiement.INSA,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "10", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Poisson pânée", avisResto1,
-                45.783876, 4.875049, 3.5, 7, "Restaurant universaire bon marché. \n",41,true));
+                45.783876, 4.875049, 3.5, 3, "Restaurant universaire bon marché. \n",41,true));
 
         restos.add(new Resto("Olivier", "Olivier.jpg", true, "Avenue des Arts", Resto.Paiement.INSA,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "9", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Millefeuille", avisResto1,
-                45.784249, 4.874854, 3.5, 7, "Restaurant universaire bon marché. \n",41,true));
+                45.784249, 4.874854, 3.5, 4, "Restaurant universaire bon marché. \n",41,true));
         restos.add(new Resto("Jussieu", "Jussieu.jpg", false, "Avenue Albert Einstein", Resto.Paiement.IZLY,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "8", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Glace à la fraise et au chocolat", avisResto1,
-                45.780981, 4.876224, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le RU.",41,true));
+                45.780981, 4.876224, 3.5, 5, "Restaurant universaire bon marché. \n Appelé affectueuse le RU.",41,true));
 
         restos.add(new Resto("Snack du Campus", "Tacos.jpg", true, "Rue de la Doua", Resto.Paiement.CB,
-                "06 25 17 86 71", "€€", "4", "11h00 - 14h, 18h00 - 23h00",
+                "06 25 17 86 71", "€€", "7", "11h00 - 14h, 18h00 - 23h00",
                 Categorie.TACOS, "Universitaire", "Tacos", avisResto1,
-                45.777149, 4.874541, 3.5, 7, "Restaurant de tacos très bon !",41,true));
+                45.777149, 4.874541, 3.5, 6, "Restaurant de tacos très bon !",41,true));
 
         restos.add(new Resto("Pizzeria Pinocchio", "PizzeriaPinocchio.jpg", true, "Boulevard du 11 Novembre 1918", Resto.Paiement.CB,
-                "06 69 69 69 69", "€€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€€", "6", "11h30 -14h",
                 Categorie.PIZZERIA, "Universitaire", "Pizza au poulpe", avisResto1,
                 45.779272, 4.874409, 3.5, 7, "Bonnes pizzas.",41,true));
 
         restos.add(new Resto("NoGlu", "NoGlu.jpg", false, "Avenue Jean Capelle", Resto.Paiement.CB,
-                "06 69 69 69 69", "€€€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€€€", "5", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Soupe de vermicelle", avisResto1,
-                45.778888, 4.874545, 3.5, 7, "Restaurant universaire bon marché. \n Appelé affectueuse le noeud.",41,true));
+                45.778888, 4.874545, 3.5, 8, "Restaurant universaire bon marché. \n Appelé affectueuse le noeud.",41,true));
 
         restos.add(new Resto("Restaurant U", "RestaurantU.jpg", true, "Avenue Jean Capelle", Resto.Paiement.IZLY,
                 "06 69 69 69 69", "€", "4", "11h30 -14h",
                 Categorie.UNIVERSITAIRE, "Universitaire", "Sandwich", avisResto1,
-                45.781110, 4.873504, 3.5, 7, "Restaurant universitaire très très bon marché",41,true));
+                45.781110, 4.873504, 3.5, 9, "Restaurant universitaire très très bon marché",41,true));
 
         restos.add(new Resto("Les mille et une nuits", "MilleEtUneNuits.jpg", false, "Avenue Jean Capelle", Resto.Paiement.CB,
-                "06 69 69 69 69", "€€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€€", "3", "11h30 -14h",
                 Categorie.ORIENTAL, "Oriental", "Miel et chèvre", avisResto1,
-                45.781206, 4.873508, 3.5, 7, "C'est un restaurant oriental.",41,true));
+                45.781206, 4.873508, 3.5, 10, "C'est un restaurant oriental.",41,true));
 
         restos.add(new Resto("Indiana", "Indiana.jpg", true, "Avenue Jean Capelle", Resto.Paiement.CB,
-                "06 69 69 69 69", "€€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€€", "2", "11h30 -14h",
                 Categorie.INDIEN, "Indien", "Spécial", avisResto1,
-                45.781220, 4.873504, 3.5, 7, "Bonne cuisine indienne.",41,true));
+                45.781220, 4.873504, 3.5, 11, "Bonne cuisine indienne.",41,true));
 
         restos.add(new Resto("Sandwich'In", "SandwichIn.jpg", true, "Avenue Jean Capelle", Resto.Paiement.CB,
-                "06 69 69 69 69", "€", "4", "11h30 -14h",
+                "06 69 69 69 69", "€", "1", "11h30 -14h",
                 Categorie.SANDWICH, "Sandwicherie", "Sandwich au poulet", avisResto1,
-                45.781250, 4.873504, 3.5, 7, "Sandwicherie !",41,true));
+                45.781250, 4.873504, 3.5, 12, "Sandwicherie !",41,true));
 
         return restos;
     }
