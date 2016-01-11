@@ -1,7 +1,7 @@
 package com.kiwi.kiwi.model;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.kiwi.kiwi.MainActivity;
 import com.kiwi.kiwi.R;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -52,12 +54,12 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
         else
             viewHolder.ouvert.setText(R.string.resto_ferme);*/
 
-        viewHolder.photo.setImageDrawable(new ColorDrawable());
+        //viewHolder.photo.setImageDrawable(new ColorDrawable(resto.getPhoto()));
 
         viewHolder.prixResto.setText(resto.getNiveauTarif());
 
-        viewHolder.tempsChemin.setText("1O" + " " + "min");
-        viewHolder.tempsRepas.setText(resto.getTempsAttente() + " min");
+        viewHolder.tempsChemin.setText("1O"+" "+"min");
+        viewHolder.tempsRepas.setText(resto.getTempsAttente()+" min");
 
         return convertView;
     }

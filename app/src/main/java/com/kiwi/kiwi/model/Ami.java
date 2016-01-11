@@ -21,20 +21,6 @@ public class Ami {
         this.restaurantActuel = resto;
     }
 
-    public Ami(String nom, String prenom, String photo, int tempsAttente, int tempsChemin) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.photo = photo;
-        this.tempsAttente = tempsAttente;
-        this.tempsChemin = tempsChemin;
-    }
-
-    public Ami(String nom, String prenom, String photo) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.photo = photo;
-    }
-
     public String getNom() {
         return nom;
     }

@@ -43,10 +43,10 @@ public class AmiAdapter extends ArrayAdapter<Ami> {
         Ami ami = getItem(position);
 
         //il ne reste plus qu'à remplir notre vue
-        viewHolder.nomPrenom.setText(ami.getNom() + " " + ami.getPrenom());
-        viewHolder.mangeA.setText("Mange à " + ami.getRestaurantActuel().getNom());
-        viewHolder.tempsChemin.setText(ami.getTempsChemin() + " min");
-        viewHolder.tempsAttente.setText(ami.getTempsAttente() + " min");
+        viewHolder.nomPrenom.setText(ami.getNom()+ " " + ami.getPrenom());
+        viewHolder.mangeA.setText("Mange à "+ami.getRestaurantActuel().getNom());
+        viewHolder.tempsChemin.setText(ami.getTempsChemin()+" min");
+        viewHolder.tempsAttente.setText(ami.getTempsAttente()+" min");
 
         return convertView;
     }

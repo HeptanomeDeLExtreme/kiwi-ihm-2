@@ -10,7 +10,4 @@
     <!-- Boutons -->
     <dimen name="buttonHeight">50dp</dimen>
     <dimen name="buttonWidth">500dp</dimen>
-
-    <!-- Textes -->
-    <dimen name="textSizeMenuHeader">20dp</dimen>
 </resources>

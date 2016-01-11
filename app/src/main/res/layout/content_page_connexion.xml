@@ -13,62 +13,62 @@
     tools:showIn="@layout/activity_page_connexion">
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/labelPseudo"
+        android:id="@+id/textView2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:text="@string/labelPseudo" />
+        android:layout_marginTop="60dp" />
 
     <EditText
-        android:id="@+id/idTextPseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/idTextPseudo"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:width="300dp"
-        android:ems="10"
         android:hint="@string/defaultPseudo"
-        android:inputType="textPersonName" />
+        android:width="300dp" />
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/mdp"
+        android:id="@+id/textView3"
         android:layout_below="@+id/idTextPseudo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:text="@string/mdp" />
+        android:layout_marginTop="48dp" />
 
     <EditText
-        android:id="@+id/idTextMdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/idTextMdp"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
-        android:width="300dp"
-        android:ems="10"
-        android:inputType="textPassword" />
+        android:width="300dp" />
 
     <Button
-        android:id="@+id/boutonRetour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/boutonRetour"
+        android:id="@+id/boutonRetour"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="46dp"
         android:width="100dp"
-        android:onClick="boutonRetourListener"
-        android:text="@string/boutonRetour" />
+        android:onClick="boutonRetourListener"/>
 
     <Button
-        android:id="@+id/boutonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/boutonRetour"
+        android:text="@string/boutonOk"
+        android:id="@+id/boutonOk"
         android:width="100dp"
-        android:onClick="boutonOkListener"
-        android:text="@string/boutonOk" />
+        android:layout_alignTop="@+id/boutonRetour"
+        android:layout_alignParentEnd="true"
+        android:onClick="boutonOkListener"/>
 </RelativeLayout>

@@ -1,66 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:padding="10dp"
+    >
 
 
     <TextView
-        android:id="@+id/nomPrenom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="nomPrenom"
+        android:id="@+id/nomPrenom"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="26dp"
         android:layout_toEndOf="@+id/photoAmi"
-        android:text="nomPrenom" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="26dp" />
 
     <ImageView
-        android:id="@+id/photoAmi"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/nomPrenom" />
+        android:id="@+id/photoAmi"
+        android:layout_alignTop="@+id/nomPrenom"
+        android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/mangeA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="mange à : KFC"
+        android:id="@+id/mangeA"
         android:layout_alignBottom="@+id/photoAmi"
-        android:layout_alignStart="@+id/nomPrenom"
-        android:text="mange à : KFC" />
+        android:layout_alignStart="@+id/nomPrenom" />
 
     <ImageView
-        android:id="@+id/imageView4"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:id="@+id/imageView4"
         android:layout_alignTop="@+id/nomPrenom"
-        android:layout_marginStart="43dp"
         android:layout_toEndOf="@+id/mangeA"
+        android:layout_marginStart="43dp"
         android:background="@drawable/hommemarchant" />
 
     <ImageView
-        android:id="@+id/imageView5"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignStart="@+id/imageView4"
+        android:id="@+id/imageView5"
         android:layout_below="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
         android:background="@drawable/couverts" />
 
     <TextView
-        android:id="@+id/tempsChemiAmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView4"
+        android:text="1 min"
+        android:id="@+id/tempsChemiAmi"
         android:layout_marginStart="25dp"
-        android:layout_toEndOf="@+id/imageView4"
-        android:text="1 min" />
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_toEndOf="@+id/imageView4" />
 
     <TextView
-        android:id="@+id/tempsAttenteAmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="1 min"
+        android:id="@+id/tempsAttenteAmi"
         android:layout_alignBottom="@+id/imageView5"
-        android:layout_alignStart="@+id/tempsChemiAmi"
-        android:text="1 min" />
+        android:layout_alignStart="@+id/tempsChemiAmi" />
 </RelativeLayout>
