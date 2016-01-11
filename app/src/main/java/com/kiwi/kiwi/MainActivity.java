@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity
     public static ArrayList<Resto> listeRestos;
     public static ArrayList<Resto> listeRestosVisibles;
     public static Filtre filtre;
+    public static boolean isConnected = false;
 
     public static List<Ami> listeAmis;
 
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
         NavigationView navigationViewRight = (NavigationView) findViewById(R.id.nav_view_right);
         navigationViewRight.setNavigationItemSelectedListener(this);
 
@@ -82,6 +85,15 @@ public class MainActivity extends AppCompatActivity
         //transaction.replace(R.id.container_view, compteFragmentINSA);
         transaction.commit();
 
+        /* if(isConnected) {
+            Log.i("DEBUG BANANE CODANTE", "La personne est connectée !");
+            findViewById(R.id.connected).setVisibility(View.VISIBLE);
+            findViewById(R.id.notConnected).setVisibility(View.INVISIBLE);
+        } else {
+            Log.i("DEBUG BANANE CODANTE", "La personne n'est pas connectée !");
+            findViewById(R.id.connected).setVisibility(View.INVISIBLE);
+            findViewById(R.id.notConnected).setVisibility(View.VISIBLE);
+        } */
     }
 
     private List<Ami> genererAmis() {
@@ -92,9 +104,9 @@ public class MainActivity extends AppCompatActivity
         list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg",5,4,restos.get(2)));
         list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg",3,1,restos.get(1)));
         list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg",5,4,restos.get(2)));
-        list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg",1,1,restos.get(0)));
-        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg",3,1,restos.get(1)));
-        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg",5,4,restos.get(2)));
+        list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg", 1, 1, restos.get(0)));
+        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg", 3, 1, restos.get(1)));
+        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg", 5, 4, restos.get(2)));
         return list;
     }
 
@@ -155,6 +167,7 @@ public class MainActivity extends AppCompatActivity
             Intent menuIntent = new Intent(this, FormulaireInscription.class);
             startActivity(menuIntent);
         } */ else if (id == R.id.nav_deconnexion) {
+            isConnected = false;
             Intent menuIntent = new Intent(this, PageInscription.class);
             startActivity(menuIntent);
         }else if (id == R.id.nav_prix) {
@@ -172,6 +185,7 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 
