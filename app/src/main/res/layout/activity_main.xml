@@ -23,4 +23,13 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:choiceMode="singleChoice"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/activity_main_drawer_right" />
+
 </android.support.v4.widget.DrawerLayout>

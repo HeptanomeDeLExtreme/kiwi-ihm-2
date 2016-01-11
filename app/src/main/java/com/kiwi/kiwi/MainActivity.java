@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        NavigationView navigationViewRight = (NavigationView) findViewById(R.id.nav_view_right);
+        navigationViewRight.setNavigationItemSelectedListener(this);
 
         mFragmentManager = getSupportFragmentManager();
 
@@ -128,6 +130,15 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.container_view, profilFragment);
         } else if (id == R.id.nav_compte) {
             //TODO
+        }else if (id == R.id.nav_prix) {
+            Log.i("DEBUG","Prix");
+            mainFragment.triPrix();
+        }else if (id == R.id.nav_attente) {
+            Log.i("DEBUG","attente");
+            mainFragment.triAttente();
+        }else if (id == R.id.nav_aller) {
+            Log.i("DEBUG","aller");
+            mainFragment.triAller();
         }
 
         transaction.commit();
