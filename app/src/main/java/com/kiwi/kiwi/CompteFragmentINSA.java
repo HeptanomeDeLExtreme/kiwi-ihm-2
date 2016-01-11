@@ -47,12 +47,18 @@ public class CompteFragmentINSA extends Fragment {
         TextView montant = (TextView) getView().findViewById(R.id.montantINSA);
         TextView date = (TextView) getView().findViewById(R.id.dateINSA);
         Button con = (Button) getView().findViewById(R.id.connexionINSA);
+        TextView loginText = (TextView) getView().findViewById(R.id.loginTextINSA);
+        TextView mdpText = (TextView) getView().findViewById(R.id.mdpTextINSA);
+        EditText mdp = (EditText) getView().findViewById(R.id.mdpINSA);
 
         email.setVisibility(View.INVISIBLE);
         montant.setVisibility(View.INVISIBLE);
         date.setVisibility(View.INVISIBLE);
         con.setVisibility(View.INVISIBLE);
         info.setVisibility(View.VISIBLE);
+        loginText.setVisibility(View.INVISIBLE);
+        mdpText.setVisibility(View.INVISIBLE);
+        mdp.setVisibility(View.INVISIBLE);
 
         ImageView b = (ImageView) view.findViewById(R.id.buttonEditIZLY);
 
@@ -63,6 +69,9 @@ public class CompteFragmentINSA extends Fragment {
                 TextView montant = (TextView) getView().findViewById(R.id.montantINSA);
                 TextView date = (TextView) getView().findViewById(R.id.dateINSA);
                 Button con = (Button) getView().findViewById(R.id.connexionINSA);
+                TextView loginText = (TextView) getView().findViewById(R.id.loginTextINSA);
+                TextView mdpText = (TextView) getView().findViewById(R.id.mdpTextINSA);
+                EditText mdp = (EditText) getView().findViewById(R.id.mdpINSA);
 
                 TextView info = (TextView) getView().findViewById(R.id.infoINSA);
 
@@ -72,15 +81,22 @@ public class CompteFragmentINSA extends Fragment {
                     date.setVisibility(View.INVISIBLE);
                     con.setVisibility(View.INVISIBLE);
                     info.setVisibility(View.VISIBLE);
+                    loginText.setVisibility(View.INVISIBLE);
+                    mdpText.setVisibility(View.INVISIBLE);
+                    mdp.setVisibility(View.INVISIBLE);
                 } else {
                     email.setVisibility(View.VISIBLE);
                     montant.setVisibility(View.VISIBLE);
                     date.setVisibility(View.VISIBLE);
                     con.setVisibility(View.VISIBLE);
                     info.setVisibility(View.INVISIBLE);
+                    loginText.setVisibility(View.VISIBLE);
+                    mdpText.setVisibility(View.VISIBLE);
+                    mdp.setVisibility(View.VISIBLE);
                     email.setText("");
                     montant.setText("");
                     date.setText("");
+                    mdp.setText("");
                 }
                 isVisible = !isVisible;
             }

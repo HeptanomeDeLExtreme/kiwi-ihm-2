@@ -21,7 +21,7 @@
         android:id="@+id/emailINSA"
         android:layout_below="@+id/buttonEditIZLY"
         android:layout_centerHorizontal="true"
-        android:text="grosdidier@insa-lyon.fr" />
+        android:text="login" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,8 +29,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Solde Restant : 50,40€"
         android:id="@+id/montantINSA"
-        android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/dateINSA" />
+        android:layout_marginTop="80dp"
+        android:layout_below="@+id/mdpTextINSA"
+        android:layout_alignEnd="@+id/emailINSA" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,12 +61,40 @@
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/infoINSA"
         android:layout_below="@+id/montantINSA"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Login :"
+        android:id="@+id/loginTextINSA"
+        android:layout_above="@+id/emailINSA"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mot de passe :"
+        android:id="@+id/mdpTextINSA"
+        android:layout_below="@+id/emailINSA"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/mdpINSA"
+        android:layout_below="@+id/mdpTextINSA"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -156,7 +156,7 @@ public class PageResto extends AppCompatActivity {
 
             if (resto.getMesAmisQuiSontDansCeResto().size() == 0){
                 TextView pasDamis = new TextView(this);
-                pasDamis.setText("Personne");
+                pasDamis.setText("0 ami");
                 pasDamis.setId(R.id.amis + 1);
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                 params.addRule(RelativeLayout.BELOW, R.id.amis);
