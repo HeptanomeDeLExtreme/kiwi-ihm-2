@@ -20,6 +20,8 @@ import android.widget.ListView;
 import com.kiwi.kiwi.model.Resto;
 import com.kiwi.kiwi.model.RestoAdapter;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /* Bonfante,
@@ -61,6 +63,7 @@ public class ListFragment extends Fragment {
 
     public static final String tag = "liste_frag";
     final String EXTRA_RESTO = "resto";
+    public ListAdapter adapter;
 
     public ListFragment() {
         // Required empty public constructor
@@ -79,7 +82,7 @@ public class ListFragment extends Fragment {
 
         List<Resto> restos = MainActivity.listeRestosVisibles;
 
-        ListAdapter adapter = new RestoAdapter(getContext(), restos);
+        adapter = new RestoAdapter(getContext(), restos);
         mListView.setAdapter(adapter);
 
 
@@ -96,6 +99,8 @@ public class ListFragment extends Fragment {
 
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -103,5 +108,58 @@ public class ListFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
 
+    public void triPrix(){
+        Collections.sort(MainActivity.listeRestosVisibles, new Comparator<Resto>() {
+            @Override
+            public int compare(Resto lhs, Resto rhs) {
+                int prixResto1 = compteOccurence(lhs.getNiveauTarif(), '€');
+                int prixResto2 = compteOccurence(rhs.getNiveauTarif(), '€');
+                return prixResto1 - prixResto2;
+            }
+        });
+        updateList();
+    }
+
+    public void triAttente(){
+        Collections.sort(MainActivity.listeRestosVisibles, new Comparator<Resto>() {
+            @Override
+            public int compare(Resto lhs, Resto rhs) {
+                int prixResto1 = Integer.parseInt(lhs.getTempsAttente());
+                int prixResto2 = Integer.parseInt(rhs.getTempsAttente());
+                return prixResto1 - prixResto2;
+            }
+        });
+        updateList();
+    }
+
+    public void triAller(){
+        Collections.sort(MainActivity.listeRestosVisibles, new Comparator<Resto>() {
+            @Override
+            public int compare(Resto lhs, Resto rhs) {
+                int prixResto1 = lhs.getTempsUtilisateurRestaurant();
+                int prixResto2 = rhs.getTempsUtilisateurRestaurant();
+                return prixResto1 - prixResto2;
+            }
+        });
+        updateList();
+    }
+
+    private void updateList(){
+        List<Resto> restos = MainActivity.listeRestosVisibles;
+        ListView mListView = (ListView) getView().findViewById(R.id.listView);
+        adapter = new RestoAdapter(getContext(), restos);
+        mListView.setAdapter(adapter);
+        Log.i("DEBUG", "update");
+    }
+
+    private int compteOccurence(String s, char c){
+        int toRet = 0;
+        for(int i =0;i<s.length();i++){
+            if(s.charAt(i)==c){
+                toRet++;
+            }
+        }
+        return toRet;
+    }
 
 }

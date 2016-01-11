@@ -56,7 +56,7 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
 
         viewHolder.prixResto.setText(resto.getNiveauTarif());
 
-        viewHolder.tempsChemin.setText("1O" + " " + "min");
+        viewHolder.tempsChemin.setText(resto.getTempsUtilisateurRestaurant() + " min");
         viewHolder.tempsRepas.setText(resto.getTempsAttente() + " min");
 
         return convertView;
