@@ -16,12 +16,9 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.kiwi.kiwi.model.Ami;
 import com.kiwi.kiwi.model.AmiAdapter;
-import com.kiwi.kiwi.model.Resto;
-import com.kiwi.kiwi.model.RestoAdapter;
 
 import java.util.List;
 

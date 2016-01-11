@@ -5,6 +5,7 @@
  */
 package com.kiwi.kiwi;
 
+import android.content.Intent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -66,6 +67,7 @@ public class ListFragment extends android.app.ListFragment {
 public class ListFragment extends Fragment {
 
     public static final String tag = "liste_frag";
+    final String EXTRA_RESTO = "resto";
     public ListAdapter adapter;
 
     public ListFragment() {
@@ -80,22 +82,22 @@ public class ListFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.i("DEBUG",view+"trui");
-        ListView mListView = (ListView) view.findViewById(R.id.listView);
+        Log.i("DEBUG", view + "trui");
+        final ListView mListView = (ListView) view.findViewById(R.id.listView);
 
         List<Resto> restos = MainActivity.listeRestosVisibles;
 
-        adapter = new RestoAdapter(getContext(), restos);
+        ListAdapter adapter = new RestoAdapter(getContext(), restos);
         mListView.setAdapter(adapter);
 
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long id) {
-                List<Resto> restos = MainActivity.listeRestosVisibles;
-                Resto restoChoisi = restos.get(position);
-                Log.i("DEBUG", "Appui sur le " + position + "ème item : " + restoChoisi.getNom());
+            public void onItemClick(AdapterView<?> adapter, View v, int position, long arg3) {
+                Intent intent = new Intent(getActivity(), PageResto.class);
+                Resto restoSelect = (Resto) (mListView.getItemAtPosition(position));
+                intent.putExtra(EXTRA_RESTO, restoSelect.getNom());
+                startActivity(intent);
             }
         });
 
@@ -162,5 +164,6 @@ public class ListFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
+
 
 }

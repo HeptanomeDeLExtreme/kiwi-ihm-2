@@ -2,10 +2,7 @@ package com.kiwi.kiwi;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -33,12 +30,12 @@ public class PageConnexion extends AppCompatActivity {
         EditText mdpEntre = (EditText) findViewById(R.id.idTextMdp);
         Log.i("debug", "Le pseudo entré par l'utilisateur est : " + pseudoEntre.getText() + " !");
         Log.i("debug", "Le mot de passe entré par l'utilisateur est : " + mdpEntre.getText() + " !");
-        if( (PSEUDO.equals(pseudoEntre.getText().toString())) && (MDP.equals(mdpEntre.getText().toString())) ) {
+        if ((PSEUDO.equals(pseudoEntre.getText().toString())) && (MDP.equals(mdpEntre.getText().toString()))) {
             Log.i("debug", "Identifiants et mot de passe corrects !");
             MainActivity.isConnected = true;
             Intent menuIntent = new Intent(this, MainActivity.class);
             startActivity(menuIntent);
-            
+
         } else {
             Log.i("debug", "Identifiants et mot de passe incorrects !");
             Toast.makeText(getApplicationContext(), getString(R.string.defaultIDIncorrects), Toast.LENGTH_SHORT).show();
