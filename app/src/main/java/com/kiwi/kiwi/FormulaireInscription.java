@@ -23,10 +23,9 @@ public class FormulaireInscription extends AppCompatActivity {
 
     public void boutonOkListener(View view) {
         Log.i("debug", "Appui sur le bouton OK !");
+        MainActivity.isConnected = true;
         Intent menuIntent = new Intent(this, MainActivity.class);
         startActivity(menuIntent);
-        /*  TODO : Comment faire pour accéder directement à la page menu sans passer par la
-        liste des restaurants ? */
     }
 
 }
