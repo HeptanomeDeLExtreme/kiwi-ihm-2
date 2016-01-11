@@ -6,6 +6,7 @@ package com.kiwi.kiwi;
  * @author Ealhad
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -18,6 +19,7 @@ import android.widget.ListView;
 
 import com.kiwi.kiwi.model.Ami;
 import com.kiwi.kiwi.model.AmiAdapter;
+import com.kiwi.kiwi.model.Resto;
 
 import java.util.List;
 
@@ -53,6 +55,13 @@ public class AmiFragment extends Fragment {
                 List<Ami> amis = MainActivity.listeAmis;
                 Ami amiChoisi = amis.get(position);
                 Log.i("DEBUG", "Appui sur le " + position + "ème item : " + amiChoisi.getNom());
+
+                //Passer sur la vue détaillée du resto où se trouve l'ami
+                Intent intent = new Intent(getActivity(), PageResto.class);
+                Resto restoSelect = amiChoisi.getRestaurantActuel();
+                intent.putExtra("resto", restoSelect.getNom());
+                startActivity(intent);
+
             }
         });
 
