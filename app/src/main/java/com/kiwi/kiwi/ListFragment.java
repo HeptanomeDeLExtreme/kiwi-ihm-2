@@ -9,24 +9,17 @@ import android.content.Intent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kiwi.kiwi.model.Resto;
 import com.kiwi.kiwi.model.RestoAdapter;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /* Bonfante,
@@ -68,7 +61,6 @@ public class ListFragment extends Fragment {
 
     public static final String tag = "liste_frag";
     final String EXTRA_RESTO = "resto";
-    public ListAdapter adapter;
 
     public ListFragment() {
         // Required empty public constructor
@@ -102,60 +94,6 @@ public class ListFragment extends Fragment {
         });
 
 
-    }
-
-    private int compteOccurence(String s, char c){
-        int toRet = 0;
-        for(int i =0;i<s.length();i++){
-            if(s.charAt(i)==c){
-                toRet++;
-            }
-        }
-        return toRet;
-    }
-
-    public void triPrix(){
-        Collections.sort(MainActivity.listeRestosVisibles, new Comparator<Resto>() {
-            @Override
-            public int compare(Resto lhs, Resto rhs) {
-                int prixResto1 = compteOccurence(lhs.getNiveauTarif(), '€');
-                int prixResto2 = compteOccurence(rhs.getNiveauTarif(), '€');
-                return prixResto1 - prixResto2;
-            }
-        });
-        updateList();
-    }
-
-    public void triAttente(){
-        Collections.sort(MainActivity.listeRestosVisibles, new Comparator<Resto>() {
-            @Override
-            public int compare(Resto lhs, Resto rhs) {
-                int prixResto1 = Integer.parseInt(lhs.getTempsAttente());
-                int prixResto2 = Integer.parseInt(rhs.getTempsAttente());
-                return prixResto1 - prixResto2;
-            }
-        });
-        updateList();
-    }
-
-    public void triAller(){
-        Collections.sort(MainActivity.listeRestosVisibles, new Comparator<Resto>() {
-            @Override
-            public int compare(Resto lhs, Resto rhs) {
-                int prixResto1 = compteOccurence(lhs.getNiveauTarif(), '€');
-                int prixResto2 = compteOccurence(rhs.getNiveauTarif(), '€');
-                return prixResto1 - prixResto2;
-            }
-        });
-        updateList();
-    }
-
-    private void updateList(){
-        List<Resto> restos = MainActivity.listeRestosVisibles;
-        ListView mListView = (ListView) getView().findViewById(R.id.listView);
-        adapter = new RestoAdapter(getContext(), restos);
-        mListView.setAdapter(adapter);
-        Log.i("DEBUG", "update");
     }
 
     @Override

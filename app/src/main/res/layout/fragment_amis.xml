@@ -8,16 +8,6 @@
         android:id="@+id/listAmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="55dp" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Synchronisez avec Facebook !"
-        android:id="@+id/boutonSynchro"
-        android:layout_gravity="center_horizontal|bottom"
-        android:background="#3d52b9"
-        android:textColor="#ffffff" />
+        android:layout_marginTop="55dp" />
 
 </FrameLayout>

@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -57,16 +56,7 @@ public class AmiFragment extends Fragment {
             }
         });
 
-        mListView.setVisibility(View.INVISIBLE);
 
-        Button synchro = (Button) view.findViewById(R.id.boutonSynchro);
-        synchro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ListView mListView = (ListView) getView().findViewById(R.id.listAmi);
-                mListView.setVisibility(View.VISIBLE);
-            }
-        });
     }
 
     @Override
