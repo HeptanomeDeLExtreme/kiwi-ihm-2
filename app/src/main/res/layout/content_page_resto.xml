@@ -19,7 +19,7 @@
 
     <TextView
         android:layout_width="170dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/nom"
@@ -31,7 +31,7 @@
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:text="Y Aller"
         android:id="@+id/aller"
         android:textSize="10dp"
@@ -40,8 +40,8 @@
 
     <Button
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
         android:text="Y Aller et Partager"
         android:id="@+id/allerPartager"
         android:textSize="10dp"
