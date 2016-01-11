@@ -19,29 +19,10 @@
     <item android:title="Comptes">
         <menu>
             <item
-                android:id="@+id/nav_compteINSA"
+                android:id="@+id/nav_compte"
                 android:icon="@android:drawable/ic_menu_share"
                 android:title="INSA " />
-            <item
-                android:id="@+id/nav_compteIZLY"
-                android:icon="@android:drawable/ic_menu_share"
-                android:title="IZLY " />
         </menu>
     </item>
-
-    <!-- <group android:id="@+id/notConnected">
-        <item
-            android:id="@+id/nav_connexion"
-            android:title="Connexion" />
-        <item
-            android:id="@+id/nav_creerCompte"
-            android:title="Créer un compte" />
-    </group> -->
-
-    <group android:id="@+id/connected">
-        <item
-            android:id="@+id/nav_deconnexion"
-            android:title="Déconnexion" />
-    </group>
 
 </menu>

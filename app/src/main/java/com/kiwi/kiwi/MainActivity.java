@@ -6,7 +6,6 @@
 
 package com.kiwi.kiwi;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -28,8 +27,6 @@ import com.kiwi.kiwi.model.Filtre;
 import com.kiwi.kiwi.model.Resto;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import com.google.android.gms.maps.model.LatLng;
 
@@ -40,7 +37,6 @@ public class MainActivity extends AppCompatActivity
     public static ArrayList<Resto> listeRestos;
     public static ArrayList<Resto> listeRestosVisibles;
     public static Filtre filtre;
-    public static boolean isConnected = false;
 
     public static List<Ami> listeAmis;
 
@@ -48,8 +44,6 @@ public class MainActivity extends AppCompatActivity
     private MainFragment mainFragment;
     private AmiFragment amisFragment;
     private ProfilFragment profilFragment;
-    private CompteFragmentINSA compteFragmentINSA;
-    private CompteFragmentIZLY compteFragmentIZLY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,10 +61,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-        NavigationView navigationViewRight = (NavigationView) findViewById(R.id.nav_view_right);
-        navigationViewRight.setNavigationItemSelectedListener(this);
-
         mFragmentManager = getSupportFragmentManager();
 
         mainFragment = new MainFragment();
@@ -81,30 +71,13 @@ public class MainActivity extends AppCompatActivity
         listeAmis = genererAmis();
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        compteFragmentINSA = new CompteFragmentINSA();
         transaction.replace(R.id.container_view, mainFragment);
-        //transaction.replace(R.id.container_view, compteFragmentINSA);
         transaction.commit();
-
-        /* if(isConnected) {
-            Log.i("DEBUG BANANE CODANTE", "La personne est connectée !");
-            findViewById(R.id.connected).setVisibility(View.VISIBLE);
-            findViewById(R.id.notConnected).setVisibility(View.INVISIBLE);
-        } else {
-            Log.i("DEBUG BANANE CODANTE", "La personne n'est pas connectée !");
-            findViewById(R.id.connected).setVisibility(View.INVISIBLE);
-            findViewById(R.id.notConnected).setVisibility(View.VISIBLE);
-        } */
     }
 
     private List<Ami> genererAmis() {
         List<Resto> restos = MainActivity.listeRestos;
-        List<Ami> list = new ArrayList<Ami>();
-        list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg",1,1,restos.get(0)));
-        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg",3,1,restos.get(1)));
-        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg",5,4,restos.get(2)));
-        list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg",3,1,restos.get(1)));
-        list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg",5,4,restos.get(2)));
+        List<Ami> list = new ArrayList<>();
         list.add(new Ami("Bonfante", "Nicolas", "Bonfante.jpg", 1, 1, restos.get(0)));
         list.add(new Ami("Nadisic", "Nicolas", "Nadisic.jpg", 3, 1, restos.get(1)));
         list.add(new Ami("Bonfante", "Ophelie", "Delsaux.jpg", 5, 4, restos.get(2)));
@@ -153,31 +126,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_profil) {
             if (profilFragment == null) profilFragment = new ProfilFragment();
             transaction.replace(R.id.container_view, profilFragment);
-        } else if (id == R.id.nav_compteINSA) {
-            if (compteFragmentINSA == null) compteFragmentINSA = new CompteFragmentINSA();
-            transaction.replace(R.id.container_view, compteFragmentINSA);
-        } else if (id == R.id.nav_compteIZLY) {
-            if (compteFragmentIZLY == null) compteFragmentIZLY = new CompteFragmentIZLY();
-            transaction.replace(R.id.container_view, compteFragmentIZLY);
-        } /*else if (id == R.id.nav_connexion) {
-            Intent menuIntent = new Intent(this, PageConnexion.class);
-            startActivity(menuIntent);
-        } else if (id == R.id.nav_creerCompte) {
-            Intent menuIntent = new Intent(this, FormulaireInscription.class);
-            startActivity(menuIntent);
-        } */ else if (id == R.id.nav_deconnexion) {
-            isConnected = false;
-            Intent menuIntent = new Intent(this, PageInscription.class);
-            startActivity(menuIntent);
-        }else if (id == R.id.nav_prix) {
-            Log.i("DEBUG","Prix");
-            mainFragment.triPrix();
-        }else if (id == R.id.nav_attente) {
-            Log.i("DEBUG","attente");
-            mainFragment.triAttente();
-        }else if (id == R.id.nav_aller) {
-            Log.i("DEBUG","aller");
-            mainFragment.triAller();
+        } else if (id == R.id.nav_compte) {
+            //TODO
         }
 
         transaction.commit();

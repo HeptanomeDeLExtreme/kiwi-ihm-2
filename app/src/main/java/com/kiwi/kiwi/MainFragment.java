@@ -7,10 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -23,7 +20,6 @@ import java.util.List;
 public class MainFragment extends Fragment {
 
     public static final String tag = "main_frag";
-    public ListFragment liste;
 
     public MainFragment() {
         // Required empty public constructor
@@ -40,7 +36,7 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-        liste = (ListFragment) getChildFragmentManager().findFragmentByTag(ListFragment.tag);
+        ListFragment liste = (ListFragment) getChildFragmentManager().findFragmentByTag(ListFragment.tag);
         CarteFragment carte = (CarteFragment) getChildFragmentManager().findFragmentByTag(CarteFragment.tag);
         TriFragment tri = (TriFragment) getChildFragmentManager().findFragmentByTag(TriFragment.tag);
 
@@ -59,18 +55,6 @@ public class MainFragment extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
 
         return view;
-    }
-
-    public void triPrix(){
-        liste.triPrix();
-    }
-
-    public void triAttente(){
-        liste.triAttente();
-    }
-
-    public void triAller(){
-        liste.triAller();
     }
 
     /**
