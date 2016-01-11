@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/buttonEditIZLY"
+        android:background="@drawable/note48"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="89dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailINSA"
+        android:layout_below="@+id/buttonEditIZLY"
+        android:layout_centerHorizontal="true"
+        android:text="grosdidier@insa-lyon.fr" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Solde Restant : 50,40€"
+        android:id="@+id/montantINSA"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/dateINSA" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Expiration : 19/01/2016"
+        android:id="@+id/dateINSA"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/montantINSA"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView6"
+        android:background="@drawable/logo_insa"
+        android:layout_alignTop="@+id/buttonEditIZLY"
+        android:layout_toStartOf="@+id/emailINSA" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connexion !"
+        android:id="@+id/connexionINSA"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/infoINSA"
+        android:layout_below="@+id/montantINSA"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
