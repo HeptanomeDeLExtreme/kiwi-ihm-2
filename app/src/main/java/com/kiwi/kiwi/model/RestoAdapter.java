@@ -52,7 +52,6 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
         else
             viewHolder.ouvert.setText(R.string.resto_ferme);*/
 
-        //TODO icone insa ou izly
         viewHolder.photo.setImageResource(getContext().getResources().getIdentifier("drawable/" + resto.getCategorie().getIcone(), null, getContext().getPackageName()));
 
 
