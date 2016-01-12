@@ -262,7 +262,7 @@ public class PageResto extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    Avis nouvelAvis = new Avis((int) note.getRating(), avisUtilisateur.getText().toString(), new Ami("Dog", "Snoop", "photoutilisateur"));
+                    Avis nouvelAvis = new Avis((int) note.getRating(), avisUtilisateur.getText().toString(), new Ami("Wayne", "Bruce", "profil"));
                     resto.addAvis(nouvelAvis);
                     Intent intent = getIntent();
                     intent.putExtra(EXTRA_RESTO, resto.getNom());
