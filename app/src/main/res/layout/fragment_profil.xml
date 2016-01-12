@@ -181,7 +181,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/imageProfilUser"
-            android:background="@drawable/user43"
+            android:background="@drawable/profil"
             android:layout_below="@+id/textView6"
             android:layout_centerHorizontal="true" />
 

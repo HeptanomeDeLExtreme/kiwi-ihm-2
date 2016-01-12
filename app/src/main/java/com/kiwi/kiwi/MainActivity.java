@@ -202,9 +202,9 @@ public class MainActivity extends AppCompatActivity
         ArrayList<Resto> restos = new ArrayList<>();
 
         //TODO aucun sens de donner un temps/distance par ami, on peut le récup dans le resto de l'ami
-        Ami ami1 = new Ami("Secret","Mathieu","user43.png",12,13);
-        Ami ami2 = new Ami("Andra","Alexis","user43.png",12,13);
-        Ami ami3 = new Ami("Fuerte","El Rodriguo","user43.png",12,13);
+        Ami ami1 = new Ami("Secret","Mathieu","user43",12,13);
+        Ami ami2 = new Ami("Andra","Alexis","user43",12,13);
+        Ami ami3 = new Ami("Fuerte","El Rodriguo","user43",12,13);
 
 
         List<Avis> avisResto1 = new ArrayList<>();
