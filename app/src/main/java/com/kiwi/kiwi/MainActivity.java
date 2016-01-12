@@ -83,12 +83,30 @@ public class MainActivity extends AppCompatActivity
     private List<Ami> genererAmis() {
         List<Resto> restos = MainActivity.listeRestos;
         List<Ami> list = new ArrayList<>();
-        list.add(new Ami("Bonfante", "Nicolas", "bonfante", 3, 7, restos.get(0)));
-        list.add(new Ami("Nadisic", "Nicolas", "nicolas", 4, 7, restos.get(1)));
-        list.add(new Ami("Delsaux", "Ophelie", "ophelie", 6, 4, restos.get(2)));
-        list.add(new Ami("Chalumeau", "Marion", "marion", 5, 4, restos.get(2)));
-        list.add(new Ami("Delacombe", "Charles", "charles", 10, 4, restos.get(7)));
-        list.add(new Ami("Boscher", "Cédric", "cedric", 8, 4, restos.get(5)));
+
+        Ami ami1 = new Ami("Bonfante", "Nicolas", "bonfante", 3, 7, restos.get(0));
+        restos.get(0).ajouteAmi(ami1);
+        list.add(ami1);
+
+        Ami ami2 = new Ami("Nadisic", "Nicolas", "nicolas", 4, 7, restos.get(1));
+        restos.get(1).ajouteAmi(ami2);
+        list.add(ami2);
+
+        Ami ami3 = new Ami("Delsaux", "Ophelie", "ophelie", 6, 4, restos.get(2));
+        restos.get(2).ajouteAmi(ami3);
+        list.add(ami3);
+
+        Ami ami4 = new Ami("Chalumeau", "Marion", "marion", 5, 4, restos.get(2));
+        restos.get(2).ajouteAmi(ami4);
+        list.add(ami4);
+
+        Ami ami5 = new Ami("Delacombe", "Charles", "charles", 10, 4, restos.get(7));
+        restos.get(7).ajouteAmi(ami5);
+        list.add(ami5);
+
+        Ami ami6 = new Ami("Boscher", "Cédric", "cedric", 8, 4, restos.get(5));
+        restos.get(5).ajouteAmi(ami6);
+        list.add(ami6);
         return list;
     }
 
@@ -162,16 +180,16 @@ public class MainActivity extends AppCompatActivity
         ArrayList<Resto> restos = new ArrayList<>();
 
         //TODO aucun sens de donner un temps/distance par ami, on peut le récup dans le resto de l'ami
-        Ami ami1 = new Ami("Secret","Mathieu","photo.png",12,13);
-        Ami ami2 = new Ami("Andra","Alexis","photo.png",12,13);
-        Ami ami3 = new Ami("Fuerte","El Rodriguo","photo.png",12,13);
+        Ami ami1 = new Ami("Secret","Mathieu","user43.png",12,13);
+        Ami ami2 = new Ami("Andra","Alexis","user43.png",12,13);
+        Ami ami3 = new Ami("Fuerte","El Rodriguo","user43.png",12,13);
 
 
         List<Avis> avisResto1 = new ArrayList<>();
         avisResto1.add(new Avis(0,"Ce n'est pas terrible...",ami1));
 
         List<Avis> avisResto2 = new ArrayList<>();
-        avisResto2.add(new Avis(3,"DADADADADAM ! Un coup de barre ? Un tacos et ça repart ! (Le serveur m'insulte à chaque fois.)",ami2));
+        avisResto2.add(new Avis(3,"DADADADADAM ! Un coup de barre ? Un tacos et ça repart ! (Le serveur m'insulte à chaque fois.)",ami3));
         avisResto2.add(new Avis(5,"Je n'oublierai jamais les soirées que Snoop Dogg et son crew m'ont fait passer au Snack du Campus !!!",ami2));
 
         List<Avis> avisResto3 = new ArrayList<>();
