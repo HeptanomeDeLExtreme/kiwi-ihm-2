@@ -1,12 +1,15 @@
 package com.kiwi.kiwi.model;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.kiwi.kiwi.MainActivity;
@@ -23,6 +26,7 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.resto_item, parent, false);
         }
@@ -38,6 +42,7 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
             viewHolder.tempsRepas = (TextView) convertView.findViewById(R.id.textTempsRepas);
             convertView.setTag(viewHolder);
         }
+
 
         //getItem(position) va récupérer l'item [position] de la List
         Resto resto = getItem(position);
@@ -58,6 +63,11 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
 
         viewHolder.tempsChemin.setText(resto.getTempsUtilisateurRestaurant() + " min");
         viewHolder.tempsRepas.setText(resto.getTempsAttente() + " min");
+
+        if(!resto.getOuvert()) {
+            convertView.setBackgroundColor(Color.rgb(0xFF,0xCC,0xCC));
+        }
+
 
         return convertView;
     }
