@@ -68,6 +68,9 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
         if(!resto.getOuvert()) {
             convertView.setBackgroundColor(Color.rgb(0xFF,0xCC,0xCC));
         }
+        else{
+            convertView.setBackgroundColor(Color.TRANSPARENT);
+        }
 
 
         return convertView;

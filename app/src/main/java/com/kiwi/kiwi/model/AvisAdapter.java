@@ -63,7 +63,7 @@ public class AvisAdapter extends ArrayAdapter<Avis> {
             }
         });
 
-        if(avis.getAuteur().getPrenom() == "Snoop" && avis.getAuteur().getNom() == "Dog"){
+        if(avis.getAuteur().getPrenom() == "Bruce" && avis.getAuteur().getNom() == "Wayne"){
             viewHolder.supprimer.setVisibility(View.VISIBLE);
         }
         else{
