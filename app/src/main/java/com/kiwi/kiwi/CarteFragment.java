@@ -7,6 +7,7 @@ package com.kiwi.kiwi;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,7 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
 
     public static final String tag = "carte_frag";
     private static final LatLng INSA = new LatLng(45.781206, 4.873504);
-    List<Resto> ListeRestos = MainActivity.listeRestos;
+    List<Resto> ListeRestos = MainActivity.listeRestosVisibles;
     private Marker SelectedMarker;
 
 
@@ -71,11 +72,12 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
                     .title(resto.getNom())
                     .snippet(resto.getNiveauTarif() + " - " + resto.getListeAmi().size() + " amis")
                     .visible(true));
+
         }
 
         map.setOnInfoWindowClickListener(this);
 
-
+        Log.i("COUCOU", ListeRestos.size()+"" );
     }
 
     @Override
