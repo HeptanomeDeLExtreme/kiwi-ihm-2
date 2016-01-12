@@ -218,23 +218,23 @@ public class MainActivity extends AppCompatActivity
 
         restos.add(new Resto("Castor et Pollux", "resto1", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
                 "06 69 69 69 69", "€", "1", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Soupe de quinoa", avisResto1,
+                Categorie.INSA, "INSA", "Soupe de quinoa", avisResto1,
                 45.781206, 4.873504, 3.5, 8, "Restaurant universaire bon marché. \n Appelé affectueusement le beurk.",41,true));
 
 
         restos.add(new Resto("Prévert", "resto2", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
                 "06 69 69 69 69", "€", "2", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Nouilles", avisResto1,
+                Categorie.INSA, "INSA", "Nouilles", avisResto1,
                 45.781109, 4.873279, 3.5, 7, "Restaurant universaire bon marché. \n",41,true));
 
         restos.add(new Resto("Grillon", "resto3", true, "Avenue des Arts", Resto.Paiement.INSA,
                 "06 69 69 69 69", "€", "3", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Poisson pâné", avisResto1,
+                Categorie.INSA, "INSA", "Poisson pâné", avisResto1,
                 45.783876, 4.875049, 6.0, 6, "Restaurant universaire bon marché. \n",41,true));
 
         restos.add(new Resto("Olivier", "resto5", true, "Avenue des Arts", Resto.Paiement.INSA,
                 "06 69 69 69 69", "€", "4", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Millefeuille", avisResto1,
+                Categorie.INSA, "INSA", "Millefeuille", avisResto1,
                 45.784249, 4.874854, 5.0, 5, "Restaurant universaire bon marché. \n",41,true));
         restos.add(new Resto("Jussieu", "resto6", false, "Avenue Albert Einstein", Resto.Paiement.IZLY,
                 "06 69 69 69 69", "€", "5", "11h30 -14h",
