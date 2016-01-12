@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -155,12 +156,21 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_prix) {
             Log.i("DEBUG","Prix");
             mainFragment.triPrix();
+            item.setCheckable(true);
+            item.setChecked(true);
+            updateView();
         }else if (id == R.id.nav_attente) {
             Log.i("DEBUG","attente");
             mainFragment.triAttente();
+            item.setCheckable(true);
+            item.setChecked(true);
+            updateView();
         }else if (id == R.id.nav_aller) {
             Log.i("DEBUG", "aller");
             mainFragment.triAller();
+            item.setCheckable(true);
+            item.setChecked(true);
+            updateView();
         }else if (id == R.id.nav_compteINSA) {
             if (compteFragmentINSA == null) compteFragmentINSA = new CompteFragmentINSA();
             transaction.replace(R.id.container_view, compteFragmentINSA);
@@ -174,6 +184,18 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void updateView(){
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+
+        if (mainFragment == null) mainFragment = new MainFragment();
+        transaction.replace(R.id.container_view, mainFragment);
+
+        transaction.commit();
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
     }
 
     private ArrayList<Resto> genererRestos() {
