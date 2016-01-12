@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity
         List<Resto> restos = MainActivity.listeRestos;
         List<Ami> list = new ArrayList<>();
 
-        Ami ami1 = new Ami("Bonfante", "Nicolas", "bonfante", 3, 7, restos.get(0));
-        restos.get(0).ajouteAmi(ami1);
+        Ami ami1 = new Ami("Bonfante", "Nicolas", "bonfante", 3, 7, restos.get(1));
+        restos.get(1).ajouteAmi(ami1);
         list.add(ami1);
 
         Ami ami2 = new Ami("Nadisic", "Nicolas", "nicolas", 4, 7, restos.get(1));
@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity
         restos.get(7).ajouteAmi(ami5);
         list.add(ami5);
 
-        Ami ami6 = new Ami("Boscher", "Cédric", "cedric", 8, 4, restos.get(5));
-        restos.get(5).ajouteAmi(ami6);
+        Ami ami6 = new Ami("Boscher", "Cédric", "cedric", 8, 4, restos.get(2));
+        restos.get(2).ajouteAmi(ami6);
         list.add(ami6);
         return list;
     }
