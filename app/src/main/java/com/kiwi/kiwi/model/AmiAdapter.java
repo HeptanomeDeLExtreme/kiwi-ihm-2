@@ -47,6 +47,7 @@ public class AmiAdapter extends ArrayAdapter<Ami> {
         viewHolder.mangeA.setText("Mange à " + ami.getRestaurantActuel().getNom());
         viewHolder.tempsChemin.setText(ami.getTempsChemin() + " min");
         viewHolder.tempsAttente.setText(ami.getTempsAttente() + " min");
+        viewHolder.photo.setImageResource(getContext().getResources().getIdentifier("drawable/" + ami.getPhoto(), null, getContext().getPackageName()));
 
         return convertView;
     }

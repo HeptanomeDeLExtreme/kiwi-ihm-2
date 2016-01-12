@@ -84,12 +84,30 @@ public class MainActivity extends AppCompatActivity
     private List<Ami> genererAmis() {
         List<Resto> restos = MainActivity.listeRestos;
         List<Ami> list = new ArrayList<>();
-        list.add(new Ami("Bonfante", "Nicolas", "bonfante", 3, 7, restos.get(0)));
-        list.add(new Ami("Nadisic", "Nicolas", "nicolas", 4, 7, restos.get(1)));
-        list.add(new Ami("Delsaux", "Ophelie", "ophelie", 6, 4, restos.get(2)));
-        list.add(new Ami("Chalumeau", "Marion", "marion", 5, 4, restos.get(2)));
-        list.add(new Ami("Delacombe", "Charles", "charles", 10, 4, restos.get(7)));
-        list.add(new Ami("Boscher", "Cédric", "cedric", 8, 4, restos.get(5)));
+
+        Ami ami1 = new Ami("Bonfante", "Nicolas", "bonfante", 3, 7, restos.get(0));
+        restos.get(0).ajouteAmi(ami1);
+        list.add(ami1);
+
+        Ami ami2 = new Ami("Nadisic", "Nicolas", "nicolas", 4, 7, restos.get(1));
+        restos.get(1).ajouteAmi(ami2);
+        list.add(ami2);
+
+        Ami ami3 = new Ami("Delsaux", "Ophelie", "ophelie", 6, 4, restos.get(2));
+        restos.get(2).ajouteAmi(ami3);
+        list.add(ami3);
+
+        Ami ami4 = new Ami("Chalumeau", "Marion", "marion", 5, 4, restos.get(2));
+        restos.get(2).ajouteAmi(ami4);
+        list.add(ami4);
+
+        Ami ami5 = new Ami("Delacombe", "Charles", "charles", 10, 4, restos.get(7));
+        restos.get(7).ajouteAmi(ami5);
+        list.add(ami5);
+
+        Ami ami6 = new Ami("Boscher", "Cédric", "cedric", 8, 4, restos.get(5));
+        restos.get(5).ajouteAmi(ami6);
+        list.add(ami6);
         return list;
     }
 
@@ -184,58 +202,58 @@ public class MainActivity extends AppCompatActivity
         ArrayList<Resto> restos = new ArrayList<>();
 
         //TODO aucun sens de donner un temps/distance par ami, on peut le récup dans le resto de l'ami
-        Ami ami1 = new Ami("Secret","Mathieu","photo.png",12,13);
-        Ami ami2 = new Ami("Andra","Alexis","photo.png",12,13);
-        Ami ami3 = new Ami("Fuerte","El Rodriguo","photo.png",12,13);
+        Ami ami1 = new Ami("Secret","Mathieu","user43.png",12,13);
+        Ami ami2 = new Ami("Andra","Alexis","user43.png",12,13);
+        Ami ami3 = new Ami("Fuerte","El Rodriguo","user43.png",12,13);
 
 
         List<Avis> avisResto1 = new ArrayList<>();
         avisResto1.add(new Avis(0,"Ce n'est pas terrible...",ami1));
 
         List<Avis> avisResto2 = new ArrayList<>();
-        avisResto2.add(new Avis(3,"DADADADADAM ! Un coup de barre ? Un tacos et ça repart ! (Le serveur m'insulte à chaque fois.)",ami2));
+        avisResto2.add(new Avis(3,"DADADADADAM ! Un coup de barre ? Un tacos et ça repart ! (Le serveur m'insulte à chaque fois.)",ami3));
         avisResto2.add(new Avis(5,"Je n'oublierai jamais les soirées que Snoop Dogg et son crew m'ont fait passer au Snack du Campus !!!",ami2));
 
         List<Avis> avisResto3 = new ArrayList<>();
 
         restos.add(new Resto("Castor et Pollux", "resto1", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
                 "06 69 69 69 69", "€", "1", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Soupe de quinoa", avisResto1,
+                Categorie.INSA, "Généraliste", "Soupe de quinoa", avisResto1,
                 45.781206, 4.873504, 3.5, 8, "Restaurant universaire bon marché. \n Appelé affectueusement le beurk.",41,true));
 
 
         restos.add(new Resto("Prévert", "resto2", true, "Avenue Jean Capelle", Resto.Paiement.INSA,
                 "06 69 69 69 69", "€", "2", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Nouilles", avisResto1,
+                Categorie.INSA, "Fast food", "Nouilles", avisResto1,
                 45.781109, 4.873279, 3.5, 7, "Restaurant universaire bon marché. \n",41,true));
 
         restos.add(new Resto("Grillon", "resto3", true, "Avenue des Arts", Resto.Paiement.INSA,
                 "06 69 69 69 69", "€", "3", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Poisson pâné", avisResto1,
+                Categorie.INSA, "Viandes grillées", "Poisson pâné", avisResto1,
                 45.783876, 4.875049, 6.0, 6, "Restaurant universaire bon marché. \n",41,true));
 
         restos.add(new Resto("Olivier", "resto5", true, "Avenue des Arts", Resto.Paiement.INSA,
                 "06 69 69 69 69", "€", "4", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Millefeuille", avisResto1,
+                Categorie.INSA, "Italien", "Millefeuille", avisResto1,
                 45.784249, 4.874854, 5.0, 5, "Restaurant universaire bon marché. \n",41,true));
         restos.add(new Resto("Jussieu", "resto6", false, "Avenue Albert Einstein", Resto.Paiement.IZLY,
                 "06 69 69 69 69", "€", "5", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Glace à la fraise et au chocolat", avisResto1,
+                Categorie.UNIVERSITAIRE, "Généraliste", "Glace à la fraise et au chocolat", avisResto1,
                 45.780981, 4.876224, 4.0, 4, "Restaurant universaire bon marché. \n Appelé affectueusement le RU.",41,true));
 
         restos.add(new Resto("Snack du Campus", "resto4", true, "Rue de la Doua", Resto.Paiement.CB,
                 "06 25 17 86 71", "€€", "6", "11h00 - 14h, 18h00 - 23h00",
-                Categorie.TACOS, "Universitaire", "Tacos", avisResto2,
+                Categorie.TACOS, "Externe", "Tacos", avisResto2,
                 45.777149, 4.874541, 8.0, 3, "Restaurant de tacos de qualité ! Appelé affectueusement Chez Snoop",41,true));
 
         restos.add(new Resto("Pizzeria Pinocchio", "resto9", true, "Boulevard du 11 Novembre 1918", Resto.Paiement.CB,
                 "06 69 69 69 69", "€€", "7", "11h30 -14h",
-                Categorie.PIZZERIA, "Universitaire", "Pizza au poulpe", avisResto3,
+                Categorie.PIZZERIA, "Externe", "Pizza au poulpe", avisResto3,
                 45.779272, 4.874409, 10.0, 2, "Bonnes pizzas.",41,true));
 
         restos.add(new Resto("NoGlu", "resto7", false, "Avenue Jean Capelle", Resto.Paiement.CB,
                 "06 69 69 69 69", "€€€", "8", "11h30 -14h",
-                Categorie.UNIVERSITAIRE, "Universitaire", "Soupe de vermicelle", avisResto1,
+                Categorie.UNIVERSITAIRE, "Sans gluten", "Soupe de vermicelle", avisResto1,
                 45.778888, 4.874545, 11.0, 1, "Restaurant universaire bon marché. \n Appelé affectueusement le noeud.",41,true));
 
         return restos;

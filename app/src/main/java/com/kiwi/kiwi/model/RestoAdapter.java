@@ -57,7 +57,8 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
         else
             viewHolder.ouvert.setText(R.string.resto_ferme);*/
 
-        viewHolder.photo.setImageDrawable(new ColorDrawable());
+        viewHolder.photo.setImageResource(getContext().getResources().getIdentifier("drawable/" + resto.getCategorie().getIcone(), null, getContext().getPackageName()));
+
 
         viewHolder.prixResto.setText(resto.getNiveauTarif());
 
