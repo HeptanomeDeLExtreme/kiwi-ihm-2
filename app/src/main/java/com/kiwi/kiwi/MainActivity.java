@@ -16,7 +16,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -29,7 +28,6 @@ import com.kiwi.kiwi.model.Resto;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.google.android.gms.maps.model.LatLng;
 
 
 public class MainActivity extends AppCompatActivity
@@ -178,6 +176,7 @@ public class MainActivity extends AppCompatActivity
             if (compteFragmentIZLY == null) compteFragmentIZLY = new CompteFragmentIZLY();
             transaction.replace(R.id.container_view, compteFragmentIZLY);
         }
+
 
         transaction.commit();
 

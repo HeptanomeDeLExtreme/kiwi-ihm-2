@@ -7,11 +7,9 @@ package com.kiwi.kiwi;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -33,6 +31,7 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
     private static final LatLng INSA = new LatLng(45.781206, 4.873504);
     List<Resto> ListeRestos = MainActivity.listeRestosVisibles;
     private Marker SelectedMarker;
+    private GoogleMap currentMap;
 
 
     public CarteFragment() {
@@ -77,7 +76,38 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
 
         map.setOnInfoWindowClickListener(this);
 
-        Log.i("COUCOU", ListeRestos.size()+"" );
+        currentMap = map;
+
+    }
+
+
+    public void updateMap() {
+        if (currentMap == null) return;
+        currentMap.clear();
+
+        // Positionne la caméra au dessus du campus
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(INSA) // Sets the center of the map to INSA
+                .zoom(15)                   // Sets the zoom
+                .bearing(0) // Sets the orientation of the camera to north
+                .tilt(0)    // Sets the tilt of the camera to 0 degrees
+                .build();    // Creates a CameraPosition from the builder
+        currentMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+
+        // Affiche les marqueurs
+        for (Resto resto : ListeRestos) {
+            currentMap.addMarker(new MarkerOptions()
+                    .position(resto.getPositionGPS())
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                    .title(resto.getNom())
+                    .snippet(resto.getNiveauTarif() + " - " + resto.getListeAmi().size() + " amis")
+                    .visible(true));
+
+        }
+
+        currentMap.setOnInfoWindowClickListener(this);
+
     }
 
     @Override

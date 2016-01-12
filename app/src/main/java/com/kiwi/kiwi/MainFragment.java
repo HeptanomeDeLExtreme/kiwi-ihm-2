@@ -21,6 +21,7 @@ public class MainFragment extends Fragment {
 
     public static final String tag = "main_frag";
     public ListFragment liste;
+    public CarteFragment carte;
 
     public MainFragment() {
         // Required empty public constructor
@@ -38,7 +39,7 @@ public class MainFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         liste = (ListFragment) getChildFragmentManager().findFragmentByTag(ListFragment.tag);
-        CarteFragment carte = (CarteFragment) getChildFragmentManager().findFragmentByTag(CarteFragment.tag);
+        carte = (CarteFragment) getChildFragmentManager().findFragmentByTag(CarteFragment.tag);
         TriFragment tri = (TriFragment) getChildFragmentManager().findFragmentByTag(TriFragment.tag);
 
         if (liste == null) liste = new ListFragment();
@@ -70,6 +71,10 @@ public class MainFragment extends Fragment {
         liste.triAller();
     }
 
+    public void updateMap() {
+        carte.updateMap();
+    }
+
     /**
      * Gère les onglets
      */
@@ -83,7 +88,8 @@ public class MainFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
-            return mFragmentList.get(position);
+            Fragment fragment = mFragmentList.get(position);
+            return fragment;
         }
 
         @Override
