@@ -308,7 +308,7 @@ public class PageResto extends AppCompatActivity {
         @Override
 
         public void onClick(View v) {
-            resto.getAvis().remove(position);
+            resto.getAvis().remove(position+1);
             Intent intent = getIntent();
             intent.putExtra(EXTRA_RESTO, resto.getNom());
             finish();
