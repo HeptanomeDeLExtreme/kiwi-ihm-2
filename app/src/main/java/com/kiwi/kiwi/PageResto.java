@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,13 +23,24 @@ import com.kiwi.kiwi.model.Avis;
 import com.kiwi.kiwi.model.AvisAdapter;
 import com.kiwi.kiwi.model.Resto;
 
-import java.util.Locale;
-
 public class PageResto extends AppCompatActivity {
 
     final String EXTRA_RESTO = "resto";
     Resto resto = null;
-    int position =0;
+    int position = 0;
+    public View.OnClickListener clickListenerSupprimer = new View.OnClickListener() {
+
+        @Override
+
+        public void onClick(View v) {
+            resto.getAvis().remove(position + 1);
+            Intent intent = getIntent();
+            intent.putExtra(EXTRA_RESTO, resto.getNom());
+            finish();
+            startActivity(intent);
+        }
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +50,11 @@ public class PageResto extends AppCompatActivity {
         Intent intent = getIntent();
 
         if (intent != null) {
-            restoNom= intent.getStringExtra(EXTRA_RESTO);
+            restoNom = intent.getStringExtra(EXTRA_RESTO);
         }
 
         for (Resto restaurant : MainActivity.listeRestos) {
-            if (restaurant.getNom().equals(restoNom)){
+            if (restaurant.getNom().equals(restoNom)) {
                 resto = restaurant;
             }
         }
@@ -67,7 +77,7 @@ public class PageResto extends AppCompatActivity {
                     // saddr : coordonees du departement IF
                     Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
                             Uri.parse("http://maps.google.com/maps?saddr=45.781942, 4.872553&daddr="
-                                    +resto.getPositionGPS().latitude+","+resto.getPositionGPS().longitude));
+                                    + resto.getPositionGPS().latitude + "," + resto.getPositionGPS().longitude));
                     startActivity(intent);
                     Toast.makeText(getApplicationContext(), "Allons y !", Toast.LENGTH_LONG).show();
                 }
@@ -81,7 +91,7 @@ public class PageResto extends AppCompatActivity {
                     // saddr : coordonees du departement IF
                     Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
                             Uri.parse("http://maps.google.com/maps?saddr=45.781942, 4.872553&daddr="
-                                    +resto.getPositionGPS().latitude+","+resto.getPositionGPS().longitude));
+                                    + resto.getPositionGPS().latitude + "," + resto.getPositionGPS().longitude));
                     startActivity(intent);
 
                     Toast.makeText(getApplicationContext(), "Destination partagée !", Toast.LENGTH_LONG).show();
@@ -99,7 +109,7 @@ public class PageResto extends AppCompatActivity {
             TextView horaires = (TextView) findViewById(R.id.horaires);
             horaires.setText("Horaires : " + resto.getHoraires());
             TextView prix = (TextView) findViewById(R.id.prix);
-            switch (resto.getNiveauTarif()){
+            switch (resto.getNiveauTarif()) {
                 case "€":
                     prix.setText("Prix : Moins de 5€");
                     break;
@@ -120,12 +130,12 @@ public class PageResto extends AppCompatActivity {
             tempsParcours.setText("Temps de parcours : " + resto.getTempsUtilisateurRestaurant() + "min");
             TextView type = (TextView) findViewById(R.id.type);
             type.setText(resto.getTypeRestaurant());
-            if(resto.getNbRepasRestants() != null){
+            if (resto.getNbRepasRestants() != null) {
                 TextView nbRepasRestants = new TextView(this, null, android.R.attr.textAppearanceMedium);
                 nbRepasRestants.setText("Nombre de repas restants : " + resto.getNbRepasRestants());
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                 params.addRule(RelativeLayout.BELOW, R.id.tempsAttente);
-                nbRepasRestants.setId(R.id.tempsParcours+6000);
+                nbRepasRestants.setId(R.id.tempsParcours + 6000);
                 nbRepasRestants.setLayoutParams(params);
                 RelativeLayout.LayoutParams params2 = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                 params2.addRule(RelativeLayout.BELOW, nbRepasRestants.getId());
@@ -135,13 +145,11 @@ public class PageResto extends AppCompatActivity {
             TextView categorie = (TextView) findViewById(R.id.categorie);
             categorie.setText(Html.fromHtml("<u>" + resto.getCategorie().getNom() + "</u>"));
             TextView statut = (TextView) findViewById(R.id.statut);
-            if(resto.getOuvert()) {
+            if (resto.getOuvert()) {
                 statut.setText(Html.fromHtml("<u>Ouvert</u>"));
-            }
-            else{
+            } else {
                 statut.setText(Html.fromHtml("<u>Fermé</u>"));
             }
-
 
 
             //Partie du menu de restaurant
@@ -149,12 +157,11 @@ public class PageResto extends AppCompatActivity {
             menu.setText(resto.getMenuDuJour());
 
 
-
             //Partie des amis qui mangent dans ce restaurant
             View separateur = findViewById(R.id.separateurDescription);
             RelativeLayout.LayoutParams paramsSeparateurDescription = (RelativeLayout.LayoutParams) separateur.getLayoutParams();
 
-            if (resto.getMesAmisQuiSontDansCeResto().size() == 0){
+            if (resto.getMesAmisQuiSontDansCeResto().size() == 0) {
                 TextView pasDamis = new TextView(this);
                 pasDamis.setText("0 ami");
                 pasDamis.setId(R.id.amis + 1);
@@ -162,15 +169,14 @@ public class PageResto extends AppCompatActivity {
                 params.addRule(RelativeLayout.BELOW, R.id.amis);
                 pasDamis.setLayoutParams(params);
                 restoLayout.addView(pasDamis);
-            }
-            else{
+            } else {
                 HorizontalScrollView amisScrollView = new HorizontalScrollView(this);
                 RelativeLayout.LayoutParams paramsAmisScrollView = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                 paramsAmisScrollView.addRule(RelativeLayout.BELOW, R.id.amis);
                 amisScrollView.setLayoutParams(paramsAmisScrollView);
                 RelativeLayout amisLayout = new RelativeLayout(this);
                 amisScrollView.setId(R.id.amis + 1);
-                for (int i=1;i< resto.getMesAmisQuiSontDansCeResto().size()+1; i++) {
+                for (int i = 1; i < resto.getMesAmisQuiSontDansCeResto().size() + 1; i++) {
                     ImageView amisPhoto = new ImageView(this);
                     amisPhoto.setImageResource(this.getResources().getIdentifier("drawable/" + resto.getMesAmisQuiSontDansCeResto().get(i - 1).getPhoto(), null, this.getPackageName()));
                     amisPhoto.setId(i + R.id.amis + 1);
@@ -179,10 +185,10 @@ public class PageResto extends AppCompatActivity {
                     amisNom.setId(i + R.id.amis + 1001);
                     amisNom.setText(resto.getMesAmisQuiSontDansCeResto().get(i - 1).getPrenom() + " " + resto.getMesAmisQuiSontDansCeResto().get(i - 1).getNom());
                     RelativeLayout.LayoutParams paramsAmisNom = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-                    paramsAmisNom.setMargins(0,220, 0, 0);
-                    if (i>1) {
+                    paramsAmisNom.setMargins(0, 220, 0, 0);
+                    if (i > 1) {
                         paramsAmisNom.addRule(RelativeLayout.RIGHT_OF, i + R.id.amis + 1000);
-                        paramsAmisNom.setMargins(30,220,0,0);
+                        paramsAmisNom.setMargins(30, 220, 0, 0);
                         RelativeLayout.LayoutParams paramsAmisPhoto = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
                         paramsAmisPhoto.addRule(RelativeLayout.ALIGN_START, i + R.id.amis + 1001);
                         paramsAmisPhoto.addRule(RelativeLayout.ALIGN_TOP, i + R.id.amis);
@@ -202,7 +208,6 @@ public class PageResto extends AppCompatActivity {
             paramsSeparateurDescription.removeRule(RelativeLayout.BELOW);
             paramsSeparateurDescription.addRule(RelativeLayout.BELOW, R.id.amis + 1);
             separateur.setLayoutParams(paramsSeparateurDescription);
-
 
 
             //Partie de la description du restaurant
@@ -236,12 +241,12 @@ public class PageResto extends AppCompatActivity {
             barre.setBackgroundColor(Color.GRAY);
             barreParams.setMargins(0, 15, 0, 0);
             barreParams.height = 5;
-            barre.setId(R.id.listAvis+2);
+            barre.setId(R.id.listAvis + 2);
             barre.setLayoutParams(barreParams);
             donnerAvisLayout.addView(barre);
 
             posNote.addRule(RelativeLayout.BELOW, R.id.listAvis + 2);
-            note.setId(R.id.listAvis+3);
+            note.setId(R.id.listAvis + 3);
             note.setLayoutParams(posNote);
 
 
@@ -251,8 +256,8 @@ public class PageResto extends AppCompatActivity {
             avisUtilisateur.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
             avisUtilisateur.setLines(3);
             avisUtilisateur.setMaxLines(5);
-            avisUtilisateur.setId(R.id.listAvis+4);
-            posAvisUtilisateur.addRule(RelativeLayout.BELOW, R.id.listAvis+3);
+            avisUtilisateur.setId(R.id.listAvis + 4);
+            posAvisUtilisateur.addRule(RelativeLayout.BELOW, R.id.listAvis + 3);
             posAvisUtilisateur.setMargins(0, 50, 0, 0);
             avisUtilisateur.setLayoutParams(posAvisUtilisateur);
 
@@ -270,7 +275,7 @@ public class PageResto extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-            posValid.addRule(RelativeLayout.BELOW, R.id.listAvis+4);
+            posValid.addRule(RelativeLayout.BELOW, R.id.listAvis + 4);
             valid.setLayoutParams(posValid);
 
             donnerAvisLayout.addView(note);
@@ -282,7 +287,7 @@ public class PageResto extends AppCompatActivity {
             posAvisText.addRule(RelativeLayout.BELOW, R.id.listAvis);
             TextView donnerAvis = new TextView(this);
             donnerAvis.setClickable(true);
-            donnerAvis.setId(R.id.listAvis+1);
+            donnerAvis.setId(R.id.listAvis + 1);
             donnerAvis.setText("Donnez le votre!");
             donnerAvis.setLayoutParams(posAvisText);
             donnerAvis.setOnClickListener(new View.OnClickListener() {
@@ -293,7 +298,7 @@ public class PageResto extends AppCompatActivity {
                 }
             });
 
-            posDonnerAvisLayout.addRule(RelativeLayout.BELOW, R.id.listAvis+1);
+            posDonnerAvisLayout.addRule(RelativeLayout.BELOW, R.id.listAvis + 1);
             donnerAvisLayout.setLayoutParams(posDonnerAvisLayout);
 
             avisLayout.addView(donnerAvis);
@@ -302,19 +307,5 @@ public class PageResto extends AppCompatActivity {
             avisLayout.setLayoutParams(params1);
         }
     }
-
-    public View.OnClickListener clickListenerSupprimer = new View.OnClickListener() {
-
-        @Override
-
-        public void onClick(View v) {
-            resto.getAvis().remove(position+1);
-            Intent intent = getIntent();
-            intent.putExtra(EXTRA_RESTO, resto.getNom());
-            finish();
-            startActivity(intent);
-        }
-
-    };
 }
 

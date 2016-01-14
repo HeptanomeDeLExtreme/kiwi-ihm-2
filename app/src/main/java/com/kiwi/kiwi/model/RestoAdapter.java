@@ -2,14 +2,11 @@ package com.kiwi.kiwi.model;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.kiwi.kiwi.MainActivity;
@@ -59,10 +56,9 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
         viewHolder.tempsChemin.setText(resto.getTempsUtilisateurRestaurant() + " min");
         viewHolder.tempsRepas.setText(resto.getTempsAttente() + " min");
 
-        if(!resto.getOuvert()) {
-            convertView.setBackgroundColor(Color.rgb(0xFF,0xCC,0xCC));
-        }
-        else{
+        if (!resto.getOuvert()) {
+            convertView.setBackgroundColor(Color.rgb(0xFF, 0xCC, 0xCC));
+        } else {
             convertView.setBackgroundColor(Color.TRANSPARENT);
         }
 

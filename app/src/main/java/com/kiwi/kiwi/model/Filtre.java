@@ -5,9 +5,6 @@ import com.kiwi.kiwi.MainActivity;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**
- * Enregistre tous les paramètres de tri
- */
 public class Filtre {
 
     private Boolean cb;
@@ -65,7 +62,7 @@ public class Filtre {
                     // € signifie 5€, €€ = 10€, €€€ = 15€
                     (resto.getNiveauTarifDouble() > prixMax) ||
                     (resto.getNiveauTarifDouble() < prixMin)
-                )
+                    )
                 itr.remove();
         }
     }

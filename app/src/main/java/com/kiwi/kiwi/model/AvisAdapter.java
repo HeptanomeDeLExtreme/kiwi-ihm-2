@@ -1,7 +1,6 @@
 package com.kiwi.kiwi.model;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kiwi.kiwi.PageResto;
 import com.kiwi.kiwi.R;
 
 import java.util.List;
@@ -60,10 +58,9 @@ public class AvisAdapter extends ArrayAdapter<Avis> {
             }
         });
 
-        if(avis.getAuteur().getPrenom() == "Bruce" && avis.getAuteur().getNom() == "Wayne"){
+        if (avis.getAuteur().getPrenom() == "Bruce" && avis.getAuteur().getNom() == "Wayne") {
             viewHolder.supprimer.setVisibility(View.VISIBLE);
-        }
-        else{
+        } else {
             viewHolder.supprimer.setVisibility(View.INVISIBLE);
         }
         viewHolder.supprimer.setOnClickListener(clickListenerSupprimer);

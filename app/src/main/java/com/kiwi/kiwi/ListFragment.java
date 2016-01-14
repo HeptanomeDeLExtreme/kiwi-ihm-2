@@ -6,10 +6,8 @@
 package com.kiwi.kiwi;
 
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +62,6 @@ public class ListFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -72,7 +69,7 @@ public class ListFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_list, container, false);
     }
 
-    public void triPrix(){
+    public void triPrix() {
         Collections.sort(MainActivity.listeRestosVisibles, new Comparator<Resto>() {
             @Override
             public int compare(Resto lhs, Resto rhs) {
@@ -84,7 +81,7 @@ public class ListFragment extends Fragment {
         updateList();
     }
 
-    public void triAttente(){
+    public void triAttente() {
         Collections.sort(MainActivity.listeRestosVisibles, new Comparator<Resto>() {
             @Override
             public int compare(Resto lhs, Resto rhs) {
@@ -96,7 +93,7 @@ public class ListFragment extends Fragment {
         updateList();
     }
 
-    public void triAller(){
+    public void triAller() {
         Collections.sort(MainActivity.listeRestosVisibles, new Comparator<Resto>() {
             @Override
             public int compare(Resto lhs, Resto rhs) {
@@ -108,17 +105,17 @@ public class ListFragment extends Fragment {
         updateList();
     }
 
-    private void updateList(){
+    private void updateList() {
         List<Resto> restos = MainActivity.listeRestosVisibles;
         ListView mListView = (ListView) getView().findViewById(R.id.listView);
         adapter = new RestoAdapter(getContext(), restos);
         mListView.setAdapter(adapter);
     }
 
-    private int compteOccurence(String s, char c){
+    private int compteOccurence(String s, char c) {
         int toRet = 0;
-        for(int i =0;i<s.length();i++){
-            if(s.charAt(i)==c){
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == c) {
                 toRet++;
             }
         }

@@ -102,7 +102,7 @@ public class CompteFragmentIZLY extends Fragment {
 
                 Random r = new Random();
                 int solde = r.nextInt(60 - 0 + 1) + 0;
-                montant.setText("Solde restant : "+solde+"€");
+                montant.setText("Solde restant : " + solde + "€");
             }
         });
 

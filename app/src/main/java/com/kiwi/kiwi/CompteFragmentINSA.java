@@ -113,8 +113,8 @@ public class CompteFragmentINSA extends Fragment {
                 int jour = r.nextInt(31 - 0 + 1) + 0;
                 int mois = r.nextInt(12 - 0 + 1) + 0;
 
-                montant.setText("Solde restant : "+solde+"€");
-                date.setText("Expiration : "+jour+"/"+mois+"/2013");
+                montant.setText("Solde restant : " + solde + "€");
+                date.setText("Expiration : " + jour + "/" + mois + "/2013");
             }
         });
 

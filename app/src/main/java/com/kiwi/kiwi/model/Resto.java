@@ -28,14 +28,15 @@ public class Resto {
 
     Boolean visible;
 
-    public Resto(){};
+    public Resto() {
+    }
 
     public Resto(String nom, String photo, Boolean ouvert, String adresse, Paiement moyenPaiement,
                  String telephone, String niveauTarif, String tempsAttente, String horaires,
                  Categorie categorie, String typeRestaurant, String menuDuJour, List<Avis> avis,
                  double lat, double lon, Double distanceUtilisateurRestaurant,
                  Integer tempsUtilisateurRestaurant, String description, Integer nbRepasRestants, Boolean visible) {
-        
+
         this.nom = nom;
         this.photo = photo;
         this.ouvert = ouvert;
@@ -60,16 +61,20 @@ public class Resto {
     }
 
 
-    public void ajouteAmi(Ami monAmi){
+    public void ajouteAmi(Ami monAmi) {
         mesAmisQuiSontDansCeResto.add(monAmi);
     }
 
-    public List<Ami> getListeAmi(){
+    public List<Ami> getListeAmi() {
         return mesAmisQuiSontDansCeResto;
     }
 
     public String getNom() {
         return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getPhoto() {
@@ -116,10 +121,6 @@ public class Resto {
         return description;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
     public String getTelephone() {
         return telephone;
     }
@@ -144,13 +145,13 @@ public class Resto {
         return nbRepasRestants;
     }
 
-    public void addAvis (Avis avis){
+    public void addAvis(Avis avis) {
         this.avis.add(avis);
     }
 
     public Double getNiveauTarifDouble() {
         Double tarif = 0.0;
-        switch (this.niveauTarif){
+        switch (this.niveauTarif) {
             case "€":
                 tarif = 4.0;
                 break;

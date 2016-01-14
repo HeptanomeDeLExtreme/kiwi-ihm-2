@@ -56,15 +56,15 @@ public class MainFragment extends Fragment {
         return view;
     }
 
-    public void triPrix(){
+    public void triPrix() {
         liste.triPrix();
     }
 
-    public void triAttente(){
+    public void triAttente() {
         liste.triAttente();
     }
 
-    public void triAller(){
+    public void triAller() {
         liste.triAller();
     }
 

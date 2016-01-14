@@ -8,7 +8,7 @@ public enum Categorie {
     ORIENTAL("oriental.jpg", "Cuisine Orientale"),
     INDIEN("indien.jpg", "Cuisine Indienne"),
     SANDWICH("sandwich.jpg", "Sandwich"),
-    INSA("logo_insa","INSA");
+    INSA("logo_insa", "INSA");
 
     private String nom;
     private String icone;

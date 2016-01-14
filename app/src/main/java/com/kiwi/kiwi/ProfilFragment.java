@@ -2,7 +2,6 @@ package com.kiwi.kiwi;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,20 +13,17 @@ import android.widget.ImageView;
 
 public class ProfilFragment extends Fragment {
 
+    public static final String tag = "profil_frag";
     private static final String PRENOM = "Bruce";
     private static final String NOM = "Wayne";
     private static final String PSEUDO = "Batman";
     private static final String MAIL = "bruce.wayne@wayne-enterprise.com";
-
     private boolean isVegetarien = false;
     private boolean isVegan = false;
     private boolean isAllergicGluten = true;
     private boolean isAllergicLactose = false;
     private boolean isHallal = false;
-
     private boolean isEdition = false;
-
-    public static final String tag = "profil_frag";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,7 +64,7 @@ public class ProfilFragment extends Fragment {
 
         /* Végétarien */
         CheckBox checkBoxVegetarien = (CheckBox) view.findViewById(R.id.checkBoxVegetarien);
-        if(isVegetarien) {
+        if (isVegetarien) {
             checkBoxVegetarien.setChecked(true);
         } else {
             checkBoxVegetarien.setChecked(false);
@@ -77,7 +73,7 @@ public class ProfilFragment extends Fragment {
 
         /* Vegan */
         CheckBox checkBoxVegan = (CheckBox) view.findViewById(R.id.checkBoxVegan);
-        if(isVegan) {
+        if (isVegan) {
             checkBoxVegan.setChecked(true);
         } else {
             checkBoxVegan.setChecked(false);
@@ -86,7 +82,7 @@ public class ProfilFragment extends Fragment {
 
         /* Gluten */
         CheckBox checkBoxGluten = (CheckBox) view.findViewById(R.id.checkBoxSansGluten);
-        if(isAllergicGluten) {
+        if (isAllergicGluten) {
             checkBoxGluten.setChecked(true);
         } else {
             checkBoxGluten.setChecked(false);
@@ -95,7 +91,7 @@ public class ProfilFragment extends Fragment {
 
         /* Lactose */
         CheckBox checkBoxLactose = (CheckBox) view.findViewById(R.id.checkBoxSansLactose);
-        if(isAllergicLactose) {
+        if (isAllergicLactose) {
             checkBoxLactose.setChecked(true);
         } else {
             checkBoxLactose.setChecked(false);
@@ -104,7 +100,7 @@ public class ProfilFragment extends Fragment {
 
         /* Hallal */
         CheckBox checkBoxHallal = (CheckBox) view.findViewById(R.id.checkBoxHallal);
-        if(isHallal) {
+        if (isHallal) {
             checkBoxHallal.setChecked(true);
         } else {
             checkBoxHallal.setChecked(false);
@@ -115,7 +111,7 @@ public class ProfilFragment extends Fragment {
         checkBoxVegetarien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isEdition) {
+                if (isEdition) {
                     isVegetarien = !isVegetarien;
                     CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxVegetarien);
                     cb.setChecked(isVegetarien);
@@ -177,7 +173,7 @@ public class ProfilFragment extends Fragment {
                 ImageView edit = (ImageView) getView().findViewById(R.id.editButton);
                 Button buttonOK = (Button) getView().findViewById(R.id.buttonProfilOk);
 
-                if(isEdition){
+                if (isEdition) {
                     edit.setVisibility(View.INVISIBLE);
                     buttonOK.setVisibility(View.VISIBLE);
                     pseudo.setEnabled(true);
@@ -209,7 +205,7 @@ public class ProfilFragment extends Fragment {
                 ImageView edit = (ImageView) getView().findViewById(R.id.editButton);
                 Button buttonOK = (Button) getView().findViewById(R.id.buttonProfilOk);
 
-                if (!isEdition){
+                if (!isEdition) {
                     edit.setVisibility(View.VISIBLE);
                     buttonOK.setVisibility(View.INVISIBLE);
                     pseudo.setEnabled(false);

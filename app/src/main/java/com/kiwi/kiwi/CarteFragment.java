@@ -24,7 +24,7 @@ import com.kiwi.kiwi.model.Resto;
 
 import java.util.List;
 
-public class CarteFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener{
+public class CarteFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
 
     public static final String tag = "carte_frag";
@@ -62,7 +62,7 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
 
 
         // Affiche les marqueurs
-        for (Resto resto : ListeRestos){
+        for (Resto resto : ListeRestos) {
             map.addMarker(new MarkerOptions()
                     .position(resto.getPositionGPS())
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
@@ -117,10 +117,10 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
     }
 
 
-    public Resto trouverRestoParNom(String nom){
+    public Resto trouverRestoParNom(String nom) {
         Resto resto = new Resto();
-        for (Resto r : ListeRestos){
-            if(r.getNom().equals(nom)){
+        for (Resto r : ListeRestos) {
+            if (r.getNom().equals(nom)) {
                 resto = r;
             }
         }
