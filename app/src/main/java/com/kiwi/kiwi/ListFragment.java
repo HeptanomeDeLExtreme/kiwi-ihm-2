@@ -24,41 +24,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/* Bonfante,
-Il y a deux blocs de commentaires. Le premier, c'était un début de solution qui utilise
-ListFragment car il y a une méthode dedans qui permet de connaître très facilement
-l'item sur lequel on a cliqué. Par contre, je n'arrive pas à la mettre en place.
-
-Le second bloc, c'est ta solution que je n'ai pas réussi à faire fonctionner.
-Zoub !
- */
-
-
-
-/*
-public class ListFragment extends android.app.ListFragment {
-    public static final String tag = "liste_frag";
-
-    public ListFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        setListAdapter(new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1, Shakespeare.TITLES));
-    }
-
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        Log.i("FragmentList", "Item clicked: " + id);
-    }
-}
-*/
-
-
-
 public class ListFragment extends Fragment {
 
     public static final String tag = "liste_frag";
@@ -77,7 +42,6 @@ public class ListFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.i("DEBUG", view + "trui");
         final ListView mListView = (ListView) view.findViewById(R.id.listView);
 
         List<Resto> restos = MainActivity.listeRestosVisibles;
@@ -149,7 +113,6 @@ public class ListFragment extends Fragment {
         ListView mListView = (ListView) getView().findViewById(R.id.listView);
         adapter = new RestoAdapter(getContext(), restos);
         mListView.setAdapter(adapter);
-        Log.i("DEBUG", "update");
     }
 
     private int compteOccurence(String s, char c){

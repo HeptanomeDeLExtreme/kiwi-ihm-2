@@ -14,9 +14,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Vue principale contenant la liste des restaurants et la carte
- */
 public class MainFragment extends Fragment {
 
     public static final String tag = "main_frag";
@@ -40,11 +37,11 @@ public class MainFragment extends Fragment {
 
         liste = (ListFragment) getChildFragmentManager().findFragmentByTag(ListFragment.tag);
         carte = (CarteFragment) getChildFragmentManager().findFragmentByTag(CarteFragment.tag);
-        TriFragment tri = (TriFragment) getChildFragmentManager().findFragmentByTag(TriFragment.tag);
+        FiltreFragment tri = (FiltreFragment) getChildFragmentManager().findFragmentByTag(FiltreFragment.tag);
 
         if (liste == null) liste = new ListFragment();
         if (carte == null) carte = new CarteFragment();
-        if (tri == null) tri = new TriFragment();
+        if (tri == null) tri = new FiltreFragment();
 
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
@@ -75,9 +72,6 @@ public class MainFragment extends Fragment {
         carte.updateMap();
     }
 
-    /**
-     * Gère les onglets
-     */
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();

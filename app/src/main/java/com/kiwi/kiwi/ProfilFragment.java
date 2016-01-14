@@ -1,7 +1,5 @@
 package com.kiwi.kiwi;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -14,9 +12,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 
-/**
- * Vue profil
- */
 public class ProfilFragment extends Fragment {
 
     private static final String PRENOM = "Bruce";
@@ -121,7 +116,6 @@ public class ProfilFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(isEdition) {
-                    Log.i("debug", "Clic sur la checkbox végétarien !");
                     isVegetarien = !isVegetarien;
                     CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxVegetarien);
                     cb.setChecked(isVegetarien);
@@ -133,7 +127,6 @@ public class ProfilFragment extends Fragment {
         checkBoxVegan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("debug", "Clic sur la checkbox vegan !");
                 isVegan = !isVegan;
                 CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxVegan);
                 cb.setChecked(isVegan);
@@ -143,7 +136,6 @@ public class ProfilFragment extends Fragment {
         checkBoxGluten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("debug", "Clic sur la checkbox gluten !");
                 isAllergicGluten = !isAllergicGluten;
                 CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxSansGluten);
                 cb.setChecked(isAllergicGluten);
@@ -153,7 +145,6 @@ public class ProfilFragment extends Fragment {
         checkBoxLactose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("debug", "Clic sur la checkbox lactose !");
                 isAllergicLactose = !isAllergicLactose;
                 CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxSansLactose);
                 cb.setChecked(isAllergicLactose);
@@ -163,7 +154,6 @@ public class ProfilFragment extends Fragment {
         checkBoxHallal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("debug", "Clic sur la checkbox gluten !");
                 isHallal = !isHallal;
                 CheckBox cb = (CheckBox) getView().findViewById(R.id.checkBoxHallal);
                 cb.setChecked(isHallal);
@@ -174,9 +164,7 @@ public class ProfilFragment extends Fragment {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("debug", "Clic sur le bouton d'édition !");
                 isEdition = !isEdition;
-                Log.i("debug", "Etat de isEdition : " + isEdition);
 
                 EditText pseudo = (EditText) getView().findViewById(R.id.pseudoUser);
                 EditText nom = (EditText) getView().findViewById(R.id.nomUser);
@@ -208,9 +196,7 @@ public class ProfilFragment extends Fragment {
         boutonOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("debug", "Clic sur le bouton d'édition !");
                 isEdition = !isEdition;
-                Log.i("debug", "Etat de isEdition : " + isEdition);
 
                 EditText pseudo = (EditText) getView().findViewById(R.id.pseudoUser);
                 EditText nom = (EditText) getView().findViewById(R.id.nomUser);

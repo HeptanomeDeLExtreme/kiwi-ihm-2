@@ -1,18 +1,12 @@
 package com.kiwi.kiwi;
 
-/**
- * Created by marion on 09/01/16.
- */
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.text.SpannableStringBuilder;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
-/**
- * User: Bazlur Rahman Rokon
- * Date: 9/7/13 - 3:33 AM
- */
+
 public class ExpandableTextView extends TextView {
     private static final int DEFAULT_TRIM_LENGTH = 200;
     private static final String ELLIPSIS = ".....";
@@ -68,17 +62,6 @@ public class ExpandableTextView extends TextView {
         }
     }
 
-    public CharSequence getOriginalText() {
-        return originalText;
-    }
 
-    public void setTrimLength(int trimLength) {
-        this.trimLength = trimLength;
-        trimmedText = getTrimmedText(originalText);
-        setText();
-    }
 
-    public int getTrimLength() {
-        return trimLength;
-    }
 }

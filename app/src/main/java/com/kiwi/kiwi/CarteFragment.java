@@ -30,7 +30,6 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
     public static final String tag = "carte_frag";
     private static final LatLng INSA = new LatLng(45.781206, 4.873504);
     List<Resto> ListeRestos = MainActivity.listeRestosVisibles;
-    private Marker SelectedMarker;
     private GoogleMap currentMap;
 
 
@@ -44,7 +43,6 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
 
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.carte);
         mapFragment.getMapAsync(this);
-        //Voir un bout de doc ici : https://developers.google.com/maps/documentation/android-api/map#configure_initial_state
 
         return view;
     }
@@ -119,7 +117,6 @@ public class CarteFragment extends Fragment implements OnMapReadyCallback, Googl
     }
 
 
-    // Méthode sale pour choper le resto depuis le marker
     public Resto trouverRestoParNom(String nom){
         Resto resto = new Resto();
         for (Resto r : ListeRestos){

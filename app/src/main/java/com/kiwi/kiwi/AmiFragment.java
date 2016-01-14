@@ -1,11 +1,5 @@
 package com.kiwi.kiwi;
 
-/**
- * Fragment contenant la liste des restaurants et les informations utiles associées
- *
- * @author Ealhad
- */
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -55,7 +49,6 @@ public class AmiFragment extends Fragment {
                                     long id) {
                 List<Ami> amis = MainActivity.listeAmis;
                 Ami amiChoisi = amis.get(position);
-                Log.i("DEBUG", "Appui sur le " + position + "ème item : " + amiChoisi.getNom());
 
                 //Passer sur la vue détaillée du resto où se trouve l'ami
                 Intent intent = new Intent(getActivity(), PageResto.class);

@@ -21,20 +21,16 @@ public class PageInscription extends AppCompatActivity {
     }
 
     public void boutonCreerCompteListener(View view) {
-        Log.i("debug", "Appui sur boutonCreerCompte");
         Intent menuIntent = new Intent(this, FormulaireInscription.class);
         startActivity(menuIntent);
     }
 
     public void boutonSeConnecterListener(View view) {
-        Log.i("debug", "Appui sur boutonSeConnecter");
         Intent menuIntent = new Intent(this, PageConnexion.class);
         startActivity(menuIntent);
     }
 
-    // TODO : Peut-être que ce n'est plus ListFragment qu'il faut appeler.
     public void boutonAccederSansCompteListener(View view) {
-        Log.i("debug", "Appui sur le lien AccederSansCompte");
         Intent menuIntent = new Intent(this, MainActivity.class);
         startActivity(menuIntent);
     }

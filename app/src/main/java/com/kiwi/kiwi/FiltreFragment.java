@@ -14,7 +14,7 @@ import com.appyvet.rangebar.RangeBar;
 /**
  * Menu de tri des restaurants
  */
-public class TriFragment extends Fragment {
+public class FiltreFragment extends Fragment {
 
     public static final String tag = "tri_frag";
 
@@ -34,7 +34,7 @@ public class TriFragment extends Fragment {
 
     private RangeBar rangeBar;
 
-    public TriFragment() {
+    public FiltreFragment() {
         // Required empty public constructor
     }
 

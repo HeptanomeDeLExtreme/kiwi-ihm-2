@@ -111,12 +111,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }*/
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
 
@@ -129,12 +123,6 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
     }
 
-    /**
-     * Gère les clics sur le menu
-     *
-     * @param item l'élément de menu sélectionné
-     * @return true
-     */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -152,19 +140,16 @@ public class MainActivity extends AppCompatActivity
             if (profilFragment == null) profilFragment = new ProfilFragment();
             transaction.replace(R.id.container_view, profilFragment);
         }else if (id == R.id.nav_prix) {
-            Log.i("DEBUG","Prix");
             mainFragment.triPrix();
             item.setCheckable(true);
             item.setChecked(true);
             updateView();
         }else if (id == R.id.nav_attente) {
-            Log.i("DEBUG","attente");
             mainFragment.triAttente();
             item.setCheckable(true);
             item.setChecked(true);
             updateView();
         }else if (id == R.id.nav_aller) {
-            Log.i("DEBUG", "aller");
             mainFragment.triAller();
             item.setCheckable(true);
             item.setChecked(true);
@@ -200,7 +185,6 @@ public class MainActivity extends AppCompatActivity
     private ArrayList<Resto> genererRestos() {
         ArrayList<Resto> restos = new ArrayList<>();
 
-        //TODO aucun sens de donner un temps/distance par ami, on peut le récup dans le resto de l'ami
         Ami ami1 = new Ami("Secret","Mathieu","user43",12,13);
         Ami ami2 = new Ami("Andra","Alexis","user43",12,13);
         Ami ami3 = new Ami("Fuerte","El Rodriguo","user43" +
@@ -259,10 +243,5 @@ public class MainActivity extends AppCompatActivity
         return restos;
     }
 
-
-    public void goToResto(View v) {
-        Log.i("Debug", "go to resto");
-        Toast.makeText(getApplicationContext(), "Restaurant !", Toast.LENGTH_SHORT).show();
-    }
 
 }

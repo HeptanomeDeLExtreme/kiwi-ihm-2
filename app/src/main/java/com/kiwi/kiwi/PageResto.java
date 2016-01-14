@@ -318,5 +318,3 @@ public class PageResto extends AppCompatActivity {
     };
 }
 
-//TODO ajouter supprimer et signaler un avis
-//TODO bouton favoris

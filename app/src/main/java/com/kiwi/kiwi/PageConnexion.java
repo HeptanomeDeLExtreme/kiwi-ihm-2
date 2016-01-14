@@ -19,24 +19,18 @@ public class PageConnexion extends AppCompatActivity {
     }
 
     public void boutonRetourListener(View view) {
-        Log.i("debug", "Appui sur le bouton Retour !");
         Intent menuIntent = new Intent(this, PageInscription.class);
         startActivity(menuIntent);
     }
 
     public void boutonOkListener(View view) {
-        Log.i("debug", "Appui sur le bouton OK !");
         EditText pseudoEntre = (EditText) findViewById(R.id.idTextPseudo);
         EditText mdpEntre = (EditText) findViewById(R.id.idTextMdp);
-        Log.i("debug", "Le pseudo entré par l'utilisateur est : " + pseudoEntre.getText() + " !");
-        Log.i("debug", "Le mot de passe entré par l'utilisateur est : " + mdpEntre.getText() + " !");
         if ((PSEUDO.equals(pseudoEntre.getText().toString())) && (MDP.equals(mdpEntre.getText().toString()))) {
-            Log.i("debug", "Identifiants et mot de passe corrects !");
             Intent menuIntent = new Intent(this, MainActivity.class);
             startActivity(menuIntent);
 
         } else {
-            Log.i("debug", "Identifiants et mot de passe incorrects !");
             Toast.makeText(getApplicationContext(), getString(R.string.defaultIDIncorrects), Toast.LENGTH_SHORT).show();
         }
     }
