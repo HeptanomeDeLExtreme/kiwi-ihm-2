@@ -1,8 +1,5 @@
 package com.kiwi.kiwi.model;
 
-/**
- * Created by root on 11/12/15.
- */
 public class Avis {
     Integer note; // Entre 1 et 5
     String texte;

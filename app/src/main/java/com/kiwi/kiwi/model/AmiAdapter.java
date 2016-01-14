@@ -12,9 +12,7 @@ import com.kiwi.kiwi.R;
 
 import java.util.List;
 
-/**
- * Created by nico on 07/01/16.
- */
+
 public class AmiAdapter extends ArrayAdapter<Ami> {
 
     public AmiAdapter(Context context, List<Ami> amiList) {

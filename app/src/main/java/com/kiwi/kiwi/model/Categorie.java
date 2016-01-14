@@ -11,7 +11,7 @@ public enum Categorie {
     INSA("logo_insa","INSA");
 
     private String nom;
-    private String icone; // TODO Voir comment fonctionne icone
+    private String icone;
 
     Categorie(String icone, String nom) {
         this.icone = icone;

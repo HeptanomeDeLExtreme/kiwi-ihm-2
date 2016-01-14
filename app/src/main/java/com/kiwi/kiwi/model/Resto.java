@@ -8,7 +8,7 @@ import java.util.List;
 public class Resto {
     String nom;
     String photo; // Chemin vers l'image, en res ou en url
-    Boolean ouvert; // Ouvert ou Fermé, juste pour toString
+    Boolean ouvert; // Ouvert ou Fermé
     String adresse;
     Paiement moyenPaiement;
     String telephone;
@@ -16,7 +16,7 @@ public class Resto {
     String tempsAttente;
     String horaires;
     Categorie categorie; // Resto U, Resto INSA, ...
-    String typeRestaurant; // Italien, Tacos, Juif, ..
+    String typeRestaurant; // Italien, Tacos, ..
     String menuDuJour;
     List<Avis> avis;
     LatLng positionGPS;
@@ -59,11 +59,6 @@ public class Resto {
         mesAmisQuiSontDansCeResto = new ArrayList<Ami>();
     }
 
-    public Resto(String photo, String nom, Boolean ouvert) {
-        this.ouvert = ouvert;
-        this.photo = photo;
-        this.nom = nom;
-    }
 
     public void ajouteAmi(Ami monAmi){
         mesAmisQuiSontDansCeResto.add(monAmi);
@@ -117,115 +112,32 @@ public class Resto {
         return avis;
     }
 
-    public Boolean getVisible() {
-        return visible;
-    }
-
-    public void cacher() {
-        visible = false;
-    }
-
-    public void montrer() {
-        visible = true;
-    }
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
-    public void setOuvert(Boolean ouvert) {
-        this.ouvert = ouvert;
-    }
-
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
-    public void setMoyenPaiement(Paiement moyenPaiement) {
-        this.moyenPaiement = moyenPaiement;
-    }
-
     public String getTelephone() {
         return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public void setNiveauTarif(String niveauTarif) {
-        this.niveauTarif = niveauTarif;
-    }
-
-    public void setTempsAttente(String tempsAttente) {
-        this.tempsAttente = tempsAttente;
-    }
-
-    public void setHoraires(String horaires) {
-        this.horaires = horaires;
-    }
-
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
     }
 
     public String getTypeRestaurant() {
         return typeRestaurant;
     }
 
-    public void setTypeRestaurant(String typeRestaurant) {
-        this.typeRestaurant = typeRestaurant;
-    }
-
-    public void setMenuDuJour(String menuDuJour) {
-        this.menuDuJour = menuDuJour;
-    }
-
-    public void setAvis(List<Avis> avis) {
-        this.avis = avis;
-    }
-
     public LatLng getPositionGPS() {
         return positionGPS;
-    }
-
-    public void setPositionGPS(LatLng positionGPS) {
-        this.positionGPS = positionGPS;
-    }
-
-    public Double getDistanceUtilisateurRestaurant() {
-        return distanceUtilisateurRestaurant;
-    }
-
-    public void setDistanceUtilisateurRestaurant(Double distanceUtilisateurRestaurant) {
-        this.distanceUtilisateurRestaurant = distanceUtilisateurRestaurant;
     }
 
     public Integer getTempsUtilisateurRestaurant() {
         return tempsUtilisateurRestaurant;
     }
 
-    public void setTempsUtilisateurRestaurant(Integer tempsUtilisateurRestaurant) {
-        this.tempsUtilisateurRestaurant = tempsUtilisateurRestaurant;
-    }
-
     public List<Ami> getMesAmisQuiSontDansCeResto() {
         return mesAmisQuiSontDansCeResto;
-    }
-
-    public void setMesAmisQuiSontDansCeResto(List<Ami> mesAmisQuiSontDansCeResto) {
-        this.mesAmisQuiSontDansCeResto = mesAmisQuiSontDansCeResto;
     }
 
     public Integer getNbRepasRestants() {
@@ -234,10 +146,6 @@ public class Resto {
 
     public void addAvis (Avis avis){
         this.avis.add(avis);
-    }
-
-    public void setVisible(Boolean visible) {
-        this.visible = visible;
     }
 
     public Double getNiveauTarifDouble() {

@@ -17,9 +17,6 @@ import com.kiwi.kiwi.R;
 
 import java.util.List;
 
-/**
- * Created by marion on 11/01/16.
- */
 public class AvisAdapter extends ArrayAdapter<Avis> {
 
     View.OnClickListener clickListenerSupprimer;

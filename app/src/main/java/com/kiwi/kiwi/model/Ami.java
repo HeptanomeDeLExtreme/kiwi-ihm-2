@@ -1,8 +1,5 @@
 package com.kiwi.kiwi.model;
 
-/**
- * Created by root on 06/01/16.
- */
 public class Ami {
 
     String nom;
@@ -55,23 +52,12 @@ public class Ami {
         return prenom;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
     public String getPhoto() {
         return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
     }
 
     public Resto getRestaurantActuel() {
         return restaurantActuel;
     }
 
-    public void setRestaurantActuel(Resto restaurantActuel) {
-        this.restaurantActuel = restaurantActuel;
-    }
 }

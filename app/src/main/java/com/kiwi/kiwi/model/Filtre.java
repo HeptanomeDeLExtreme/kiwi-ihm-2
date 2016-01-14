@@ -169,17 +169,9 @@ public class Filtre {
         majRestos();
     }
 
-    public Double getPrixMin() {
-        return prixMin;
-    }
-
     public void setPrixMin(Double prixMin) {
         this.prixMin = prixMin;
         majRestos();
-    }
-
-    public Double getPrixMax() {
-        return prixMax;
     }
 
     public void setPrixMax(Double prixMax) {

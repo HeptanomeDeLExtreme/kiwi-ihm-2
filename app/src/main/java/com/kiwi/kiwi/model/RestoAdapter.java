@@ -35,7 +35,6 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
         if (viewHolder == null) {
             viewHolder = new RestoViewHolder();
             viewHolder.nom = (TextView) convertView.findViewById(R.id.nom);
-            //viewHolder.ouvert = (TextView) convertView.findViewById(R.id.ouvert);
             viewHolder.photo = (ImageView) convertView.findViewById(R.id.photo);
             viewHolder.prixResto = (TextView) convertView.findViewById(R.id.prixResto);
             viewHolder.tempsChemin = (TextView) convertView.findViewById(R.id.textTempsChemin);
@@ -51,11 +50,6 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
 
         //il ne reste plus qu'à remplir notre vue
         viewHolder.nom.setText(resto.getNom());
-
-/*        if (resto.getOuvert())
-            viewHolder.ouvert.setText(R.string.resto_ouvert);
-        else
-            viewHolder.ouvert.setText(R.string.resto_ferme);*/
 
         viewHolder.photo.setImageResource(getContext().getResources().getIdentifier("drawable/" + resto.getCategorie().getIcone(), null, getContext().getPackageName()));
 
@@ -78,7 +72,6 @@ public class RestoAdapter extends ArrayAdapter<Resto> {
 
     private class RestoViewHolder {
         public TextView nom;
-        //public TextView ouvert;
         public TextView prixResto;
         public ImageView photo;
         public TextView tempsChemin;
