@@ -5,18 +5,18 @@
 
         <group android:checkableBehavior="single">
             <menu>
-            <item
-                android:id="@+id/nav_prix"
-                android:icon="@android:drawable/btn_star_big_on"
-                android:title="Prix" />
-            <item
-                android:id="@+id/nav_attente"
-                android:icon="@android:drawable/ic_menu_myplaces"
-                android:title="Temps d'attente" />
-            <item
-                android:id="@+id/nav_aller"
-                android:icon="@android:drawable/ic_dialog_map"
-                android:title="Temps pour y aller" />
+                <item
+                    android:id="@+id/nav_prix"
+                    android:icon="@android:drawable/btn_star_big_on"
+                    android:title="Prix" />
+                <item
+                    android:id="@+id/nav_attente"
+                    android:icon="@android:drawable/ic_menu_myplaces"
+                    android:title="Temps d'attente" />
+                <item
+                    android:id="@+id/nav_aller"
+                    android:icon="@android:drawable/ic_dialog_map"
+                    android:title="Temps pour y aller" />
             </menu>
         </group>
 
