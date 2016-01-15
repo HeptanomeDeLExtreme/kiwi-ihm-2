@@ -106,10 +106,13 @@ public class ListFragment extends Fragment {
     }
 
     private void updateList() {
-        List<Resto> restos = MainActivity.listeRestosVisibles;
-        ListView mListView = (ListView) getView().findViewById(R.id.listView);
-        adapter = new RestoAdapter(getContext(), restos);
-        mListView.setAdapter(adapter);
+        try {
+            List<Resto> restos = MainActivity.listeRestosVisibles;
+            ListView mListView = (ListView) getView().findViewById(R.id.listView);
+            adapter = new RestoAdapter(getContext(), restos);
+            mListView.setAdapter(adapter);
+        }
+        catch(Exception e){}
     }
 
     private int compteOccurence(String s, char c) {
