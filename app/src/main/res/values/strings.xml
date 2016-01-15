@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">kiwi</string>
+    <string name="app_name">Kiwi</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -13,7 +13,7 @@
 
     <!-- Titre des activités -->
     <string name="title_activity_maps">Map</string>
-    <string name="title_activity_page_inscription">PageInscription</string>
+    <string name="title_activity_page_inscription">Kiwi</string>
     <string name="title_activity_formulaire_inscription">FormulaireInscription</string>
     <string name="title_activity_page_connexion">PageConnexion</string>
 
